@@ -8,53 +8,50 @@
 
 import UIKit
 
-class CancelReasonViewController: UIViewController {
-
+class CancelReasonViewController: BaseViewController {
+    
     //MARK:- Outlets
-        @IBOutlet weak var btnOption1: UIButton!
+    @IBOutlet weak var btnOption1: UIButton!
     @IBOutlet weak var btnOption2: UIButton!
     @IBOutlet weak var btnOption3: UIButton!
     @IBOutlet weak var btnOption4: UIButton!
     
     //MARK:- Variables
-        var selectedButton = UIButton()
+    var selectedButton = UIButton()
+    
+    //MARK:- Lifecycle func
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        //MARK:- Lifecycle func
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            self.setUpNavigationBar()
-            self.callViewDidLoad()
-            
-            
-            // Do any additional setup after loading the view.
-        }
+        self.setUpNavigationBar()
+        self.callViewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.callViewWillLoad()
+    }
+    
+    
+    //MARK:- main funcs
+    private func callViewDidLoad()
+    {
         
-        override func viewWillAppear(_ animated: Bool) {
-            self.callViewWillLoad()
-        }
-        override func viewWillDisappear(_ animated: Bool) {
-
-        }
+    }
+    private func callViewWillLoad()
+    {
+        self.selectedButton = self.btnOption1
+    }
+    
+    private func setUpNavigationBar(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         
-        //MARK:- main funcs
-        private func callViewDidLoad()
-        {
-            
-        }
-        private func callViewWillLoad()
-        {
-            self.selectedButton = self.btnOption1
-        }
-        
-        private func setUpNavigationBar(){
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            self.navigationController?.navigationBar.shadowImage = UIImage()
-            self.navigationController?.navigationBar.isTranslucent = true
-            
-            self.navigationItem.title = "Cancel Reason"
-        }
-
+        self.navigationItem.title = "Cancel Reason"
+    }
+    
     //MARK:- Button Actions
     @IBAction func btnSubmitAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -73,5 +70,5 @@ class CancelReasonViewController: UIViewController {
             }
         }
     }
-
+    
 }

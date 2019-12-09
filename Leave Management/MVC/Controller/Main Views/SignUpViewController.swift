@@ -10,7 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     
     //MARK:- Outlets
@@ -37,18 +37,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.addNotifications()
         self.navigationController?.navigationBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.removeNotifications()
     }
     
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        
-        
-    }
     
     //MARK:- main funcs
     private func callViewDidLoad()
@@ -146,42 +143,106 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     //MARK:- Button Actions
     
     @IBAction func btnPasswordAction(_ sender: UIButton) {
-        if sender.tag == 0//show password
-        {
-            sender.tag = 1
-            self.tfPassword.isSecureTextEntry = false
-            sender.setImage(eyeShown, for: .normal)
-        }
-        else{//hide password
-            sender.tag = 0
-            self.tfPassword.isSecureTextEntry = true
-            sender.setImage(eyeHidden, for: .normal)
-        }
+        //        if sender.tag == 0//show password
+        //        {
+        //            sender.tag = 1
+        //            self.tfPassword.isSecureTextEntry = false
+        //            sender.setImage(eyeShown, for: .normal)
+        //        }
+        //        else{//hide password
+        //            sender.tag = 0
+        //            self.tfPassword.isSecureTextEntry = true
+        //            sender.setImage(eyeHidden, for: .normal)
+        //        }
     }
     @IBAction func btnConfirmPasswordAction(_ sender: UIButton) {
-        if sender.tag == 0//show password
-        {
-            sender.tag = 1
-            self.tfConfirmPassword.isSecureTextEntry = false
-            sender.setImage(eyeShown, for: .normal)
-        }
-        else{//hide password
-            sender.tag = 0
-            self.tfConfirmPassword.isSecureTextEntry = true
-            sender.setImage(eyeHidden, for: .normal)
-        }
+        //        if sender.tag == 0//show password
+        //        {
+        //            sender.tag = 1
+        //            self.tfConfirmPassword.isSecureTextEntry = false
+        //            sender.setImage(eyeShown, for: .normal)
+        //        }
+        //        else{//hide password
+        //            sender.tag = 0
+        //            self.tfConfirmPassword.isSecureTextEntry = true
+        //            sender.setImage(eyeHidden, for: .normal)
+        //        }
     }
     
     @IBAction func btnLoginAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func btnSignUpAction(_ sender: UIButton) {
+        self.view.endEditing(true)
+        let name = self.trimString(self.tfFullName.text ?? "")
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let phoneNumber = self.trimString(self.tfPhoneNumber.text ?? "")
+        let designation = self.trimString(self.tfDesignation.text ?? "")
+        let password = self.trimString(self.tfPassword.text ?? "")
+        let confirmPassword = self.trimString(self.tfConfirmPassword.text ?? "")
+        if !self.isValidText(name){
+            self.showAlert(title: "Warning", message: "Please enter your fullname.", actionTitle: "Ok")
+        }else if !self.isValidText(email){
+            self.showAlert(title: "Warning", message: "Please enter your email.", actionTitle: "Ok")
+        }else if !self.isValidEmail(email){
+            self.showAlert(title: "Warning", message: "Please enter valid email.", actionTitle: "Ok")
+        }else if !self.isValidPhoneNumber(phoneNumber){
+            self.showAlert(title: "Warning", message: "Please enter your phone number.", actionTitle: "Ok")
+        }else if !self.isValidText(phoneNumber){
+            self.showAlert(title: "Warning", message: "Please enter valid phone number.", actionTitle: "Ok")
+        }else if !self.isValidText(designation){
+            self.showAlert(title: "Warning", message: "Please enter your designation.", actionTitle: "Ok")
+        }else if !self.isValidText(password){
+            self.showAlert(title: "Warning", message: "Please enter your password.", actionTitle: "Ok")
+        }else if !self.isValidText(confirmPassword){
+            self.showAlert(title: "Warning", message: "Please confirm your password.", actionTitle: "Ok")
+        }else if password != confirmPassword{
+            self.showAlert(title: "Warning", message: "Password doesn't match.", actionTitle: "Ok")
+        }else{
+            self.apiHit()
+        }
+        
+    }
+    
+    //MARK:- API Hit
+    private func apiHit(){
+        
+        let name = self.trimString(self.tfFullName.text ?? "")
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let phoneNumber = self.trimString(self.tfPhoneNumber.text ?? "")
+        let designation = self.trimString(self.tfDesignation.text ?? "")
+        let password = self.trimString(self.tfPassword.text ?? "")
+        let confirmPassword = self.trimString(self.tfConfirmPassword.text ?? "")
+        //                guard let url = URL(string: loginUrl) else {
+        //                    return
+        //                }
+        //
+        //                API().post(url: url, parameters: ["name": name,"email": email,"phoneNumber": phoneNumber,"designation": designation,"password": password, "confirmPassword": confirmPassword], token: "", success: { (user) in
+        //                    DispatchQueue.main.async {
+        //                        let model = UserModel.init(dict: userDataDict)
+        //                        RealmDatabase.shared.add(object: model)
+        //                        if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
+        //                        {
+        //                            self.navigationController?.pushViewController(vc, animated: true)
+        //                        }
+        //                    }
+        //                }) { (error) in
+        //                    self.showAlert(title: "Error", message: error, actionTitle: "Ok")
+        //                }
+        
+        let model = UserModel()
+        model.id = 1
+        model.fullName = name
+        model.email = email
+        model.phoneNumber = phoneNumber
+        model.designation = designation
+        RealmDatabase.shared.add(object: model)
+        
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
         {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-
-
-
+    
+    
 }

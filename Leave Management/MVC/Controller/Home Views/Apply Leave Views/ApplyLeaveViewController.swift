@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ApplyLeaveViewController: UIViewController {
-
+class ApplyLeaveViewController: BaseViewController {
+    
     //MARK:- Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textView: UITextView!
@@ -23,7 +23,7 @@ class ApplyLeaveViewController: UIViewController {
     @IBOutlet weak var btnAttachment: UIButton!
     
     @IBOutlet weak var viewPickers: UIView!
-//    @IBOutlet weak var viewPickerContainer: UIView!
+    //    @IBOutlet weak var viewPickerContainer: UIView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var datepickerView: UIDatePicker!
     
@@ -69,7 +69,7 @@ class ApplyLeaveViewController: UIViewController {
         self.pickerView.dataSource = self
         self.datepickerView.date = Date()
         self.viewPickers.isHidden = true
-//        self.viewPickerContainer.isHidden = true
+        //        self.viewPickerContainer.isHidden = true
         self.btnLeaveType.setTitle(self.pickerLeaveType[0], for: .normal)
         self.btnShiftType.setTitle(self.pickerShiftType[0], for: .normal)
         self.viewDate.isHidden = true
@@ -89,7 +89,7 @@ class ApplyLeaveViewController: UIViewController {
         self.navigationItem.title = "Apply Leave"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
     }
-
+    
     @objc func rightBarButtonAction(_ sender: Any){
         self.navigationController?.popViewController(animated: true)
     }
@@ -155,7 +155,7 @@ class ApplyLeaveViewController: UIViewController {
     
     @IBAction func btnSelectStartDateAction(_ sender: UIButton) {
         self.pickerType = 2
-//        self.datepickerView.datePickerMode = .date
+        //        self.datepickerView.datePickerMode = .date
         self.datepickerView.minimumDate = Date()
         self.datepickerView.maximumDate = nil
         self.pickerView.isHidden = true
@@ -168,14 +168,14 @@ class ApplyLeaveViewController: UIViewController {
     }
     @IBAction func btnSelectEndDateAction(_ sender: UIButton) {
         self.pickerType = 3
-//        self.datepickerView.datePickerMode = .date
+        //        self.datepickerView.datePickerMode = .date
         self.datepickerView.minimumDate = self.startDate
         let maxiDate = Calendar.current.date(byAdding: .hour, value: 24, to: self.startDate)
         switch self.selectedShiftType
         {
-            case 0,1: self.datepickerView.maximumDate = maxiDate
-            case 2,3: self.datepickerView.maximumDate = nil
-            default: break
+        case 0,1: self.datepickerView.maximumDate = maxiDate
+        case 2,3: self.datepickerView.maximumDate = nil
+        default: break
         }
         self.pickerView.isHidden = true
         self.datepickerView.isHidden = false
@@ -213,32 +213,30 @@ class ApplyLeaveViewController: UIViewController {
         }
     }
     @IBAction func btnCancelPickerAction(_ sender: UIButton) {
-            self.viewPickers.isHidden = true
+        self.viewPickers.isHidden = true
         self.calculateDays()
-            
-    }
         
+    }
+    
     @IBAction func btnUploadAttachmentAction(_ sender: UIButton) {
-        Utility().showActionSheet(viewController: self, pickerDelegate: self)
+        self.showActionSheet(pickerDelegate: self)
     }
     
     @IBAction func btnApplyAction(_ sender: UIButton) {
-            self.view.endEditing(true)
-    //        let newPassword = self.tfNewPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-    //
-    //        if newPassword?.isEmpty ?? false{
-    //            let alert = UIAlertController(title: "Warning", message: "Enter new Password", preferredStyle: .alert)
-    //            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-    //            self.present(alert, animated: true, completion: nil)
-    //        }else{
-                let alert = UIAlertController(title: "Success", message: "Your have successfully applied for leave.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
-                    self.navigationController?.popViewController(animated: true)
-                }))
-                self.present(alert, animated: true, completion: nil)
-    //        }
-          
+        self.view.endEditing(true)
+        let reason = self.trimString(self.textView.text ?? "")
+        
+        if !self.isValidText(reason) || reason == self.textViewPlaceholder{
+            self.showAlert(title: "Warning", message: "Please enter reason for leave.", actionTitle: "Ok")
+        }else if self.selectedShiftType == 3 && self.lblTotalDays.text?.contains("Duration") ?? false{
+            self.showAlert(title: "Warning", message: "Please select end date.", actionTitle: "Ok")
+        }else{
+            self.apiHit()
         }
+    }
+    
+    
+    //MARK: - funcs
     func checkForShiftType(){
         let date = self.dateSelected(self.startDate)
         self.btnStartDate.setTitle(date, for: .normal)
@@ -279,49 +277,47 @@ class ApplyLeaveViewController: UIViewController {
             break
         }
         self.calculateDays()
-//        if let index = self.pickerShiftType.firstIndex(where: { $0 == self. }) != nil
-//        {
-//            if self.viewDate.isHidden
-//            {
-//                self.viewDateHeight.constant = 77
-//                self.viewDate.isHidden = false
-//            }
-//        }else if self.viewDate.isHidden == false{
-//            self.viewDateHeight.constant = 0
-//            self.viewDate.isHidden = true
-//        }
     }
     
     func dateSelected(_ sender: Date) -> String {
         let formatter = DateFormatter()
         switch self.selectedShiftType{
-            case 0,1,3: formatter.dateFormat = "dd MMM yyyy HH:mm a"
-            case 2: formatter.dateFormat = "dd MMM yyyy"
-            default: break
+        case 0,1,3: formatter.dateFormat = "dd MMM yyyy HH:mm a"
+        case 2: formatter.dateFormat = "dd MMM yyyy"
+        default: break
         }
         let str = formatter.string(from: sender)
         return str
     }
     func calculateDays(){
         switch self.selectedShiftType{
-            case 0,1:
-                let diff = Calendar.current.dateComponents([.hour, .minute], from: self.startDate, to: self.endDate)
-                let hours = diff.hour ?? 0
-                let mint = diff.minute ?? 0
-                self.lblTotalDays.text = (hours > 0) ? ((mint > 0) ? "\(hours) Hours, \(mint) minutes" : "\(hours) Hours") : ((mint > 0) ? "\(mint) minutes" : "Duration")
-            case 2: self.lblTotalDays.text = "Duration"
-            case 3:
-                let days = Calendar.current.dateComponents([.day], from: self.startDate, to: self.endDate).day ?? 0
-                self.lblTotalDays.text = (days>0) ?  "\(days+1) Days" : "Duration"
-            default: break
+        case 0,1:
+            let diff = Calendar.current.dateComponents([.hour, .minute], from: self.startDate, to: self.endDate)
+            let hours = diff.hour ?? 0
+            let mint = diff.minute ?? 0
+            self.lblTotalDays.text = (hours > 0) ? ((mint > 0) ? "\(hours) Hours, \(mint) minutes" : "\(hours) Hours") : ((mint > 0) ? "\(mint) minutes" : "Duration")
+        case 2: self.lblTotalDays.text = "Duration"
+        case 3:
+            let days = Calendar.current.dateComponents([.day], from: self.startDate, to: self.endDate).day ?? 0
+            self.lblTotalDays.text = (days>0) ?  "\(days+1) Days" : "Duration"
+        default: break
         }
     }
     
-
+    
+    //MARK:- API Hit
+    private func apiHit(){
+        let alert = UIAlertController(title: "Success", message: "Your have successfully applied for leave.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 extension ApplyLeaveViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate
 {
-     //MARK:- ImageViewController delegate
+    //MARK:- ImageViewController delegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let imageName = "image.png"
         
@@ -358,9 +354,10 @@ extension ApplyLeaveViewController  : UITextViewDelegate {
         textView.sizeToFit()
     }
 }
+
 extension ApplyLeaveViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     //MARK:- PickerView delegate
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -372,15 +369,15 @@ extension ApplyLeaveViewController: UIPickerViewDelegate, UIPickerViewDataSource
         return self.pickerArr[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        switch self.pickerType
-//        {
-//        case 0:
-//            self.btnLeaveType.setTitle(self.pickerArr[row], for: .normal)
-//        case 1:
-//            self.btnShiftType.setTitle(self.pickerArr[row], for: .normal)
-//        default:
-//            break
-//        }
+        //        switch self.pickerType
+        //        {
+        //        case 0:
+        //            self.btnLeaveType.setTitle(self.pickerArr[row], for: .normal)
+        //        case 1:
+        //            self.btnShiftType.setTitle(self.pickerArr[row], for: .normal)
+        //        default:
+        //            break
+        //        }
     }
     
     

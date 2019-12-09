@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LeaveStatusTableViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource {
     
     
     //MARK:- Outlets
@@ -32,11 +32,10 @@ class LeaveStatusTableViewController: UIViewController , UITableViewDelegate, UI
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.callViewWillLoad()
     }
-    override func viewWillDisappear(_ animated: Bool) {
-
-    }
+    
     
     //MARK:- main funcs
     private func callViewDidLoad()
@@ -68,7 +67,7 @@ class LeaveStatusTableViewController: UIViewController , UITableViewDelegate, UI
         
         self.navigationItem.title = "Leave Status"
     }
-
+    
     //MARK:- TableView Delegate and Datasources
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -114,13 +113,13 @@ class LeaveStatusTableViewController: UIViewController , UITableViewDelegate, UI
             break
         }
         cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 12
-//        if thereIsAttachments{
-//            cell.viewAttachments.isHidden = false
-//            cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 12
-//        }else{
-//            cell.viewAttachments.isHidden = true
-//            cell.viewAttachmentsHeight.constant = 0
-//        }
+        //        if thereIsAttachments{
+        //            cell.viewAttachments.isHidden = false
+        //            cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 12
+        //        }else{
+        //            cell.viewAttachments.isHidden = true
+        //            cell.viewAttachmentsHeight.constant = 0
+        //        }
         
         return cell
     }

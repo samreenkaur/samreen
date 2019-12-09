@@ -9,21 +9,21 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
-
-
+class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
+    
+    
     //MARK:- Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tfOldPassword: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet weak var tfNewPassword: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet weak var tfConfirmPassword: SkyFloatingLabelTextFieldWithIcon!
-
-
+    
+    
     //MARK:- Variables
-
-
+    
+    
     //MARK:- Lifecycle func
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,19 +31,17 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         self.callViewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.addNotifications()
     }
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.removeNotifications()
     }
-
-
-    override func viewDidDisappear(_ animated: Bool) {
-        
-    }
-
+    
+    
     //MARK:- main funcs
     private func callViewDidLoad()
     {
@@ -58,15 +56,15 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     {
         
     }
-
+    
     private func setUpNavigationBar(){
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationItem.title = "Change Password"
     }
-
-
+    
+    
     //MARK:- TextField Delegate func
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == tfOldPassword
@@ -82,20 +80,20 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
-
+    
     //MARK:- Notifications
     private func addNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
-
-
+    
+    
+    
     private func removeNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         
         let userInfo = notification.userInfo!
@@ -106,30 +104,39 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         contentInset.bottom = keyboardFrame.size.height
         scrollView.contentInset = contentInset
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }
-
+    
     //MARK:- Button Actions
     @IBAction func btnResetPasswordAction(_ sender: UIButton) {
-        self.view.endEditing(true)
-        let newPassword = self.tfNewPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let password = self.trimString(self.tfOldPassword.text ?? "")
+        let newpassword = self.trimString(self.tfNewPassword.text ?? "")
+        let confirmPassword = self.trimString(self.tfConfirmPassword.text ?? "")
         
-        if newPassword?.isEmpty ?? false{
-            let alert = UIAlertController(title: "Warning", message: "Enter new Password", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        if !self.isValidText(password){
+            self.showAlert(title: "Warning", message: "Please enter your last password.", actionTitle: "Ok")
+        }else if !self.isValidText(newpassword){
+            self.showAlert(title: "Warning", message: "Please enter your new password.", actionTitle: "Ok")
+        }else if !self.isValidText(confirmPassword){
+            self.showAlert(title: "Warning", message: "Please confirm your password.", actionTitle: "Ok")
+        }else if newpassword != confirmPassword{
+            self.showAlert(title: "Warning", message: "Password doesn't match.", actionTitle: "Ok")
         }else{
-            let alert = UIAlertController(title: "Success", message: "Your password has been successfully updated.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
-                self.navigationController?.popViewController(animated: true)
-            }))
-            self.present(alert, animated: true, completion: nil)
+            self.apiHit()
         }
-      
+        
     }
-
+    //MARK:- API Hit
+    private func apiHit(){
+        let alert = UIAlertController(title: "Success", message: "Your password has been successfully updated.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

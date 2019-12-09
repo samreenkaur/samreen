@@ -8,10 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-    //MARK:- Outlets
-    
+class HomeViewController: BaseViewController {
     
     //MARK:- Variables
     
@@ -26,25 +23,18 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-
-    }
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
+        self.callViewWillLoad()
     }
     
     //MARK:- main funcs
     private func callViewDidLoad()
     {
-                
+        
     }
     private func callViewWillLoad()
     {
-        
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     private func setUpNavigationBar(){
@@ -56,7 +46,7 @@ class HomeViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_notifaction"), style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
     }
-
+    
     @objc func rightBarButtonAction(_ sender: Any){
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kNotificationsViewController) as? NotificationsViewController
         {

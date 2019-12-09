@@ -10,7 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 
 
-class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
+class ResetPasswordViewController: BaseViewController , UITextFieldDelegate {
     
     
     //MARK:- Outlets
@@ -34,15 +34,12 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.addNotifications()
     }
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.removeNotifications()
-    }
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        
     }
     
     //MARK:- main funcs
@@ -113,23 +110,28 @@ class ResetPasswordViewController: UIViewController , UITextFieldDelegate {
     //MARK:- Button Actions
     @IBAction func btnResetPasswordAction(_ sender: UIButton) {
         self.view.endEditing(true)
-        let newPassword = self.tfNewPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let password = self.trimString(self.tfNewPassword.text ?? "")
+        let confirmPassword = self.trimString(self.tfConfirmPassword.text ?? "")
         
-        if newPassword?.isEmpty ?? false{
-            let alert = UIAlertController(title: "Warning", message: "Enter new Password", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        if !self.isValidText(password){
+            self.showAlert(title: "Warning", message: "Please enter your password.", actionTitle: "Ok")
+        }else if !self.isValidText(confirmPassword){
+            self.showAlert(title: "Warning", message: "Please confirm your password.", actionTitle: "Ok")
+        }else if password != confirmPassword{
+            self.showAlert(title: "Warning", message: "Password doesn't match.", actionTitle: "Ok")
         }else{
-            let alert = UIAlertController(title: "Success", message: "Your password has been successfully updated.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
-                self.navigationController?.popViewController(animated: true)
-            }))
-            self.present(alert, animated: true, completion: nil)
+            self.apiHit()
         }
-      
+        
     }
-    
-    
+    //MARK:- API Hit
+    private func apiHit(){
+        let alert = UIAlertController(title: "Success", message: "Your password has been successfully updated.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
 }
 

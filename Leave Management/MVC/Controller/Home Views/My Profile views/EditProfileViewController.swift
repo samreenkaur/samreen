@@ -9,9 +9,9 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class EditProfileViewController: UIViewController , UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-
+class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
     //MARK:- Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgUser: UIImageView!
@@ -21,12 +21,13 @@ class EditProfileViewController: UIViewController , UITextFieldDelegate , UIImag
     @IBOutlet weak var tfPhoneNumber: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet weak var tfDesignation: SkyFloatingLabelTextFieldWithIcon!
     
-
+    
     //MARK:- Variables
     var imagePicker = UIImagePickerController()
-
+    var user = UserModel()
+    
     //MARK:- Lifecycle func
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,20 +35,18 @@ class EditProfileViewController: UIViewController , UITextFieldDelegate , UIImag
         self.callViewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.addNotifications()
+        self.callViewWillLoad()
     }
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.removeNotifications()
     }
-
-
-    override func viewDidDisappear(_ animated: Bool) {
-        
-        
-    }
-
+    
+    
     //MARK:- main funcs
     private func callViewDidLoad()
     {
@@ -62,9 +61,17 @@ class EditProfileViewController: UIViewController , UITextFieldDelegate , UIImag
     }
     private func callViewWillLoad()
     {
-        
+        user = user.getUserloggedIn() ?? UserModel()
+        if user.id > 0
+        {
+            self.tfFullName.text = user.fullName
+            self.tfEmail.text = user.email
+            self.tfPhoneNumber.text = user.phoneNumber
+            self.tfDesignation.text = user.designation
+            
+        }
     }
-
+    
     private func setUpNavigationBar(){
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -73,12 +80,12 @@ class EditProfileViewController: UIViewController , UITextFieldDelegate , UIImag
         self.navigationItem.title = "Edit Profile"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
     }
-
+    
     @objc func rightBarButtonAction(_ sender: Any){
         self.navigationController?.popViewController(animated: true)
     }
-
-
+    
+    
     //MARK:- TextField Delegate func
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == tfFullName
@@ -97,20 +104,20 @@ class EditProfileViewController: UIViewController , UITextFieldDelegate , UIImag
         
         return true
     }
-
+    
     //MARK:- Notifications
     private func addNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
-
-
+    
+    
+    
     private func removeNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         
         let userInfo = notification.userInfo!
@@ -121,7 +128,7 @@ class EditProfileViewController: UIViewController , UITextFieldDelegate , UIImag
         contentInset.bottom = keyboardFrame.size.height
         scrollView.contentInset = contentInset
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
@@ -155,25 +162,54 @@ class EditProfileViewController: UIViewController , UITextFieldDelegate , UIImag
         picker.dismiss(animated: true, completion: nil)
     }
     
-
+    
     //MARK:- Button Actions
     @IBAction func btnUploadImageAction(_ sender: UIButton) {
         
-            let alert = UIAlertController(title: "", message: "Choose", preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-                Utility().camera(viewController: self, pickerDelegate: self)
-            }))
-            alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
-                Utility().photoLibrary(viewController: self, pickerDelegate: self)
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-
-            }))
-            self.present(alert, animated: true, completion: nil)
-        
+        self.showActionSheet(pickerDelegate: self)
     }
     @IBAction func btnSaveAction(_ sender: UIButton) {
+        let name = self.trimString(self.tfFullName.text ?? "")
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let phoneNumber = self.trimString(self.tfPhoneNumber.text ?? "")
+        let designation = self.trimString(self.tfDesignation.text ?? "")
+        
+        if !self.isValidText(name){
+            self.showAlert(title: "Warning", message: "Please enter your fullname.", actionTitle: "Ok")
+        }else if !self.isValidText(email){
+            self.showAlert(title: "Warning", message: "Please enter your email.", actionTitle: "Ok")
+        }else if !self.isValidEmail(email){
+            self.showAlert(title: "Warning", message: "Please enter valid email.", actionTitle: "Ok")
+        }else if !self.isValidPhoneNumber(phoneNumber){
+            self.showAlert(title: "Warning", message: "Please enter your phone number.", actionTitle: "Ok")
+        }else if !self.isValidText(phoneNumber){
+            self.showAlert(title: "Warning", message: "Please enter valid phone number.", actionTitle: "Ok")
+        }else if !self.isValidText(designation){
+            self.showAlert(title: "Warning", message: "Please enter your designation.", actionTitle: "Ok")
+        }else{
+            self.apiHit()
+        }
+        
+    }
+    
+    //MARK:- API Hit
+    private func apiHit(){
+        let name = self.trimString(self.tfFullName.text ?? "")
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let phoneNumber = self.trimString(self.tfPhoneNumber.text ?? "")
+        let designation = self.trimString(self.tfDesignation.text ?? "")
+        user.realm?.beginWrite()
+        user.fullName = name
+        user.email = email
+        user.phoneNumber = phoneNumber
+        user.designation = designation
+        //        RealmDatabase.shared.add(object: user)
+        do {
+            try user.realm?.commitWrite()
+        } catch {
+            print(error.localizedDescription)
+        }
         self.navigationController?.popViewController(animated: true)
     }
-
+    
 }

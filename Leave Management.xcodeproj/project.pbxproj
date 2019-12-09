@@ -10,12 +10,16 @@
 		10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */; };
 		103994072398C42900EB14E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994062398C42900EB14E4 /* ResetPasswordViewController.swift */; };
 		1039940A2398C85C00EB14E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994092398C85C00EB14E4 /* HomeViewController.swift */; };
-		1039940C2398CFE300EB14E4 /* LayoutableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039940B2398CFE300EB14E4 /* LayoutableButton.swift */; };
 		1039940E2398D1DA00EB14E4 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039940D2398D1DA00EB14E4 /* MyProfileViewController.swift */; };
 		103994102398D1F200EB14E4 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039940F2398D1F200EB14E4 /* EditProfileViewController.swift */; };
 		103994122398D21A00EB14E4 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994112398D21A00EB14E4 /* ChangePasswordViewController.swift */; };
 		103994162398ED3000EB14E4 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994152398ED3000EB14E4 /* NotificationsViewController.swift */; };
 		103994182398ED4000EB14E4 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994172398ED4000EB14E4 /* NotificationTableViewCell.swift */; };
+		1041A9E2239E23240080E6F4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E1239E23240080E6F4 /* BaseViewController.swift */; };
+		1041A9E4239E31DF0080E6F4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E3239E31DF0080E6F4 /* API.swift */; };
+		1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E5239E3ACE0080E6F4 /* User.swift */; };
+		1041A9E9239E5B190080E6F4 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E8239E5B190080E6F4 /* RealmManager.swift */; };
+		1041A9EB239E7E010080E6F4 /* Holidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9EA239E7E010080E6F4 /* Holidays.swift */; };
 		10B328A923991DE800B6D0CA /* ApplyLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */; };
 		10B328AB23991DF400B6D0CA /* HolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328AA23991DF400B6D0CA /* HolidaysViewController.swift */; };
 		10B328AD23991E0100B6D0CA /* LeaveStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328AC23991E0100B6D0CA /* LeaveStatusViewController.swift */; };
@@ -30,7 +34,6 @@
 		10F57C7A2397E0BD0025082D /* Leave_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C792397E0BD0025082D /* Leave_ManagementTests.swift */; };
 		10F57C852397E0BD0025082D /* Leave_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C842397E0BD0025082D /* Leave_ManagementUITests.swift */; };
 		10F57C932397E3670025082D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C922397E3670025082D /* Extension.swift */; };
-		10F57C952397E3B10025082D /* UtilityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C942397E3B10025082D /* UtilityClass.swift */; };
 		10F57C9C2397E4230025082D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C9B2397E4230025082D /* LoginViewController.swift */; };
 		10F57C9E2397E46C0025082D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C9D2397E46C0025082D /* Constants.swift */; };
 		10F57CA02397E4F10025082D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C9F2397E4F10025082D /* SignUpViewController.swift */; };
@@ -59,12 +62,16 @@
 		10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
 		103994062398C42900EB14E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		103994092398C85C00EB14E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		1039940B2398CFE300EB14E4 /* LayoutableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutableButton.swift; sourceTree = "<group>"; };
 		1039940D2398D1DA00EB14E4 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		1039940F2398D1F200EB14E4 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		103994112398D21A00EB14E4 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		103994152398ED3000EB14E4 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		103994172398ED4000EB14E4 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		1041A9E1239E23240080E6F4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1041A9E3239E31DF0080E6F4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		1041A9E5239E3ACE0080E6F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1041A9E8239E5B190080E6F4 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		1041A9EA239E7E010080E6F4 /* Holidays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidays.swift; sourceTree = "<group>"; };
 		10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyLeaveViewController.swift; sourceTree = "<group>"; };
 		10B328AA23991DF400B6D0CA /* HolidaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewController.swift; sourceTree = "<group>"; };
 		10B328AC23991E0100B6D0CA /* LeaveStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveStatusViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +92,6 @@
 		10F57C842397E0BD0025082D /* Leave_ManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leave_ManagementUITests.swift; sourceTree = "<group>"; };
 		10F57C862397E0BD0025082D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10F57C922397E3670025082D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		10F57C942397E3B10025082D /* UtilityClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityClass.swift; sourceTree = "<group>"; };
 		10F57C9B2397E4230025082D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		10F57C9D2397E46C0025082D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		10F57C9F2397E4F10025082D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +159,18 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		1041A9E7239E59F20080E6F4 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1041A9E3239E31DF0080E6F4 /* API.swift */,
+				1041A9E1239E23240080E6F4 /* BaseViewController.swift */,
+				10F57C9D2397E46C0025082D /* Constants.swift */,
+				10F57C922397E3670025082D /* Extension.swift */,
+				1041A9E8239E5B190080E6F4 /* RealmManager.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		10B328A523991DA800B6D0CA /* Apply Leave Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,11 +226,8 @@
 			children = (
 				10F57C622397E0BC0025082D /* AppDelegate.swift */,
 				10F57C642397E0BC0025082D /* SceneDelegate.swift */,
+				1041A9E7239E59F20080E6F4 /* Global */,
 				10F57C962397E3B60025082D /* MVC */,
-				10F57C9D2397E46C0025082D /* Constants.swift */,
-				10F57C922397E3670025082D /* Extension.swift */,
-				10F57C942397E3B10025082D /* UtilityClass.swift */,
-				1039940B2398CFE300EB14E4 /* LayoutableButton.swift */,
 				10F57C682397E0BC0025082D /* Main.storyboard */,
 				10F57C6B2397E0BD0025082D /* Assets.xcassets */,
 				10F57C6D2397E0BD0025082D /* LaunchScreen.storyboard */,
@@ -268,6 +283,8 @@
 		10F57C992397E3CA0025082D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1041A9E5239E3ACE0080E6F4 /* User.swift */,
+				1041A9EA239E7E010080E6F4 /* Holidays.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -478,8 +495,9 @@
 				10B328A923991DE800B6D0CA /* ApplyLeaveViewController.swift in Sources */,
 				103994162398ED3000EB14E4 /* NotificationsViewController.swift in Sources */,
 				103994102398D1F200EB14E4 /* EditProfileViewController.swift in Sources */,
-				1039940C2398CFE300EB14E4 /* LayoutableButton.swift in Sources */,
 				103994072398C42900EB14E4 /* ResetPasswordViewController.swift in Sources */,
+				1041A9EB239E7E010080E6F4 /* Holidays.swift in Sources */,
+				1041A9E2239E23240080E6F4 /* BaseViewController.swift in Sources */,
 				103994182398ED4000EB14E4 /* NotificationTableViewCell.swift in Sources */,
 				10F57CA22397E6B80025082D /* ForgotPasswordViewController.swift in Sources */,
 				10F57C9C2397E4230025082D /* LoginViewController.swift in Sources */,
@@ -490,12 +508,14 @@
 				1039940E2398D1DA00EB14E4 /* MyProfileViewController.swift in Sources */,
 				1039940A2398C85C00EB14E4 /* HomeViewController.swift in Sources */,
 				10F57C652397E0BC0025082D /* SceneDelegate.swift in Sources */,
-				10F57C952397E3B10025082D /* UtilityClass.swift in Sources */,
+				1041A9E4239E31DF0080E6F4 /* API.swift in Sources */,
 				10F57C932397E3670025082D /* Extension.swift in Sources */,
 				10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */,
 				10B328AB23991DF400B6D0CA /* HolidaysViewController.swift in Sources */,
 				10F57C9E2397E46C0025082D /* Constants.swift in Sources */,
+				1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */,
 				103994122398D21A00EB14E4 /* ChangePasswordViewController.swift in Sources */,
+				1041A9E9239E5B190080E6F4 /* RealmManager.swift in Sources */,
 				10B328B123991E3F00B6D0CA /* HolidaysTableViewCell.swift in Sources */,
 				10B328AD23991E0100B6D0CA /* LeaveStatusViewController.swift in Sources */,
 			);

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HolidaysViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource {
     
     
     //MARK:- Outlets
@@ -27,22 +27,30 @@ class HolidaysViewController: UIViewController , UITableViewDelegate, UITableVie
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
+        self.callViewWillLoad()
     }
-    override func viewWillDisappear(_ animated: Bool) {
-
-    }
+    
     
     //MARK:- main funcs
     private func callViewDidLoad()
     {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-                
+        
     }
     private func callViewWillLoad()
     {
-        
+        if let results = RealmDatabase.shared.fetch(type: HolidaysModel.self, AndFilter: nil)
+        {
+            for i in results
+            {
+                if let model = i as? HolidaysModel
+                {
+                    
+                }
+            }
+        }
     }
     
     private func setUpNavigationBar(){
@@ -52,7 +60,7 @@ class HolidaysViewController: UIViewController , UITableViewDelegate, UITableVie
         
         self.navigationItem.title = "Holidays"
     }
-
+    
     //MARK:- TableView Delegate and Datasources
     func numberOfSections(in tableView: UITableView) -> Int {
         return 12
@@ -72,13 +80,13 @@ class HolidaysViewController: UIViewController , UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 30)) //set these values as necessary
         returnedView.backgroundColor = .white
-
+        
         let label = UILabel(frame: CGRect(x: 20, y: 5, width: self.tableView.frame.width - 40, height: 30))
         label.font = .systemFont(ofSize: 14)
         label.textColor = UIColor.darkGray
         label.text = "\(section+1) - 2019"
         returnedView.addSubview(label)
-
+        
         return returnedView
     }
 }

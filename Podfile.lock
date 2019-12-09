@@ -1,20 +1,30 @@
 PODS:
   - Parchment (1.7.0)
+  - Realm (4.1.1):
+    - Realm/Headers (= 4.1.1)
+  - Realm/Headers (4.1.1)
+  - RealmSwift (4.1.1):
+    - Realm (= 4.1.1)
   - SkyFloatingLabelTextField (3.7.0)
 
 DEPENDENCIES:
   - Parchment
+  - RealmSwift
   - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC REPOS:
   trunk:
     - Parchment
+    - Realm
+    - RealmSwift
     - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   Parchment: cae686f73685d16742cec9c19239b7578a15f0f5
+  Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
+  RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
 
-PODFILE CHECKSUM: 2b5a224efcb168935acf5b82a4e10f8f35183779
+PODFILE CHECKSUM: 4bb2148a8c1b2a5b93feb683693e12b45de43288
 
 COCOAPODS: 1.8.3

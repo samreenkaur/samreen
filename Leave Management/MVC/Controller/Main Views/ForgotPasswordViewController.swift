@@ -9,8 +9,8 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class ForgotPasswordViewController: UIViewController {
-
+class ForgotPasswordViewController: BaseViewController {
+    
     //MARK:- Outlets
     @IBOutlet weak var tfEmail: SkyFloatingLabelTextFieldWithIcon!
     
@@ -26,9 +26,11 @@ class ForgotPasswordViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
     }
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -43,32 +45,39 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     private func setUpNavigationBar(){
-           self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-           self.navigationController?.navigationBar.shadowImage = UIImage()
-           self.navigationController?.navigationBar.isTranslucent = true
-            self.navigationItem.title = ""
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationItem.title = ""
     }
-       
+    
     
     //MARK:- Button Actions
     
     
     @IBAction func btnResetPasswordAction(_ sender: UIButton) {
         self.view.endEditing(true)
-        let email = self.tfEmail.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let email = self.trimString(self.tfEmail.text ?? "")
         
-        if email?.isEmpty ?? false{
-            let alert = UIAlertController(title: "Warning", message: "Enter email", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        if !self.isValidText(email){
+            self.showAlert(title: "Warning", message: "Please enter your email.", actionTitle: "Ok")
+        }else if !self.isValidEmail(email){
+            self.showAlert(title: "Warning", message: "Please enter valid email.", actionTitle: "Ok")
         }else{
-            let alert = UIAlertController(title: "Success", message: "An email has been sent to \(email ?? "this email address") for further instructions.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
-                self.navigationController?.popViewController(animated: true)
-            }))
-            self.present(alert, animated: true, completion: nil)
+            self.apiHit()
         }
-      
+        
+        
     }
-
+    //MARK:- API Hit
+    private func apiHit(){
+        
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let alert = UIAlertController(title: "Success", message: "An email has been sent to \(email ?? "this email address") for further instructions.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

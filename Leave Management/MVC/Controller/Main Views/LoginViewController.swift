@@ -9,7 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class LoginViewController: UIViewController , UITextFieldDelegate {
+class LoginViewController: BaseViewController , UITextFieldDelegate {
     
     
     //MARK:- Outlets
@@ -29,23 +29,28 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         
         self.setUpNavigationBar()
         self.callViewDidLoad()
+        self.ifuserAlreadyExists()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.addNotifications()
         self.navigationController?.navigationBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.removeNotifications()
     }
     
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         self.tfEmail.text = ""
         self.tfPassword.text = ""
         
     }
+    
     
     //MARK:- main funcs
     private func callViewDidLoad()
@@ -68,6 +73,15 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
+    private func ifuserAlreadyExists(){
+        let model = UserModel().getUserloggedIn() ?? UserModel()
+        if model.id>0{
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
+            {
+                self.navigationController?.pushViewController(vc, animated: false)
+            }
+        }
+    }
     
     //MARK:- TextField Delegate func
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -114,17 +128,17 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
     
     //MARK:- Button Actions
     @IBAction func btnSignInPasswordAction(_ sender: UIButton) {
-        if sender.tag == 0//show password
-        {
-            sender.tag = 1
-            self.tfPassword.isSecureTextEntry = false
-            sender.setImage(eyeShown, for: .normal)
-        }
-        else{//hide password
-            sender.tag = 0
-            self.tfPassword.isSecureTextEntry = true
-            sender.setImage(eyeHidden, for: .normal)
-        }
+        //        if sender.tag == 0//show password
+        //        {
+        //            sender.tag = 1
+        //            self.tfPassword.isSecureTextEntry = false
+        //            sender.setImage(eyeShown, for: .normal)
+        //        }
+        //        else{//hide password
+        //            sender.tag = 0
+        //            self.tfPassword.isSecureTextEntry = true
+        //            sender.setImage(eyeHidden, for: .normal)
+        //        }
         
     }
     @IBAction func btnForgotPassword(_ sender: UIButton) {
@@ -135,11 +149,22 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         
     }
     @IBAction func btnLoginAction(_ sender: UIButton) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
-        {
-            self.navigationController?.pushViewController(vc, animated: true)
+        self.view.endEditing(true)
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let password = self.trimString(self.tfPassword.text ?? "")
+        
+        if !self.isValidText(email){
+            self.showAlert(title: "Warning", message: "Please enter your email.", actionTitle: "Ok")
+        }else if !self.isValidEmail(email){
+            self.showAlert(title: "Warning", message: "Please enter valid email.", actionTitle: "Ok")
+        }else if !self.isValidText(password){
+            self.showAlert(title: "Warning", message: "Please enter your password.", actionTitle: "Ok")
+        }else{
+            self.apiHit()
         }
     }
+    
+    
     @IBAction func btnSignUpAction(_ sender: UIButton) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kSignUpViewController) as? SignUpViewController
         {
@@ -147,6 +172,41 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         }
     }
     
+    //MARK:- API Hit
+    private func apiHit(){
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let password = self.trimString(self.tfPassword.text ?? "")
+        
+        //        guard let url = URL(string: loginUrl) else {
+        //            return
+        //        }
+        //
+        //        API().post(url: url, parameters: ["email": email, "password": password], token: "", success: { (user) in
+        //            DispatchQueue.main.async {
+        ////                let user = try! JSONDecoder().decode(User.self, from: user)
+        //                let model = UserModel.init(dict: userDataDict)
+        //                RealmDatabase.shared.add(object: model)
+        //                if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
+        //                {
+        //                    self.navigationController?.pushViewController(vc, animated: true)
+        //                }
+        //            }
+        //        }) { (error) in
+        //            self.showAlert(title: "Error", message: error, actionTitle: "Ok")
+        //        }
+        
+        
+        //
+        //        let model = UserModel().getUserloggedIn()
+        //            model?.email = email
+        //        model?.id = 1
+        //            RealmDatabase.shared.add(object: model ?? UserModel())
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
+        {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
     
     
 }

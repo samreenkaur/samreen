@@ -8,10 +8,9 @@
 
 import UIKit
 
-class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NotificationsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-
     //MARK:- Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,18 +27,16 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
-    override func viewWillDisappear(_ animated: Bool) {
-
-    }
+    
     
     //MARK:- main funcs
     private func callViewDidLoad()
     {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-                
     }
     private func callViewWillLoad()
     {
@@ -53,7 +50,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         
         self.navigationItem.title = "Notifications"
     }
-
+    
     //MARK:- TableView Delegate and Datasources
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -63,7 +60,6 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: kNotificationTableViewCell, for: indexPath) as! NotificationTableViewCell
         
         cell.lblTitle.text = "Your leave for \(Int(ceil(Double(indexPath.row+1) * 10 / 15)))-\(indexPath.row + 1) is unapproved"
-//        cell.lblTime.text = ""
         
         return cell
     }

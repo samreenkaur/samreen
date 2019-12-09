@@ -9,44 +9,35 @@
 import UIKit
 import Parchment
 
-class LeaveStatusViewController: UIViewController {
+class LeaveStatusViewController: BaseViewController {
     
     
     //MARK:- Outlets
     @IBOutlet weak var containerView: UIView!
     
     //MARK:- Variables
-//    let pagingViewController = PagingViewController()
+    //    let pagingViewController = PagingViewController()
     var childViewControllersArray = [UIViewController]()
     var childViewTitleArray = [String]()
     
     //MARK:- Lifecycle func
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setUpNavigationBar()
         self.callViewDidLoad()
-        
-        
-        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
     }
-    override func viewWillDisappear(_ animated: Bool) {
-
-    }
+    
     
     //MARK:- main funcs
     private func callViewDidLoad()
     {
-        
         self.initializeViewControllers()
         self.addPagingViewController()
-        
-        
     }
     private func callViewWillLoad()
     {
@@ -73,35 +64,35 @@ class LeaveStatusViewController: UIViewController {
         thirdViewController.status = 3
         fourthViewController.status = 4
         self.childViewControllersArray = [
-          firstViewController,
-          secondViewController,
-          thirdViewController,
-          fourthViewController
+            firstViewController,
+            secondViewController,
+            thirdViewController,
+            fourthViewController
         ]
     }
     private func addPagingViewController()
     {
         let pagingViewController = FixedPagingViewController(viewControllers: self.childViewControllersArray)
-                pagingViewController.menuBackgroundColor = themeColor
-                pagingViewController.indicatorColor = UIColor.white
-                pagingViewController.selectedTextColor = UIColor.white
-                pagingViewController.textColor = UIColor.white
-                
-                pagingViewController.dataSource = self
-                pagingViewController.select(index: 0)
-                
-                addChild(pagingViewController)
-                view.addSubview(pagingViewController.view)
-                pagingViewController.didMove(toParent: self)
-                pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                  pagingViewController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-                  pagingViewController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-                  pagingViewController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-                  pagingViewController.view.topAnchor.constraint(equalTo: containerView.topAnchor)
-                ])
+        pagingViewController.menuBackgroundColor = themeColor
+        pagingViewController.indicatorColor = UIColor.white
+        pagingViewController.selectedTextColor = UIColor.white
+        pagingViewController.textColor = UIColor.white
+        
+        pagingViewController.dataSource = self
+        pagingViewController.select(index: 0)
+        
+        addChild(pagingViewController)
+        view.addSubview(pagingViewController.view)
+        pagingViewController.didMove(toParent: self)
+        pagingViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pagingViewController.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            pagingViewController.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            pagingViewController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            pagingViewController.view.topAnchor.constraint(equalTo: containerView.topAnchor)
+        ])
     }
-
+    
     
 }
 extension LeaveStatusViewController: PagingViewControllerDataSource {
@@ -113,11 +104,11 @@ extension LeaveStatusViewController: PagingViewControllerDataSource {
         return PagingIndexItem(index: index, title: "\(self.childViewTitleArray[index])") as! T
     }
     
-
+    
     func numberOfViewControllers<T>(in pagingViewController: PagingViewController<T>) -> Int {
         return self.childViewControllersArray.count
     }
-
-
+    
+    
     
 }
