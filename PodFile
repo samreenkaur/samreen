@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'Leave Management' do
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'Parchment'
+end

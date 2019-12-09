@@ -1,0 +1,20 @@
+PODS:
+  - Parchment (1.7.0)
+  - SkyFloatingLabelTextField (3.7.0)
+
+DEPENDENCIES:
+  - Parchment
+  - SkyFloatingLabelTextField (~> 3.0)
+
+SPEC REPOS:
+  trunk:
+    - Parchment
+    - SkyFloatingLabelTextField
+
+SPEC CHECKSUMS:
+  Parchment: cae686f73685d16742cec9c19239b7578a15f0f5
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
+
+PODFILE CHECKSUM: 2b5a224efcb168935acf5b82a4e10f8f35183779
+
+COCOAPODS: 1.8.3

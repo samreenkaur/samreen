@@ -1,0 +1,833 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */; };
+		103994072398C42900EB14E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994062398C42900EB14E4 /* ResetPasswordViewController.swift */; };
+		1039940A2398C85C00EB14E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994092398C85C00EB14E4 /* HomeViewController.swift */; };
+		1039940C2398CFE300EB14E4 /* LayoutableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039940B2398CFE300EB14E4 /* LayoutableButton.swift */; };
+		1039940E2398D1DA00EB14E4 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039940D2398D1DA00EB14E4 /* MyProfileViewController.swift */; };
+		103994102398D1F200EB14E4 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1039940F2398D1F200EB14E4 /* EditProfileViewController.swift */; };
+		103994122398D21A00EB14E4 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994112398D21A00EB14E4 /* ChangePasswordViewController.swift */; };
+		103994162398ED3000EB14E4 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994152398ED3000EB14E4 /* NotificationsViewController.swift */; };
+		103994182398ED4000EB14E4 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994172398ED4000EB14E4 /* NotificationTableViewCell.swift */; };
+		10B328A923991DE800B6D0CA /* ApplyLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */; };
+		10B328AB23991DF400B6D0CA /* HolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328AA23991DF400B6D0CA /* HolidaysViewController.swift */; };
+		10B328AD23991E0100B6D0CA /* LeaveStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328AC23991E0100B6D0CA /* LeaveStatusViewController.swift */; };
+		10B328AF23991E3600B6D0CA /* LeaveStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328AE23991E3600B6D0CA /* LeaveStatusTableViewCell.swift */; };
+		10B328B123991E3F00B6D0CA /* HolidaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328B023991E3F00B6D0CA /* HolidaysTableViewCell.swift */; };
+		10B328B323993B3A00B6D0CA /* LeaveStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328B223993B3A00B6D0CA /* LeaveStatusTableViewController.swift */; };
+		10F57C632397E0BC0025082D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C622397E0BC0025082D /* AppDelegate.swift */; };
+		10F57C652397E0BC0025082D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C642397E0BC0025082D /* SceneDelegate.swift */; };
+		10F57C6A2397E0BC0025082D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F57C682397E0BC0025082D /* Main.storyboard */; };
+		10F57C6C2397E0BD0025082D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F57C6B2397E0BD0025082D /* Assets.xcassets */; };
+		10F57C6F2397E0BD0025082D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F57C6D2397E0BD0025082D /* LaunchScreen.storyboard */; };
+		10F57C7A2397E0BD0025082D /* Leave_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C792397E0BD0025082D /* Leave_ManagementTests.swift */; };
+		10F57C852397E0BD0025082D /* Leave_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C842397E0BD0025082D /* Leave_ManagementUITests.swift */; };
+		10F57C932397E3670025082D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C922397E3670025082D /* Extension.swift */; };
+		10F57C952397E3B10025082D /* UtilityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C942397E3B10025082D /* UtilityClass.swift */; };
+		10F57C9C2397E4230025082D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C9B2397E4230025082D /* LoginViewController.swift */; };
+		10F57C9E2397E46C0025082D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C9D2397E46C0025082D /* Constants.swift */; };
+		10F57CA02397E4F10025082D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C9F2397E4F10025082D /* SignUpViewController.swift */; };
+		10F57CA22397E6B80025082D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57CA12397E6B80025082D /* ForgotPasswordViewController.swift */; };
+		3A2711E5FC89C06EEB2FECBF /* Pods_Leave_Management.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732C0FB2CC08075276278CC1 /* Pods_Leave_Management.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10F57C762397E0BD0025082D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10F57C572397E0BC0025082D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10F57C5E2397E0BC0025082D;
+			remoteInfo = "Leave Management";
+		};
+		10F57C812397E0BD0025082D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10F57C572397E0BC0025082D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10F57C5E2397E0BC0025082D;
+			remoteInfo = "Leave Management";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
+		103994062398C42900EB14E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		103994092398C85C00EB14E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1039940B2398CFE300EB14E4 /* LayoutableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutableButton.swift; sourceTree = "<group>"; };
+		1039940D2398D1DA00EB14E4 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		1039940F2398D1F200EB14E4 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		103994112398D21A00EB14E4 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		103994152398ED3000EB14E4 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		103994172398ED4000EB14E4 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyLeaveViewController.swift; sourceTree = "<group>"; };
+		10B328AA23991DF400B6D0CA /* HolidaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewController.swift; sourceTree = "<group>"; };
+		10B328AC23991E0100B6D0CA /* LeaveStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveStatusViewController.swift; sourceTree = "<group>"; };
+		10B328AE23991E3600B6D0CA /* LeaveStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveStatusTableViewCell.swift; sourceTree = "<group>"; };
+		10B328B023991E3F00B6D0CA /* HolidaysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysTableViewCell.swift; sourceTree = "<group>"; };
+		10B328B223993B3A00B6D0CA /* LeaveStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveStatusTableViewController.swift; sourceTree = "<group>"; };
+		10F57C5F2397E0BC0025082D /* Leave Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leave Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10F57C622397E0BC0025082D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		10F57C642397E0BC0025082D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		10F57C692397E0BC0025082D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10F57C6B2397E0BD0025082D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10F57C6E2397E0BD0025082D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		10F57C702397E0BD0025082D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10F57C752397E0BD0025082D /* Leave ManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Leave ManagementTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10F57C792397E0BD0025082D /* Leave_ManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leave_ManagementTests.swift; sourceTree = "<group>"; };
+		10F57C7B2397E0BD0025082D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10F57C802397E0BD0025082D /* Leave ManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Leave ManagementUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10F57C842397E0BD0025082D /* Leave_ManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leave_ManagementUITests.swift; sourceTree = "<group>"; };
+		10F57C862397E0BD0025082D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10F57C922397E3670025082D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		10F57C942397E3B10025082D /* UtilityClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityClass.swift; sourceTree = "<group>"; };
+		10F57C9B2397E4230025082D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		10F57C9D2397E46C0025082D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		10F57C9F2397E4F10025082D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		10F57CA12397E6B80025082D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		1E0A16FD233BCCCE1112377B /* Pods-Leave Management.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leave Management.debug.xcconfig"; path = "Target Support Files/Pods-Leave Management/Pods-Leave Management.debug.xcconfig"; sourceTree = "<group>"; };
+		3DD6AC9A15134CD40095272E /* Pods-Leave Management.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leave Management.release.xcconfig"; path = "Target Support Files/Pods-Leave Management/Pods-Leave Management.release.xcconfig"; sourceTree = "<group>"; };
+		732C0FB2CC08075276278CC1 /* Pods_Leave_Management.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leave_Management.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10F57C5C2397E0BC0025082D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2711E5FC89C06EEB2FECBF /* Pods_Leave_Management.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10F57C722397E0BD0025082D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10F57C7D2397E0BD0025082D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		103994082398C83800EB14E4 /* Home Views */ = {
+			isa = PBXGroup;
+			children = (
+				103994092398C85C00EB14E4 /* HomeViewController.swift */,
+				10B328A523991DA800B6D0CA /* Apply Leave Views */,
+				10B328A623991DB200B6D0CA /* Holidays Views */,
+				10B328A723991DBC00B6D0CA /* Leave Status Views */,
+				103994132398ECF200EB14E4 /* My Profile views */,
+				103994142398ED0800EB14E4 /* Notifications */,
+			);
+			path = "Home Views";
+			sourceTree = "<group>";
+		};
+		103994132398ECF200EB14E4 /* My Profile views */ = {
+			isa = PBXGroup;
+			children = (
+				1039940D2398D1DA00EB14E4 /* MyProfileViewController.swift */,
+				1039940F2398D1F200EB14E4 /* EditProfileViewController.swift */,
+				103994112398D21A00EB14E4 /* ChangePasswordViewController.swift */,
+			);
+			path = "My Profile views";
+			sourceTree = "<group>";
+		};
+		103994142398ED0800EB14E4 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				103994152398ED3000EB14E4 /* NotificationsViewController.swift */,
+				103994172398ED4000EB14E4 /* NotificationTableViewCell.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		10B328A523991DA800B6D0CA /* Apply Leave Views */ = {
+			isa = PBXGroup;
+			children = (
+				10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */,
+			);
+			path = "Apply Leave Views";
+			sourceTree = "<group>";
+		};
+		10B328A623991DB200B6D0CA /* Holidays Views */ = {
+			isa = PBXGroup;
+			children = (
+				10B328AA23991DF400B6D0CA /* HolidaysViewController.swift */,
+				10B328B023991E3F00B6D0CA /* HolidaysTableViewCell.swift */,
+			);
+			path = "Holidays Views";
+			sourceTree = "<group>";
+		};
+		10B328A723991DBC00B6D0CA /* Leave Status Views */ = {
+			isa = PBXGroup;
+			children = (
+				10B328AC23991E0100B6D0CA /* LeaveStatusViewController.swift */,
+				10B328B223993B3A00B6D0CA /* LeaveStatusTableViewController.swift */,
+				10B328AE23991E3600B6D0CA /* LeaveStatusTableViewCell.swift */,
+				10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */,
+			);
+			path = "Leave Status Views";
+			sourceTree = "<group>";
+		};
+		10F57C562397E0BC0025082D = {
+			isa = PBXGroup;
+			children = (
+				10F57C612397E0BC0025082D /* Leave Management */,
+				10F57C782397E0BD0025082D /* Leave ManagementTests */,
+				10F57C832397E0BD0025082D /* Leave ManagementUITests */,
+				10F57C602397E0BC0025082D /* Products */,
+				11004A52197C0342D50AA92B /* Pods */,
+				13460D530995C764585FF415 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		10F57C602397E0BC0025082D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10F57C5F2397E0BC0025082D /* Leave Management.app */,
+				10F57C752397E0BD0025082D /* Leave ManagementTests.xctest */,
+				10F57C802397E0BD0025082D /* Leave ManagementUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10F57C612397E0BC0025082D /* Leave Management */ = {
+			isa = PBXGroup;
+			children = (
+				10F57C622397E0BC0025082D /* AppDelegate.swift */,
+				10F57C642397E0BC0025082D /* SceneDelegate.swift */,
+				10F57C962397E3B60025082D /* MVC */,
+				10F57C9D2397E46C0025082D /* Constants.swift */,
+				10F57C922397E3670025082D /* Extension.swift */,
+				10F57C942397E3B10025082D /* UtilityClass.swift */,
+				1039940B2398CFE300EB14E4 /* LayoutableButton.swift */,
+				10F57C682397E0BC0025082D /* Main.storyboard */,
+				10F57C6B2397E0BD0025082D /* Assets.xcassets */,
+				10F57C6D2397E0BD0025082D /* LaunchScreen.storyboard */,
+				10F57C702397E0BD0025082D /* Info.plist */,
+			);
+			path = "Leave Management";
+			sourceTree = "<group>";
+		};
+		10F57C782397E0BD0025082D /* Leave ManagementTests */ = {
+			isa = PBXGroup;
+			children = (
+				10F57C792397E0BD0025082D /* Leave_ManagementTests.swift */,
+				10F57C7B2397E0BD0025082D /* Info.plist */,
+			);
+			path = "Leave ManagementTests";
+			sourceTree = "<group>";
+		};
+		10F57C832397E0BD0025082D /* Leave ManagementUITests */ = {
+			isa = PBXGroup;
+			children = (
+				10F57C842397E0BD0025082D /* Leave_ManagementUITests.swift */,
+				10F57C862397E0BD0025082D /* Info.plist */,
+			);
+			path = "Leave ManagementUITests";
+			sourceTree = "<group>";
+		};
+		10F57C962397E3B60025082D /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				10F57C992397E3CA0025082D /* Model */,
+				10F57C982397E3C30025082D /* View */,
+				10F57C972397E3BB0025082D /* Controller */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		10F57C972397E3BB0025082D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10F57C9A2397E3D10025082D /* Main Views */,
+				103994082398C83800EB14E4 /* Home Views */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		10F57C982397E3C30025082D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10F57C992397E3CA0025082D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10F57C9A2397E3D10025082D /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				10F57C9B2397E4230025082D /* LoginViewController.swift */,
+				10F57C9F2397E4F10025082D /* SignUpViewController.swift */,
+				10F57CA12397E6B80025082D /* ForgotPasswordViewController.swift */,
+				103994062398C42900EB14E4 /* ResetPasswordViewController.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		11004A52197C0342D50AA92B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E0A16FD233BCCCE1112377B /* Pods-Leave Management.debug.xcconfig */,
+				3DD6AC9A15134CD40095272E /* Pods-Leave Management.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		13460D530995C764585FF415 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				732C0FB2CC08075276278CC1 /* Pods_Leave_Management.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10F57C5E2397E0BC0025082D /* Leave Management */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10F57C892397E0BD0025082D /* Build configuration list for PBXNativeTarget "Leave Management" */;
+			buildPhases = (
+				D26475C4D7860E230A407988 /* [CP] Check Pods Manifest.lock */,
+				10F57C5B2397E0BC0025082D /* Sources */,
+				10F57C5C2397E0BC0025082D /* Frameworks */,
+				10F57C5D2397E0BC0025082D /* Resources */,
+				BE78858FFB06DCDF17E6C9D2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Leave Management";
+			productName = "Leave Management";
+			productReference = 10F57C5F2397E0BC0025082D /* Leave Management.app */;
+			productType = "com.apple.product-type.application";
+		};
+		10F57C742397E0BD0025082D /* Leave ManagementTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10F57C8C2397E0BD0025082D /* Build configuration list for PBXNativeTarget "Leave ManagementTests" */;
+			buildPhases = (
+				10F57C712397E0BD0025082D /* Sources */,
+				10F57C722397E0BD0025082D /* Frameworks */,
+				10F57C732397E0BD0025082D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10F57C772397E0BD0025082D /* PBXTargetDependency */,
+			);
+			name = "Leave ManagementTests";
+			productName = "Leave ManagementTests";
+			productReference = 10F57C752397E0BD0025082D /* Leave ManagementTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		10F57C7F2397E0BD0025082D /* Leave ManagementUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10F57C8F2397E0BD0025082D /* Build configuration list for PBXNativeTarget "Leave ManagementUITests" */;
+			buildPhases = (
+				10F57C7C2397E0BD0025082D /* Sources */,
+				10F57C7D2397E0BD0025082D /* Frameworks */,
+				10F57C7E2397E0BD0025082D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10F57C822397E0BD0025082D /* PBXTargetDependency */,
+			);
+			name = "Leave ManagementUITests";
+			productName = "Leave ManagementUITests";
+			productReference = 10F57C802397E0BD0025082D /* Leave ManagementUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10F57C572397E0BC0025082D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = osx;
+				TargetAttributes = {
+					10F57C5E2397E0BC0025082D = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					10F57C742397E0BD0025082D = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 10F57C5E2397E0BC0025082D;
+					};
+					10F57C7F2397E0BD0025082D = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 10F57C5E2397E0BC0025082D;
+					};
+				};
+			};
+			buildConfigurationList = 10F57C5A2397E0BC0025082D /* Build configuration list for PBXProject "Leave Management" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10F57C562397E0BC0025082D;
+			productRefGroup = 10F57C602397E0BC0025082D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10F57C5E2397E0BC0025082D /* Leave Management */,
+				10F57C742397E0BD0025082D /* Leave ManagementTests */,
+				10F57C7F2397E0BD0025082D /* Leave ManagementUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10F57C5D2397E0BC0025082D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10F57C6F2397E0BD0025082D /* LaunchScreen.storyboard in Resources */,
+				10F57C6C2397E0BD0025082D /* Assets.xcassets in Resources */,
+				10F57C6A2397E0BC0025082D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10F57C732397E0BD0025082D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10F57C7E2397E0BD0025082D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BE78858FFB06DCDF17E6C9D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Leave Management/Pods-Leave Management-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Leave Management/Pods-Leave Management-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Leave Management/Pods-Leave Management-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D26475C4D7860E230A407988 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Leave Management-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10F57C5B2397E0BC0025082D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10B328A923991DE800B6D0CA /* ApplyLeaveViewController.swift in Sources */,
+				103994162398ED3000EB14E4 /* NotificationsViewController.swift in Sources */,
+				103994102398D1F200EB14E4 /* EditProfileViewController.swift in Sources */,
+				1039940C2398CFE300EB14E4 /* LayoutableButton.swift in Sources */,
+				103994072398C42900EB14E4 /* ResetPasswordViewController.swift in Sources */,
+				103994182398ED4000EB14E4 /* NotificationTableViewCell.swift in Sources */,
+				10F57CA22397E6B80025082D /* ForgotPasswordViewController.swift in Sources */,
+				10F57C9C2397E4230025082D /* LoginViewController.swift in Sources */,
+				10F57CA02397E4F10025082D /* SignUpViewController.swift in Sources */,
+				10B328B323993B3A00B6D0CA /* LeaveStatusTableViewController.swift in Sources */,
+				10B328AF23991E3600B6D0CA /* LeaveStatusTableViewCell.swift in Sources */,
+				10F57C632397E0BC0025082D /* AppDelegate.swift in Sources */,
+				1039940E2398D1DA00EB14E4 /* MyProfileViewController.swift in Sources */,
+				1039940A2398C85C00EB14E4 /* HomeViewController.swift in Sources */,
+				10F57C652397E0BC0025082D /* SceneDelegate.swift in Sources */,
+				10F57C952397E3B10025082D /* UtilityClass.swift in Sources */,
+				10F57C932397E3670025082D /* Extension.swift in Sources */,
+				10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */,
+				10B328AB23991DF400B6D0CA /* HolidaysViewController.swift in Sources */,
+				10F57C9E2397E46C0025082D /* Constants.swift in Sources */,
+				103994122398D21A00EB14E4 /* ChangePasswordViewController.swift in Sources */,
+				10B328B123991E3F00B6D0CA /* HolidaysTableViewCell.swift in Sources */,
+				10B328AD23991E0100B6D0CA /* LeaveStatusViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10F57C712397E0BD0025082D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10F57C7A2397E0BD0025082D /* Leave_ManagementTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10F57C7C2397E0BD0025082D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10F57C852397E0BD0025082D /* Leave_ManagementUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10F57C772397E0BD0025082D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10F57C5E2397E0BC0025082D /* Leave Management */;
+			targetProxy = 10F57C762397E0BD0025082D /* PBXContainerItemProxy */;
+		};
+		10F57C822397E0BD0025082D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10F57C5E2397E0BC0025082D /* Leave Management */;
+			targetProxy = 10F57C812397E0BD0025082D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		10F57C682397E0BC0025082D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10F57C692397E0BC0025082D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		10F57C6D2397E0BD0025082D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10F57C6E2397E0BD0025082D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		10F57C872397E0BD0025082D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10F57C882397E0BD0025082D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10F57C8A2397E0BD0025082D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E0A16FD233BCCCE1112377B /* Pods-Leave Management.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2A3W34TJQ;
+				INFOPLIST_FILE = "Leave Management/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beyondroot.Leave-Management";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10F57C8B2397E0BD0025082D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DD6AC9A15134CD40095272E /* Pods-Leave Management.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2A3W34TJQ;
+				INFOPLIST_FILE = "Leave Management/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beyondroot.Leave-Management";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		10F57C8D2397E0BD0025082D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2A3W34TJQ;
+				INFOPLIST_FILE = "Leave ManagementTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beyondroot.Leave-ManagementTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leave Management.app/Leave Management";
+			};
+			name = Debug;
+		};
+		10F57C8E2397E0BD0025082D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2A3W34TJQ;
+				INFOPLIST_FILE = "Leave ManagementTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beyondroot.Leave-ManagementTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leave Management.app/Leave Management";
+			};
+			name = Release;
+		};
+		10F57C902397E0BD0025082D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2A3W34TJQ;
+				INFOPLIST_FILE = "Leave ManagementUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beyondroot.Leave-ManagementUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Leave Management";
+			};
+			name = Debug;
+		};
+		10F57C912397E0BD0025082D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C2A3W34TJQ;
+				INFOPLIST_FILE = "Leave ManagementUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beyondroot.Leave-ManagementUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Leave Management";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10F57C5A2397E0BC0025082D /* Build configuration list for PBXProject "Leave Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10F57C872397E0BD0025082D /* Debug */,
+				10F57C882397E0BD0025082D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10F57C892397E0BD0025082D /* Build configuration list for PBXNativeTarget "Leave Management" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10F57C8A2397E0BD0025082D /* Debug */,
+				10F57C8B2397E0BD0025082D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10F57C8C2397E0BD0025082D /* Build configuration list for PBXNativeTarget "Leave ManagementTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10F57C8D2397E0BD0025082D /* Debug */,
+				10F57C8E2397E0BD0025082D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10F57C8F2397E0BD0025082D /* Build configuration list for PBXNativeTarget "Leave ManagementUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10F57C902397E0BD0025082D /* Debug */,
+				10F57C912397E0BD0025082D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10F57C572397E0BC0025082D /* Project object */;
+}
