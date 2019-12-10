@@ -24,7 +24,7 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
                     HolidaysModel.init(dict: ["id":7 as AnyObject,"title":"Diwali" as AnyObject,"date":"27 10 2019" as AnyObject]),
                     HolidaysModel.init(dict: ["id":8 as AnyObject,"title":"Christmas" as AnyObject,"date":"25 12 2019" as AnyObject])]
     var holidaysArray = [HolidaysModel]()
-    var listArray = [Int : [HolidaysModel]]()
+    var listArray = [[HolidaysModel]]()
     
     //MARK:- Lifecycle func
     override func viewDidLoad() {
@@ -78,14 +78,18 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
 //
         //get data and sort
         self.holidaysArray = self.holidays
-        self.holidaysArray = self.sortArray()
-        let new = Dictionary(grouping: self.holidaysArray, by: { $0.month })
-        self.listArray = new
+//        self.holidaysArray = self.sortArray()
+        let dict = Dictionary(grouping: self.holidaysArray, by: { $0.month })
+        let sorted = dict.sorted { $0.key < $1.key }
+//        let keysArraySorted = Array(sorted.map({ $0.key }))
+        let valuesArraySorted = Array(sorted.map({ $0.value }))
+
+        self.listArray = valuesArraySorted//new
         self.tableView.reloadData()
     }
     private func sortArray() -> [HolidaysModel]{
         dateFormatter.dateFormat = "dd MM, yyyy"
-        let arr = self.holidaysArray.sorted(by: { dateFormatter.date(from:$0.completeDate)?.compare(dateFormatter.date(from:$1.completeDate) ?? Date()) == .orderedDescending })
+        let arr = self.holidaysArray.sorted(by: { dateFormatter.date(from:$0.completeDate)?.compare(dateFormatter.date(from:$1.completeDate) ?? Date()) == .orderedAscending })
         return arr
     }
     
@@ -93,17 +97,17 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
     
     //MARK:- TableView Delegate and Datasources
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 12//self.listArray.count
+        return self.listArray.count//12//
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2//self.listArray[section]?.count ?? 0
+        return self.listArray[section].count//2//
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kHolidaysTableViewCell, for: indexPath) as! HolidaysTableViewCell
-//        let data = self.listArray[indexPath.section]?[indexPath.row]
-//        cell.lbltitle.text = data?.title
-//        cell.lblDay.text = "\(data?.day ?? 0)"
+        let data = self.listArray[indexPath.section][indexPath.row]
+        cell.lbltitle.text = data.title
+        cell.lblDay.text = "\(data.day)"
         return cell
     }
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -116,9 +120,10 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
         let label = UILabel(frame: CGRect(x: 20, y: 5, width: self.tableView.frame.width - 40, height: 30))
         label.font = .boldSystemFont(ofSize: 14)
         label.textColor = UIColor.black
-        label.text = "\(section+1) - 2019"
-//        let data = self.listArray[section]?[0]
-//        label.text = "\(data?.month ?? 0) - \(data?.year ?? 0)"
+//        label.text = "\(section+1) - 2019"
+        let data = self.listArray[section][0]
+        let month: String = "\(Month.init(rawValue: data.month)!)"
+        label.text = "\(month) \(data.year)"
         returnedView.addSubview(label)
         
         return returnedView

@@ -20,6 +20,11 @@
 		1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E5239E3ACE0080E6F4 /* User.swift */; };
 		1041A9E9239E5B190080E6F4 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E8239E5B190080E6F4 /* RealmManager.swift */; };
 		1041A9EB239E7E010080E6F4 /* Holidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9EA239E7E010080E6F4 /* Holidays.swift */; };
+		10AB4F87239FA8FB002E5787 /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10AB4F82239FA8FB002E5787 /* Karla-Regular.ttf */; };
+		10AB4F88239FA8FB002E5787 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 10AB4F83239FA8FB002E5787 /* OFL.txt */; };
+		10AB4F89239FA8FB002E5787 /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10AB4F84239FA8FB002E5787 /* Karla-BoldItalic.ttf */; };
+		10AB4F8A239FA8FB002E5787 /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10AB4F85239FA8FB002E5787 /* Karla-Italic.ttf */; };
+		10AB4F8B239FA8FB002E5787 /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10AB4F86239FA8FB002E5787 /* Karla-Bold.ttf */; };
 		10B328A923991DE800B6D0CA /* ApplyLeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */; };
 		10B328AB23991DF400B6D0CA /* HolidaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328AA23991DF400B6D0CA /* HolidaysViewController.swift */; };
 		10B328AD23991E0100B6D0CA /* LeaveStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328AC23991E0100B6D0CA /* LeaveStatusViewController.swift */; };
@@ -72,6 +77,11 @@
 		1041A9E5239E3ACE0080E6F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1041A9E8239E5B190080E6F4 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1041A9EA239E7E010080E6F4 /* Holidays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidays.swift; sourceTree = "<group>"; };
+		10AB4F82239FA8FB002E5787 /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
+		10AB4F83239FA8FB002E5787 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		10AB4F84239FA8FB002E5787 /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
+		10AB4F85239FA8FB002E5787 /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
+		10AB4F86239FA8FB002E5787 /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
 		10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyLeaveViewController.swift; sourceTree = "<group>"; };
 		10B328AA23991DF400B6D0CA /* HolidaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysViewController.swift; sourceTree = "<group>"; };
 		10B328AC23991E0100B6D0CA /* LeaveStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveStatusViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +181,18 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		10AB4F81239FA8DC002E5787 /* Font  */ = {
+			isa = PBXGroup;
+			children = (
+				10AB4F86239FA8FB002E5787 /* Karla-Bold.ttf */,
+				10AB4F84239FA8FB002E5787 /* Karla-BoldItalic.ttf */,
+				10AB4F85239FA8FB002E5787 /* Karla-Italic.ttf */,
+				10AB4F82239FA8FB002E5787 /* Karla-Regular.ttf */,
+				10AB4F83239FA8FB002E5787 /* OFL.txt */,
+			);
+			path = "Font ";
+			sourceTree = "<group>";
+		};
 		10B328A523991DA800B6D0CA /* Apply Leave Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +248,7 @@
 			children = (
 				10F57C622397E0BC0025082D /* AppDelegate.swift */,
 				10F57C642397E0BC0025082D /* SceneDelegate.swift */,
+				10AB4F81239FA8DC002E5787 /* Font  */,
 				1041A9E7239E59F20080E6F4 /* Global */,
 				10F57C962397E3B60025082D /* MVC */,
 				10F57C682397E0BC0025082D /* Main.storyboard */,
@@ -423,9 +446,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AB4F88239FA8FB002E5787 /* OFL.txt in Resources */,
 				10F57C6F2397E0BD0025082D /* LaunchScreen.storyboard in Resources */,
 				10F57C6C2397E0BD0025082D /* Assets.xcassets in Resources */,
+				10AB4F8B239FA8FB002E5787 /* Karla-Bold.ttf in Resources */,
 				10F57C6A2397E0BC0025082D /* Main.storyboard in Resources */,
+				10AB4F87239FA8FB002E5787 /* Karla-Regular.ttf in Resources */,
+				10AB4F89239FA8FB002E5787 /* Karla-BoldItalic.ttf in Resources */,
+				10AB4F8A239FA8FB002E5787 /* Karla-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

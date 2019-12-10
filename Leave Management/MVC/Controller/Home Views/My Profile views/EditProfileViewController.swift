@@ -105,7 +105,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == tfPhoneNumber && (tfPhoneNumber.text?.count ?? 0 >= 10) && string == ""
+        if textField == tfPhoneNumber && (tfPhoneNumber.text?.count ?? 0 >= 10) && string != ""
         {
             return false
         }else if textField.text?.count ?? 0 >= 50 && string != ""{
