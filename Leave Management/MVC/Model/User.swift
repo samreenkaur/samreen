@@ -59,12 +59,17 @@ class UserModel: Object {
     
     func getUserloggedIn() -> UserModel?
     {
-        if let model = RealmDatabase.shared.fetch(type: UserModel.self, AndPrimaryKey: "userData"){
-            if let userdata = model as? UserModel{
+        do {
+            let realm = try Realm()
+            let result = realm.object(ofType: UserModel.self, forPrimaryKey: "userData")
+            if let userdata = result{
                 return userdata
             }
+        } catch let error as NSError {
+            print(error)
             return nil
         }
+        
         return nil
     }
     

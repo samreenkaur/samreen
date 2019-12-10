@@ -212,7 +212,6 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
         user.email = email
         user.phoneNumber = phoneNumber
         user.designation = designation
-        //        RealmDatabase.shared.add(object: user)
         do {
             try user.realm?.commitWrite()
         } catch {

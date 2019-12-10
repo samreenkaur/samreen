@@ -57,7 +57,7 @@ class BaseViewController: UIViewController {
     func showLogoutAlert() {
         let alert = UIAlertController(title: "Are you sure?", message: "You want to Log out.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            RealmDatabase.shared.deleteAllFromDatabase()
+            self.deleteAllFromDatabase()
             UIApplication.shared.applicationIconBadgeNumber = 0
             self.navigationController?.popToRootViewController(animated: true)
             alert.dismiss(animated: true, completion: nil)
@@ -70,7 +70,7 @@ class BaseViewController: UIViewController {
         // kLogout -------- logout user when token is expired
         let alert = UIAlertController(title: "Session Expired!!", message: "Please login.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in
-            RealmDatabase.shared.deleteAllFromDatabase()
+            self.deleteAllFromDatabase()
             UIApplication.shared.applicationIconBadgeNumber = 0
             self.navigationController?.popToRootViewController(animated: true)
             alert.dismiss(animated: true, completion: nil)
@@ -78,7 +78,16 @@ class BaseViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    func deleteAllFromDatabase(){
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+    }
     
     
     //MARK:- Add Image Picker Controller

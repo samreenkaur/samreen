@@ -18,7 +18,6 @@
 		1041A9E2239E23240080E6F4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E1239E23240080E6F4 /* BaseViewController.swift */; };
 		1041A9E4239E31DF0080E6F4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E3239E31DF0080E6F4 /* API.swift */; };
 		1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E5239E3ACE0080E6F4 /* User.swift */; };
-		1041A9E9239E5B190080E6F4 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E8239E5B190080E6F4 /* RealmManager.swift */; };
 		1041A9EB239E7E010080E6F4 /* Holidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9EA239E7E010080E6F4 /* Holidays.swift */; };
 		10AB4F87239FA8FB002E5787 /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10AB4F82239FA8FB002E5787 /* Karla-Regular.ttf */; };
 		10AB4F88239FA8FB002E5787 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 10AB4F83239FA8FB002E5787 /* OFL.txt */; };
@@ -75,7 +74,6 @@
 		1041A9E1239E23240080E6F4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1041A9E3239E31DF0080E6F4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1041A9E5239E3ACE0080E6F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		1041A9E8239E5B190080E6F4 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1041A9EA239E7E010080E6F4 /* Holidays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidays.swift; sourceTree = "<group>"; };
 		10AB4F82239FA8FB002E5787 /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
 		10AB4F83239FA8FB002E5787 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				1041A9E1239E23240080E6F4 /* BaseViewController.swift */,
 				10F57C9D2397E46C0025082D /* Constants.swift */,
 				10F57C922397E3670025082D /* Extension.swift */,
-				1041A9E8239E5B190080E6F4 /* RealmManager.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -543,7 +540,6 @@
 				10F57C9E2397E46C0025082D /* Constants.swift in Sources */,
 				1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */,
 				103994122398D21A00EB14E4 /* ChangePasswordViewController.swift in Sources */,
-				1041A9E9239E5B190080E6F4 /* RealmManager.swift in Sources */,
 				10B328B123991E3F00B6D0CA /* HolidaysTableViewCell.swift in Sources */,
 				10B328AD23991E0100B6D0CA /* LeaveStatusViewController.swift in Sources */,
 			);

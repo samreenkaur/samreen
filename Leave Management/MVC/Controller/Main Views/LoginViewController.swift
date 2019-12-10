@@ -205,8 +205,14 @@ class LoginViewController: BaseViewController , UITextFieldDelegate {
         //
         //        let model = UserModel().getUserloggedIn()
         //            model?.email = email
-        //        model?.id = 1
-        //            RealmDatabase.shared.add(object: model ?? UserModel())
+        //do {
+        //    let realm = try Realm()
+        //    try realm.write {
+        //        realm.add(model, update: .all)
+        //    }
+        //} catch let error as NSError {
+        //    print(error)
+        //}
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
         {
             self.navigationController?.pushViewController(vc, animated: true)

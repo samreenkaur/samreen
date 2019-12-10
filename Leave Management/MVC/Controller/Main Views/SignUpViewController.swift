@@ -8,7 +8,7 @@
 
 import UIKit
 import SkyFloatingLabelTextField
-
+import RealmSwift
 
 class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
@@ -239,14 +239,20 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         //                    self.showAlert(title: "Error", message: error, actionTitle: "Ok")
         //                }
         
-//        let model = UserModel()
-//        model.id = 1
-//        model.fullName = name
-//        model.email = email
-//        model.phoneNumber = phoneNumber
-//        model.designation = designation
-//        RealmDatabase.shared.add(object: model)
-//
+        let model = UserModel()
+        model.id = 1
+        model.fullName = name
+        model.email = email
+        model.phoneNumber = phoneNumber
+        model.designation = designation
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(model, update: .all)
+            }
+        } catch let error as NSError {
+            print(error)
+        }
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
         {
             self.navigationController?.pushViewController(vc, animated: true)

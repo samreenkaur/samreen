@@ -862,17 +862,17 @@
                                 <color key="backgroundColor" name="App Theme"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0m-XZ-77b">
-                                <rect key="frame" x="0.0" y="173.5" width="414" height="181"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="180"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_logo" translatesAutoresizingMaskIntoConstraints="NO" id="AVX-ZW-7bt">
-                                        <rect key="frame" x="-23" y="0.0" width="460" height="100"/>
+                                        <rect key="frame" x="92" y="0.0" width="230" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="rPe-IL-7ko"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is long established fact that a reader will be distracted." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aam-4I-VIb">
-                                        <rect key="frame" x="40" y="120" width="334" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="40" y="120" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>

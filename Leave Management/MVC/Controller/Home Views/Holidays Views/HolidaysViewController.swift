@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource {
     
@@ -64,16 +65,21 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
     //MARK:- funcs
     private func getList(){
         //realm data
-//        if let results = RealmDatabase.shared.fetch(type: HolidaysModel.self, AndFilter: nil)
-//        {
-//            self.holidaysArray = []
-//            for i in results
-//            {
-//                if let model = i as? HolidaysModel
+//        do {
+//            let realm = try Realm()
+//            let result = realm.objects(HolidaysModel.self)
+//                self.holidaysArray = []
+//                for i in result
 //                {
-//                    self.holidaysArray.append(model)
+//                    if let model = i as? HolidaysModel?
+//                    {
+//                        self.holidaysArray.append(model ?? HolidaysModel())
+//                    }
 //                }
-//            }
+//
+//        } catch let error as NSError {
+//            print(error)
+//
 //        }
 //
         //get data and sort
