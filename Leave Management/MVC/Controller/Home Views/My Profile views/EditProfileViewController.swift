@@ -78,7 +78,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
         self.navigationController?.navigationBar.isTranslucent = true
         
         self.navigationItem.title = "Edit Profile"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
     }
     
     @objc func rightBarButtonAction(_ sender: Any){
@@ -102,6 +102,15 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
             tfDesignation.resignFirstResponder()
         }
         
+        return true
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == tfPhoneNumber && (tfPhoneNumber.text?.count ?? 0 >= 10) && string == ""
+        {
+            return false
+        }else if textField.text?.count ?? 0 >= 50 && string != ""{
+            return false
+        }
         return true
     }
     
@@ -180,9 +189,9 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
             self.showAlert(title: "Warning", message: "Please enter your email.", actionTitle: "Ok")
         }else if !self.isValidEmail(email){
             self.showAlert(title: "Warning", message: "Please enter valid email.", actionTitle: "Ok")
-        }else if !self.isValidPhoneNumber(phoneNumber){
-            self.showAlert(title: "Warning", message: "Please enter your phone number.", actionTitle: "Ok")
         }else if !self.isValidText(phoneNumber){
+            self.showAlert(title: "Warning", message: "Please enter your phone number.", actionTitle: "Ok")
+        }else if !self.isValidPhoneNumber(phoneNumber){
             self.showAlert(title: "Warning", message: "Please enter valid phone number.", actionTitle: "Ok")
         }else if !self.isValidText(designation){
             self.showAlert(title: "Warning", message: "Please enter your designation.", actionTitle: "Ok")

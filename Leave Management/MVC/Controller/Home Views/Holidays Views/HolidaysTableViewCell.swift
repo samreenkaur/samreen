@@ -10,6 +10,10 @@ import UIKit
 
 class HolidaysTableViewCell: UITableViewCell {
 
+    //MARK:- Outlets
+    @IBOutlet weak var lbltitle: UILabel!
+    @IBOutlet weak var lblDay: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

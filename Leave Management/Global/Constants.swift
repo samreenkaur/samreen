@@ -61,3 +61,14 @@ let userPlaceholder = UIImage(named: "user")
 let loginString = String(format: "%@:%@", "email", "password")
 let loginData = loginString.data(using: String.Encoding.utf8)!
 let basicAuthString = "Basic \(loginData.base64EncodedString())"
+
+
+//MARK:- Formatter
+let dateFormatter = DateFormatter()
+
+//MARK:- Enumerations
+enum Month: Int {
+   case January = 1, February, March, April, May, June, July, August,
+      September, October, November, December
+}
+

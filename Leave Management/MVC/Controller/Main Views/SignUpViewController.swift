@@ -97,6 +97,15 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         
         return true
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == tfPhoneNumber && (tfPhoneNumber.text?.count ?? 0 >= 10) && string != ""
+        {
+            return false
+        }else if textField.text?.count ?? 0 >= 50 && string != ""{
+            return false
+        }
+        return true
+    }
     
     //MARK:- Notifications
     private func addNotifications(){
@@ -186,9 +195,9 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             self.showAlert(title: "Warning", message: "Please enter your email.", actionTitle: "Ok")
         }else if !self.isValidEmail(email){
             self.showAlert(title: "Warning", message: "Please enter valid email.", actionTitle: "Ok")
-        }else if !self.isValidPhoneNumber(phoneNumber){
-            self.showAlert(title: "Warning", message: "Please enter your phone number.", actionTitle: "Ok")
         }else if !self.isValidText(phoneNumber){
+            self.showAlert(title: "Warning", message: "Please enter your phone number.", actionTitle: "Ok")
+        }else if !self.isValidPhoneNumber(phoneNumber){
             self.showAlert(title: "Warning", message: "Please enter valid phone number.", actionTitle: "Ok")
         }else if !self.isValidText(designation){
             self.showAlert(title: "Warning", message: "Please enter your designation.", actionTitle: "Ok")
@@ -230,14 +239,14 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         //                    self.showAlert(title: "Error", message: error, actionTitle: "Ok")
         //                }
         
-        let model = UserModel()
-        model.id = 1
-        model.fullName = name
-        model.email = email
-        model.phoneNumber = phoneNumber
-        model.designation = designation
-        RealmDatabase.shared.add(object: model)
-        
+//        let model = UserModel()
+//        model.id = 1
+//        model.fullName = name
+//        model.email = email
+//        model.phoneNumber = phoneNumber
+//        model.designation = designation
+//        RealmDatabase.shared.add(object: model)
+//
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
         {
             self.navigationController?.pushViewController(vc, animated: true)

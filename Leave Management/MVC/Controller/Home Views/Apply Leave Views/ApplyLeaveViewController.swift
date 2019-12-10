@@ -87,7 +87,7 @@ class ApplyLeaveViewController: BaseViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         
         self.navigationItem.title = "Apply Leave"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
     }
     
     @objc func rightBarButtonAction(_ sender: Any){
@@ -225,11 +225,10 @@ class ApplyLeaveViewController: BaseViewController {
     @IBAction func btnApplyAction(_ sender: UIButton) {
         self.view.endEditing(true)
         let reason = self.trimString(self.textView.text ?? "")
-        
-        if !self.isValidText(reason) || reason == self.textViewPlaceholder{
-            self.showAlert(title: "Warning", message: "Please enter reason for leave.", actionTitle: "Ok")
-        }else if self.selectedShiftType == 3 && self.lblTotalDays.text?.contains("Duration") ?? false{
+        if self.selectedShiftType == 3 && self.lblTotalDays.text?.contains("Duration") ?? false{
             self.showAlert(title: "Warning", message: "Please select end date.", actionTitle: "Ok")
+        }else if !self.isValidText(reason) || reason == self.textViewPlaceholder{
+            self.showAlert(title: "Warning", message: "Please enter reason for leave.", actionTitle: "Ok")
         }else{
             self.apiHit()
         }

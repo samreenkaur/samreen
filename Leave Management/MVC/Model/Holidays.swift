@@ -14,8 +14,10 @@ class HolidaysModel: Object {
     //MARK:- Variables
     @objc dynamic var id = Int()
     @objc dynamic var title: String = ""
-    @objc dynamic var date: String = ""
-    
+    @objc dynamic var completeDate: String = ""
+    @objc dynamic var day = Int()
+    @objc dynamic var month = Int()
+    @objc dynamic var year = Int()
     
     //MARK:- Main func
     override static func primaryKey() -> String? {
@@ -37,9 +39,22 @@ class HolidaysModel: Object {
         }
         if let item = dict["date"] as? String
         {
-            self.date = item
+            self.completeDate = item
+            if item != ""{
+                let date = self.convertStringToDate(dateString: item) ?? Date()
+                let component = Calendar.current.dateComponents([.day,.month,.year], from: date)
+                self.day = component.day ?? 0
+                self.month = component.month ?? 0
+                self.year = component.year ?? 0
+            }
         }
-        
+    }
+    
+    func convertStringToDate(dateString : String) -> Date?{
+        let formatter = dateFormatter
+        formatter.dateFormat = "dd MM yyyy"
+        let date = formatter.date(from: dateString)
+        return date
     }
     
 }

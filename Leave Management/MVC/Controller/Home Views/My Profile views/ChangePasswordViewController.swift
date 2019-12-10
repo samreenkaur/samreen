@@ -80,6 +80,12 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         
         return true
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.text?.count ?? 0 >= 50 && string != ""{
+            return false
+        }
+        return true
+    }
     
     //MARK:- Notifications
     private func addNotifications(){
