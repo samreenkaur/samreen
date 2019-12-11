@@ -206,9 +206,9 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     */
     open var titleFormatter: ((String) -> String) = { (text: String) -> String in
         if #available(iOS 9.0, *) {
-            return text.localizedUppercase
+            return text.localizedCapitalized
         } else {
-            return text.uppercased()
+            return text.capitalized
         }
     }
 
@@ -532,9 +532,10 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
 
     fileprivate func updateTitleVisibility(_ animated: Bool = false, completion: ((_ completed: Bool) -> Void)? = nil) {
         let alpha: CGFloat = isTitleVisible() ? 1.0 : 0.0
-        let frame: CGRect = titleLabelRectForBounds(bounds, editing: isTitleVisible())
+        var frame: CGRect = titleLabelRectForBounds(bounds, editing: isTitleVisible())
         let updateBlock = { () -> Void in
             self.titleLabel.alpha = alpha
+//            frame.origin.x = 15.0
             self.titleLabel.frame = frame
         }
         if animated {
@@ -565,7 +566,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
         let titleHeight = self.titleHeight()
 
         let rect = CGRect(
-            x: superRect.origin.x,
+            x: superRect.origin.x + 5,
             y: titleHeight,
             width: superRect.size.width,
             height: superRect.size.height - titleHeight - selectedLineHeight
@@ -583,7 +584,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
         let titleHeight = self.titleHeight()
 
         let rect = CGRect(
-            x: superRect.origin.x,
+            x: superRect.origin.x + 5,
             y: titleHeight,
             width: superRect.size.width,
             height: superRect.size.height - titleHeight - selectedLineHeight
@@ -598,7 +599,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
      */
     override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         let rect = CGRect(
-            x: 0,
+            x: 5,
             y: titleHeight(),
             width: bounds.size.width,
             height: bounds.size.height - titleHeight() - selectedLineHeight
@@ -616,9 +617,9 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     */
     open func titleLabelRectForBounds(_ bounds: CGRect, editing: Bool) -> CGRect {
         if editing {
-            return CGRect(x: 0, y: 0, width: bounds.size.width, height: titleHeight())
+            return CGRect(x: 30, y: 0, width: bounds.size.width, height: titleHeight())
         }
-        return CGRect(x: 0, y: titleHeight(), width: bounds.size.width, height: titleHeight())
+        return CGRect(x: 5, y: titleHeight(), width: bounds.size.width, height: titleHeight())
     }
 
     /**

@@ -27,17 +27,9 @@ class ForgotPasswordViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.addNotifications()
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.barTintColor = UIColor.black
-        self.navigationController?.navigationBar.tintColor = UIColor.black
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.removeNotifications()
-        self.navigationController?.navigationBar.isHidden = true
-        self.navigationController?.navigationBar.barTintColor = UIColor.white
-        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     //MARK:- main funcs
@@ -57,35 +49,12 @@ class ForgotPasswordViewController: BaseViewController {
         self.navigationItem.title = ""
     }
     
-    private func addNotifications(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    private func removeNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        
-        let userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInset
-    }
     
     //MARK:- Button Actions
     
+    @IBAction func btnLoginAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func btnResetPasswordAction(_ sender: UIButton) {
         self.view.endEditing(true)

@@ -52,11 +52,9 @@ class ApplyLeaveViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.addNotifications()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.removeNotifications()
     }
     
     //MARK:- main funcs
@@ -94,35 +92,6 @@ class ApplyLeaveViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    //MARK:- Notifications
-    private func addNotifications(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    
-    
-    private func removeNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        
-        let userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInset
-    }
     
     
     
@@ -197,9 +166,10 @@ class ApplyLeaveViewController: BaseViewController {
             self.selectedShiftType = self.pickerView.selectedRow(inComponent: 0)
             self.checkForShiftType()
         case 2:
-            self.checkForShiftType()
+            
             let date = self.dateSelected(self.datepickerView.date)
             self.startDate = self.datepickerView.date
+            self.checkForShiftType()
             self.btnStartDate.setTitle(date, for: .normal)
             
         case 3:

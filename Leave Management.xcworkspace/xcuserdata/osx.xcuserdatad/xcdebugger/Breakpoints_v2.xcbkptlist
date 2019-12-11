@@ -7,16 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3C7ECCCC-C75F-469A-AF01-117F9BD9E1C1"
+            uuid = "4FD32F5E-ADF8-4BBF-8298-AE11F5C6492B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Leave Management/MVC/Controller/Home Views/My Profile views/EditProfileViewController.swift"
+            filePath = "Pods/SkyFloatingLabelTextField/Sources/SkyFloatingLabelTextField.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "updateTextAligment()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A3B6FCB-CCE1-4CEE-9C9D-1F38AE99604E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SkyFloatingLabelTextField/Sources/SkyFloatingLabelTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "549"
+            endingLineNumber = "549"
+            landmarkName = "updateTitleVisibility(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD5CACD9-8FD0-4C53-8FA3-93AA5A67E099"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SkyFloatingLabelTextField/Sources/SkyFloatingLabelTextField.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "620"
+            endingLineNumber = "620"
+            landmarkName = "titleLabelRectForBounds(_:editing:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

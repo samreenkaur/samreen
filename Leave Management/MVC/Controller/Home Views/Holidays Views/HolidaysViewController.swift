@@ -23,7 +23,9 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
                     HolidaysModel.init(dict: ["id":5 as AnyObject,"title":"Good Friday" as AnyObject,"date":"19 04 2019" as AnyObject]),
                     HolidaysModel.init(dict: ["id":6 as AnyObject,"title":"Independence Day" as AnyObject,"date":"15 08 2019" as AnyObject]),
                     HolidaysModel.init(dict: ["id":7 as AnyObject,"title":"Diwali" as AnyObject,"date":"27 10 2019" as AnyObject]),
-                    HolidaysModel.init(dict: ["id":8 as AnyObject,"title":"Christmas" as AnyObject,"date":"25 12 2019" as AnyObject])]
+                    HolidaysModel.init(dict: ["id":8 as AnyObject,"title":"Guru Nanak Dev Ji's Birthday" as AnyObject,"date":"12 11 2019" as AnyObject]),
+                    HolidaysModel.init(dict: ["id":9 as AnyObject,"title":"Christmas" as AnyObject,"date":"25 12 2019" as AnyObject]),
+                    HolidaysModel.init(dict: ["id":10 as AnyObject,"title":"Krishna Janmashtami" as AnyObject,"date":"24 08 2019" as AnyObject])]
     var holidaysArray = [HolidaysModel]()
     var listArray = [[HolidaysModel]]()
     

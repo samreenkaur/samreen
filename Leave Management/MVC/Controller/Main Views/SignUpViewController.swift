@@ -38,12 +38,10 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.addNotifications()
         self.navigationController?.navigationBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.removeNotifications()
     }
     
     
@@ -107,35 +105,6 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         return true
     }
     
-    //MARK:- Notifications
-    private func addNotifications(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    
-    
-    private func removeNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        
-        let userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInset
-    }
     func addAccessoryViewForPhoneNumberField() {
         let btnNext = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44))
         btnNext.backgroundColor = UIColor.white
@@ -146,7 +115,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     }
     @objc func actionOnDonePhonenumber()
     {
-        self.tfDesignation.resignFirstResponder()
+        self.tfDesignation.becomeFirstResponder()
     }
     
     //MARK:- Button Actions
@@ -239,20 +208,20 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         //                    self.showAlert(title: "Error", message: error, actionTitle: "Ok")
         //                }
         
-        let model = UserModel()
-        model.id = 1
-        model.fullName = name
-        model.email = email
-        model.phoneNumber = phoneNumber
-        model.designation = designation
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(model, update: .all)
-            }
-        } catch let error as NSError {
-            print(error)
-        }
+//        let model = UserModel()
+//        model.id = 1
+//        model.fullName = name
+//        model.email = email
+//        model.phoneNumber = phoneNumber
+//        model.designation = designation
+//        do {
+//            let realm = try Realm()
+//            try realm.write {
+//                realm.add(model, update: .all)
+//            }
+//        } catch let error as NSError {
+//            print(error)
+//        }
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
         {
             self.navigationController?.pushViewController(vc, animated: true)

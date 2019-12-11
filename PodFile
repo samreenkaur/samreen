@@ -4,4 +4,5 @@ target 'Leave Management' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Parchment'
   pod 'RealmSwift'
+  pod 'TPKeyboardAvoidingSwift'
 end
