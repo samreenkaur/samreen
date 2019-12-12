@@ -20,7 +20,6 @@ class UserModel: Object {
     @objc dynamic var designation: String = ""
     @objc dynamic var userData = "userData"
     
-    
     //MARK:- Main func
     override static func primaryKey() -> String? {
         return "userData"

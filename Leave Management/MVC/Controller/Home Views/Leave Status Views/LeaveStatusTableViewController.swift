@@ -76,6 +76,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kLeaveStatusTableViewCell, for: indexPath) as! LeaveStatusTableViewCell
         cell.btnCancel.tag = indexPath.row
+        cell.lblReason.text = "I want to go for a trip and will not be able to attend the office for a week.  go for a trip and will not be able to attend the office for a week. "
         cell.btnCancel.addTarget(self, action: #selector(self.cancelButtonAction(_:)), for: .touchUpInside)
         switch self.status
         {
@@ -94,14 +95,14 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             cell.btnCancel.isHidden = true
             cell.btnCancelHeight.constant = 0
             cell.viewResponseReason.isHidden = false
-            cell.viewResponseReasonHeight.constant = cell.lblResponseReason.frame.size.height + 12
+            cell.viewResponseReasonHeight.constant = cell.lblResponseReason.frame.size.height + 15
         case 3:
             cell.lblStatus.text = "Cancelled"
             cell.lblStatus.textColor = themeColorRed
             cell.btnCancel.isHidden = true
             cell.btnCancelHeight.constant = 0
             cell.viewResponseReason.isHidden = false
-            cell.viewResponseReasonHeight.constant = cell.lblResponseReason.frame.size.height + 12
+            cell.viewResponseReasonHeight.constant = cell.lblResponseReason.frame.size.height + 15
         case 4:
             cell.lblStatus.text = "Pending"
             cell.lblStatus.textColor = themeColorYellow
@@ -112,10 +113,10 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         default:
             break
         }
-        cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 12
+        cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 15
         //        if thereIsAttachments{
         //            cell.viewAttachments.isHidden = false
-        //            cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 12
+        //            cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 15
         //        }else{
         //            cell.viewAttachments.isHidden = true
         //            cell.viewAttachmentsHeight.constant = 0

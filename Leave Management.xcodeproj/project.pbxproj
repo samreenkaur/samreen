@@ -167,7 +167,7 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		1041A9E7239E59F20080E6F4 /* Global */ = {
+		1041A9E7239E59F20080E6F4 /* Global Files */ = {
 			isa = PBXGroup;
 			children = (
 				1041A9E3239E31DF0080E6F4 /* API.swift */,
@@ -175,7 +175,7 @@
 				10F57C9D2397E46C0025082D /* Constants.swift */,
 				10F57C922397E3670025082D /* Extension.swift */,
 			);
-			path = Global;
+			path = "Global Files";
 			sourceTree = "<group>";
 		};
 		10AB4F81239FA8DC002E5787 /* Font  */ = {
@@ -246,7 +246,7 @@
 				10F57C622397E0BC0025082D /* AppDelegate.swift */,
 				10F57C642397E0BC0025082D /* SceneDelegate.swift */,
 				10AB4F81239FA8DC002E5787 /* Font  */,
-				1041A9E7239E59F20080E6F4 /* Global */,
+				1041A9E7239E59F20080E6F4 /* Global Files */,
 				10F57C962397E3B60025082D /* MVC */,
 				10F57C682397E0BC0025082D /* Main.storyboard */,
 				10F57C6B2397E0BD0025082D /* Assets.xcassets */,

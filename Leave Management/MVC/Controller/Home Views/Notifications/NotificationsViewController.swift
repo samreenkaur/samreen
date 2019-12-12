@@ -58,8 +58,8 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kNotificationTableViewCell, for: indexPath) as! NotificationTableViewCell
-        
-        cell.lblTitle.text = "Your leave for \(Int(ceil(Double(indexPath.row+1) * 10 / 15)))-\(indexPath.row + 1) is unapproved"
+        let month: String = "\(Month.init(rawValue: indexPath.row + 1)!)"
+        cell.lblTitle.text = "Your leave for \(Int(ceil(Double(indexPath.row+1) * 10 / 15))) \(month), 2019 is unapproved"
         
         return cell
     }
