@@ -49,12 +49,16 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         {
         case 1:
             self.tableView.tableHeaderView = nil
+            break
         case 2:
             self.tableView.tableHeaderView = nil
+            break
         case 3:
             self.tableView.tableHeaderView = nil
+            break
         case 4:
             self.tableView.tableHeaderView = self.headerView
+            break
         default:
             break
         }
@@ -87,7 +91,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             cell.btnCancelHeight.constant = 0
             cell.viewResponseReason.isHidden = true
             cell.viewResponseReasonHeight.constant = 0
-            
+            break
             
         case 2:
             cell.lblStatus.text = "Unapproved"
@@ -96,6 +100,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             cell.btnCancelHeight.constant = 0
             cell.viewResponseReason.isHidden = false
             cell.viewResponseReasonHeight.constant = cell.lblResponseReason.frame.size.height + 15
+            break
         case 3:
             cell.lblStatus.text = "Cancelled"
             cell.lblStatus.textColor = themeColorRed
@@ -103,6 +108,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             cell.btnCancelHeight.constant = 0
             cell.viewResponseReason.isHidden = false
             cell.viewResponseReasonHeight.constant = cell.lblResponseReason.frame.size.height + 15
+            break
         case 4:
             cell.lblStatus.text = "Pending"
             cell.lblStatus.textColor = themeColorYellow
@@ -110,6 +116,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             cell.btnCancelHeight.constant = 50
             cell.viewResponseReason.isHidden = true
             cell.viewResponseReasonHeight.constant = 0
+            break
         default:
             break
         }

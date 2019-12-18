@@ -11,6 +11,8 @@ import Foundation
 import AVFoundation
 import Photos
 import RealmSwift
+import Alamofire
+
 
 class BaseViewController: UIViewController {
     
@@ -144,6 +146,7 @@ class BaseViewController: UIViewController {
         case .authorized:
             //handle authorized status
             self.present(picker, animated: true, completion: nil)
+            break
         case .denied :
             //handle denied status
             let alertController = UIAlertController(title: NSLocalizedString("Allow access to use photo library", comment: ""), message: NSLocalizedString("Open settings to make changes.", comment: ""), preferredStyle: .alert)
@@ -156,7 +159,7 @@ class BaseViewController: UIViewController {
             alertController.addAction(settingsAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
-            
+            break
         case .restricted:
             let alert = UIAlertController(title: "Restricted",
                                           message: "You've been restricted from using the photos on this device. Without photo library access this feature won't work..",
@@ -165,6 +168,7 @@ class BaseViewController: UIViewController {
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
+            break
         case .notDetermined:
             // ask for permissions
             PHPhotoLibrary.requestAuthorization() { status in
@@ -172,11 +176,13 @@ class BaseViewController: UIViewController {
                 case .authorized:
                     // as above
                     self.present(picker, animated: true, completion: nil)
+                    break
                 case .denied, .restricted:
                     // as above
                     let alert = UIAlertController(title: "Access for Photos is not allowed", message: "Make changes from settings", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                    break
                 case .notDetermined:
                     // won't happen but still
                     break
@@ -184,6 +190,7 @@ class BaseViewController: UIViewController {
                     break
                 }
             }
+            break
         @unknown default:
             break
         }
@@ -201,6 +208,7 @@ class BaseViewController: UIViewController {
                 case .authorized:
                     self.present(picker, animated: true, completion: nil)
                 // as above
+                    break
                 case .denied, .restricted: break
                 // as above
                 case .notDetermined: break

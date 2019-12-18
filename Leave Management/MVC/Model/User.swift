@@ -74,8 +74,6 @@ class UserModel: Object {
     
 }
 
-
-
 //struct User: Codable, CustomStringConvertible {
 //    public let ID: String
 //    public let fullname: String

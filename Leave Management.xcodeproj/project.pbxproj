@@ -16,7 +16,6 @@
 		103994162398ED3000EB14E4 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994152398ED3000EB14E4 /* NotificationsViewController.swift */; };
 		103994182398ED4000EB14E4 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994172398ED4000EB14E4 /* NotificationTableViewCell.swift */; };
 		1041A9E2239E23240080E6F4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E1239E23240080E6F4 /* BaseViewController.swift */; };
-		1041A9E4239E31DF0080E6F4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E3239E31DF0080E6F4 /* API.swift */; };
 		1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9E5239E3ACE0080E6F4 /* User.swift */; };
 		1041A9EB239E7E010080E6F4 /* Holidays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041A9EA239E7E010080E6F4 /* Holidays.swift */; };
 		10AB4F87239FA8FB002E5787 /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10AB4F82239FA8FB002E5787 /* Karla-Regular.ttf */; };
@@ -30,6 +29,7 @@
 		10B328AF23991E3600B6D0CA /* LeaveStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328AE23991E3600B6D0CA /* LeaveStatusTableViewCell.swift */; };
 		10B328B123991E3F00B6D0CA /* HolidaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328B023991E3F00B6D0CA /* HolidaysTableViewCell.swift */; };
 		10B328B323993B3A00B6D0CA /* LeaveStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328B223993B3A00B6D0CA /* LeaveStatusTableViewController.swift */; };
+		10DA560523A8F0BD00A3945B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DA560423A8F0BD00A3945B /* GoogleService-Info.plist */; };
 		10F57C632397E0BC0025082D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C622397E0BC0025082D /* AppDelegate.swift */; };
 		10F57C652397E0BC0025082D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C642397E0BC0025082D /* SceneDelegate.swift */; };
 		10F57C6A2397E0BC0025082D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F57C682397E0BC0025082D /* Main.storyboard */; };
@@ -63,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10310FC223A8F3F300987B04 /* Leave Management.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Leave Management.entitlements"; sourceTree = "<group>"; };
 		10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
 		103994062398C42900EB14E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		103994092398C85C00EB14E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		103994152398ED3000EB14E4 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		103994172398ED4000EB14E4 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		1041A9E1239E23240080E6F4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		1041A9E3239E31DF0080E6F4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1041A9E5239E3ACE0080E6F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1041A9EA239E7E010080E6F4 /* Holidays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidays.swift; sourceTree = "<group>"; };
 		10AB4F82239FA8FB002E5787 /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
@@ -86,6 +86,7 @@
 		10B328AE23991E3600B6D0CA /* LeaveStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveStatusTableViewCell.swift; sourceTree = "<group>"; };
 		10B328B023991E3F00B6D0CA /* HolidaysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysTableViewCell.swift; sourceTree = "<group>"; };
 		10B328B223993B3A00B6D0CA /* LeaveStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveStatusTableViewController.swift; sourceTree = "<group>"; };
+		10DA560423A8F0BD00A3945B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10F57C5F2397E0BC0025082D /* Leave Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leave Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F57C622397E0BC0025082D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F57C642397E0BC0025082D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +171,6 @@
 		1041A9E7239E59F20080E6F4 /* Global Files */ = {
 			isa = PBXGroup;
 			children = (
-				1041A9E3239E31DF0080E6F4 /* API.swift */,
 				1041A9E1239E23240080E6F4 /* BaseViewController.swift */,
 				10F57C9D2397E46C0025082D /* Constants.swift */,
 				10F57C922397E3670025082D /* Extension.swift */,
@@ -243,6 +243,7 @@
 		10F57C612397E0BC0025082D /* Leave Management */ = {
 			isa = PBXGroup;
 			children = (
+				10310FC223A8F3F300987B04 /* Leave Management.entitlements */,
 				10F57C622397E0BC0025082D /* AppDelegate.swift */,
 				10F57C642397E0BC0025082D /* SceneDelegate.swift */,
 				10AB4F81239FA8DC002E5787 /* Font  */,
@@ -251,6 +252,7 @@
 				10F57C682397E0BC0025082D /* Main.storyboard */,
 				10F57C6B2397E0BD0025082D /* Assets.xcassets */,
 				10F57C6D2397E0BD0025082D /* LaunchScreen.storyboard */,
+				10DA560423A8F0BD00A3945B /* GoogleService-Info.plist */,
 				10F57C702397E0BD0025082D /* Info.plist */,
 			);
 			path = "Leave Management";
@@ -349,6 +351,7 @@
 				10F57C5C2397E0BC0025082D /* Frameworks */,
 				10F57C5D2397E0BC0025082D /* Resources */,
 				BE78858FFB06DCDF17E6C9D2 /* [CP] Embed Pods Frameworks */,
+				102DF27B23A8E45B00B5C73A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -448,6 +451,7 @@
 				10F57C6C2397E0BD0025082D /* Assets.xcassets in Resources */,
 				10AB4F8B239FA8FB002E5787 /* Karla-Bold.ttf in Resources */,
 				10F57C6A2397E0BC0025082D /* Main.storyboard in Resources */,
+				10DA560523A8F0BD00A3945B /* GoogleService-Info.plist in Resources */,
 				10AB4F87239FA8FB002E5787 /* Karla-Regular.ttf in Resources */,
 				10AB4F89239FA8FB002E5787 /* Karla-BoldItalic.ttf in Resources */,
 				10AB4F8A239FA8FB002E5787 /* Karla-Italic.ttf in Resources */,
@@ -471,6 +475,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		102DF27B23A8E45B00B5C73A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 		BE78858FFB06DCDF17E6C9D2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,7 +554,6 @@
 				1039940E2398D1DA00EB14E4 /* MyProfileViewController.swift in Sources */,
 				1039940A2398C85C00EB14E4 /* HomeViewController.swift in Sources */,
 				10F57C652397E0BC0025082D /* SceneDelegate.swift in Sources */,
-				1041A9E4239E31DF0080E6F4 /* API.swift in Sources */,
 				10F57C932397E3670025082D /* Extension.swift in Sources */,
 				10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */,
 				10B328AB23991DF400B6D0CA /* HolidaysViewController.swift in Sources */,
@@ -715,15 +735,18 @@
 			baseConfigurationReference = 1E0A16FD233BCCCE1112377B /* Pods-Leave Management.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "Leave Management/Leave Management.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sanjeev Kumar (RQE4S5A979)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C2A3W34TJQ;
 				INFOPLIST_FILE = "Leave Management/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.beyondroot.Leave-Management";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beyondroot.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Beyond Root Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -734,15 +757,18 @@
 			baseConfigurationReference = 3DD6AC9A15134CD40095272E /* Pods-Leave Management.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "Leave Management/Leave Management.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sanjeev Kumar (RQE4S5A979)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C2A3W34TJQ;
 				INFOPLIST_FILE = "Leave Management/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.beyondroot.Leave-Management";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beyondroot.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Beyond Root Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

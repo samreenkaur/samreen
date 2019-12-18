@@ -8,6 +8,9 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import Alamofire
+import Crashlytics
+import RealmSwift
 
 class LoginViewController: BaseViewController , UITextFieldDelegate {
     
@@ -57,6 +60,7 @@ class LoginViewController: BaseViewController , UITextFieldDelegate {
         self.tfPassword.delegate = self
         
         self.setupToHideKeyboardOnTapOnView()
+        //Crashlytics.sharedInstance().crash()
         
     }
     private func callViewWillLoad()
@@ -152,9 +156,38 @@ class LoginViewController: BaseViewController , UITextFieldDelegate {
         let email = self.trimString(self.tfEmail.text ?? "")
         let password = self.trimString(self.tfPassword.text ?? "")
         
-        //        guard let url = URL(string: loginUrl) else {
-        //            return
-        //        }
+//        guard let url = URL(string: loginUrl) else {
+//                return
+//        }
+        let parameters : Parameters = ["email": email, "password": password]
+        
+        Alamofire.request(loginUrl, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+//                do{
+//                    let json = try JSONSerialization.data(withJSONObject: response.result, options: .prettyPrinted)
+                    let model = UserModel.init(dict: response.result.value as! [String : AnyObject])
+                    do {
+                        let realm = try Realm()
+                        try realm.write {
+                            realm.add(model, update: .all)
+                        }
+                    } catch let error as NSError {
+                        print(error)
+                    }
+//                }
+//                catch
+//                {
+//                    print("error")
+//                }
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            }
+        }
+        
         //
         //        API().post(url: url, parameters: ["email": email, "password": password], token: "", success: { (user) in
         //            DispatchQueue.main.async {

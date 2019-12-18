@@ -23,32 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9A3B6FCB-CCE1-4CEE-9C9D-1F38AE99604E"
+            uuid = "29ACD974-BE19-4321-96DE-5863D25E995F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/SkyFloatingLabelTextField/Sources/SkyFloatingLabelTextField.swift"
+            filePath = "Leave Management/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "549"
-            endingLineNumber = "549"
-            landmarkName = "updateTitleVisibility(_:completion:)"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "messaging(_:didReceiveRegistrationToken:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DD5CACD9-8FD0-4C53-8FA3-93AA5A67E099"
+            uuid = "33FC4C71-1E73-4BAE-A3DB-1FE40CCB8A3E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/SkyFloatingLabelTextField/Sources/SkyFloatingLabelTextField.swift"
+            filePath = "Leave Management/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "620"
-            endingLineNumber = "620"
-            landmarkName = "titleLabelRectForBounds(_:editing:)"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "application(received:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

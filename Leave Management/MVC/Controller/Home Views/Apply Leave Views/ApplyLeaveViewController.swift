@@ -143,7 +143,9 @@ class ApplyLeaveViewController: BaseViewController {
         switch self.selectedShiftType
         {
         case 0,1: self.datepickerView.maximumDate = maxiDate
+            break
         case 2,3: self.datepickerView.maximumDate = nil
+            break
         default: break
         }
         self.pickerView.isHidden = true
@@ -161,16 +163,19 @@ class ApplyLeaveViewController: BaseViewController {
         {
         case 0:
             self.btnLeaveType.setTitle(self.pickerArr[row], for: .normal)
+            break
         case 1:
             self.btnShiftType.setTitle(self.pickerArr[row], for: .normal)
             self.selectedShiftType = self.pickerView.selectedRow(inComponent: 0)
             self.checkForShiftType()
+            break
         case 2:
             
             let date = self.dateSelected(self.datepickerView.date)
             self.startDate = self.datepickerView.date
             self.checkForShiftType()
             self.btnStartDate.setTitle(date, for: .normal)
+            break
             
         case 3:
             self.checkForShiftType()
@@ -178,6 +183,7 @@ class ApplyLeaveViewController: BaseViewController {
             self.endDate = self.datepickerView.date
             self.btnEndDate.setTitle(date, for: .normal)
             self.calculateDays()
+            break
         default:
             break
         }
@@ -219,6 +225,7 @@ class ApplyLeaveViewController: BaseViewController {
             let maxiDate = Calendar.current.date(byAdding: .hour, value: 2, to: self.startDate) ?? Date()
             self.btnEndDate.setTitle(self.dateSelected(maxiDate), for: .normal)
             self.endDate = maxiDate
+            break
         case 1:
             self.viewDateHeight.constant = 77
             self.viewDate.isHidden = false
@@ -228,12 +235,14 @@ class ApplyLeaveViewController: BaseViewController {
             let maxiDate = Calendar.current.date(byAdding: .hour, value: 4, to: self.startDate) ?? Date()
             self.endDate = maxiDate
             self.btnEndDate.setTitle(self.dateSelected(maxiDate), for: .normal)
+            break
         case 2 :
             self.viewDateHeight.constant = 0
             self.viewDate.isHidden = true
             self.datepickerView.datePickerMode = .date
             self.btnEndDate.isUserInteractionEnabled = false
             self.datepickerView.maximumDate = nil
+            break
         case 3:
             self.viewDateHeight.constant = 77
             self.viewDate.isHidden = false
@@ -242,6 +251,7 @@ class ApplyLeaveViewController: BaseViewController {
             self.datepickerView.datePickerMode = .dateAndTime
             self.endDate = Date()
             self.btnEndDate.setTitle("End Date (Including)", for: .normal)
+            break
         default:
             break
         }
@@ -252,7 +262,9 @@ class ApplyLeaveViewController: BaseViewController {
         let formatter = DateFormatter()
         switch self.selectedShiftType{
         case 0,1,3: formatter.dateFormat = "dd MMM yyyy HH:mm a"
+            break
         case 2: formatter.dateFormat = "dd MMM yyyy"
+            break
         default: break
         }
         let str = formatter.string(from: sender)
@@ -265,10 +277,13 @@ class ApplyLeaveViewController: BaseViewController {
             let hours = diff.hour ?? 0
             let mint = diff.minute ?? 0
             self.lblTotalDays.text = (hours > 0) ? ((mint > 0) ? "\(hours) Hours, \(mint) minutes" : "\(hours) Hours") : ((mint > 0) ? "\(mint) minutes" : "Duration")
+            break
         case 2: self.lblTotalDays.text = "Duration"
+            break
         case 3:
             let days = Calendar.current.dateComponents([.day], from: self.startDate, to: self.endDate).day ?? 0
             self.lblTotalDays.text = (days>0) ?  "\(days+1) Days" : "Duration"
+            break
         default: break
         }
     }

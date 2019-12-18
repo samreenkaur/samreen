@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_design" translatesAutoresizingMaskIntoConstraints="NO" id="mNn-ny-6DP">
-                                <rect key="frame" x="0.0" y="0.0" width="92" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsY-CZ-c2I" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -40,7 +40,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="178.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FLf-0H-oKA">
-                                                                <rect key="frame" x="52.5" y="40" width="230" height="98.5"/>
+                                                                <rect key="frame" x="-62.5" y="40" width="460" height="98.5"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -362,19 +362,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFy-3s-zZ5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="972"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1472"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_design" translatesAutoresizingMaskIntoConstraints="NO" id="74F-70-gbP">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="972"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="1472"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAn-yM-hgJ">
-                                                <rect key="frame" x="20" y="100" width="335" height="772"/>
+                                                <rect key="frame" x="20" y="100" width="335" height="1272"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZa-K2-hmY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="180"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="680"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="s3d-FV-VSj">
-                                                                <rect key="frame" x="52.5" y="40" width="230" height="100"/>
+                                                                <rect key="frame" x="-62.5" y="40" width="460" height="600"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -385,7 +385,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tq1-zG-Ylz">
-                                                        <rect key="frame" x="20" y="180" width="295" height="490"/>
+                                                        <rect key="frame" x="20" y="680" width="295" height="490"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v17-cb-bEa" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
                                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
@@ -728,7 +728,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnP-eJ-AbO">
-                                                        <rect key="frame" x="0.0" y="670" width="335" height="102"/>
+                                                        <rect key="frame" x="0.0" y="1170" width="335" height="102"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fex-4o-ivm">
                                                                 <rect key="frame" x="48" y="12" width="239" height="50"/>
@@ -1685,7 +1685,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_design" translatesAutoresizingMaskIntoConstraints="NO" id="kvZ-1f-gd4">
-                                <rect key="frame" x="0.0" y="0.0" width="92" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3b-eB-a0T" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1700,7 +1700,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="295"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgot_password_img" translatesAutoresizingMaskIntoConstraints="NO" id="AqT-yu-pTJ">
-                                                                <rect key="frame" x="79" y="60" width="177" height="100"/>
+                                                                <rect key="frame" x="-9.5" y="60" width="354" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="sJB-YJ-WP4"/>
                                                                 </constraints>
@@ -1914,7 +1914,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_design" translatesAutoresizingMaskIntoConstraints="NO" id="9Yo-1Q-Qbo">
-                                <rect key="frame" x="0.0" y="0.0" width="92" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mje-qh-TPk" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1929,7 +1929,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="296"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reset_password_img" translatesAutoresizingMaskIntoConstraints="NO" id="2UF-EW-Tt7">
-                                                                <rect key="frame" x="82.5" y="60" width="170" height="100"/>
+                                                                <rect key="frame" x="-2.5" y="60" width="340" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="iAo-WA-UCS"/>
                                                                 </constraints>
@@ -3757,7 +3757,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Dark Gray">
-            <color red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.2630000114440918" green="0.2630000114440918" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Green">
             <color red="0.0" green="0.82300001382827759" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

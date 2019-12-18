@@ -9,6 +9,8 @@
 import UIKit
 import SkyFloatingLabelTextField
 import RealmSwift
+import Alamofire
+
 
 class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
@@ -69,6 +71,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
     }
+    
     
     
     //MARK:- TextField Delegate func
