@@ -14,5 +14,7 @@ target 'Leave Management' do
   pod 'Parchment'
   pod 'RealmSwift'
   pod 'TPKeyboardAvoidingSwift'
+  pod 'NVActivityIndicatorView'
+  pod 'SDWebImage'
   
 end

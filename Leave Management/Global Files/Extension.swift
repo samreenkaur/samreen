@@ -64,7 +64,7 @@ extension UIView
         }
     }
     
-    func addShadow(shadowColor: CGColor = themeColorShadow.cgColor,
+    func addShadow(shadowColor: CGColor = Colors.themeShadow.cgColor,
                    shadowOffset: CGSize = CGSize(width: 0.5, height: 0.5),
                    shadowOpacity: Float = 0.8,
                    shadowRadius: CGFloat = 3.0) {

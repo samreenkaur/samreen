@@ -96,6 +96,8 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
             self.showAlert(title: "Warning", message: "Please enter your last password.", actionTitle: "Ok")
         }else if !self.isValidText(newpassword){
             self.showAlert(title: "Warning", message: "Please enter your new password.", actionTitle: "Ok")
+        }else if !self.isValidPassword(newpassword){
+            self.showAlert(title: "Warning", message: "Password must contain 6 characters and atleast one uppercase, one lowercase, one digit, one special character.", actionTitle: "Ok")
         }else if !self.isValidText(confirmPassword){
             self.showAlert(title: "Warning", message: "Please confirm your password.", actionTitle: "Ok")
         }else if newpassword != confirmPassword{

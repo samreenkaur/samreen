@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+
+
 
 class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource {
     
@@ -18,7 +21,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     
     //MARK:- Variables
     var status = 1// "Approved", "Unapproved","Cancelled", "Pending"
-    
+    var arrList = [LeavesModel]()
     
     //MARK:- Lifecycle func
     override func viewDidLoad() {
@@ -42,6 +45,8 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.getUserData()
+        self.apiHit()
     }
     private func callViewWillLoad()
     {
@@ -74,7 +79,13 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     
     //MARK:- TableView Delegate and Datasources
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        let count = self.arrList.count
+        if count > 0 {
+            self.tableView.isHidden = false
+        }else{
+            self.tableView.isHidden = true
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,7 +97,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         {
         case 1:
             cell.lblStatus.text = "Approved"
-            cell.lblStatus.textColor = themeColorGreen
+            cell.lblStatus.textColor = Colors.themeGreen
             cell.btnCancel.isHidden = true
             cell.btnCancelHeight.constant = 0
             cell.viewResponseReason.isHidden = true
@@ -95,7 +106,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             
         case 2:
             cell.lblStatus.text = "Unapproved"
-            cell.lblStatus.textColor = themeColor
+            cell.lblStatus.textColor = Colors.themeColor
             cell.btnCancel.isHidden = true
             cell.btnCancelHeight.constant = 0
             cell.viewResponseReason.isHidden = false
@@ -103,7 +114,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             break
         case 3:
             cell.lblStatus.text = "Cancelled"
-            cell.lblStatus.textColor = themeColorRed
+            cell.lblStatus.textColor = Colors.themeRed
             cell.btnCancel.isHidden = true
             cell.btnCancelHeight.constant = 0
             cell.viewResponseReason.isHidden = false
@@ -111,7 +122,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             break
         case 4:
             cell.lblStatus.text = "Pending"
-            cell.lblStatus.textColor = themeColorYellow
+            cell.lblStatus.textColor = Colors.themeYellow
             cell.btnCancel.isHidden = false
             cell.btnCancelHeight.constant = 50
             cell.viewResponseReason.isHidden = true
@@ -141,6 +152,60 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         {
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    
+    
+    //MARK:- API Hit
+    private func apiHit(){
+        
+        let url = APIUrl.base + APIUrl.getAllLeaves + "?leaveStatusId=\(self.status)"
+        let parameters : Parameters = [:]
+        
+        let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
+        Alamofire.request(url, method: .get, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                self.removeLoader()
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let success = data["Success"] as? Int, success == 1,let responsedata = data["Data"] as? [[String:AnyObject]]
+                    {
+                        let model : [LeavesModel] = responsedata.map(LeavesModel.init)
+                        self.arrList = model
+                        self.tableView.reloadData()
+                    }
+                    else if let message = data["Message"] as? String
+                    {
+                        self.showAlert(title: "Error", message: message, actionTitle: "Ok")
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+            case .failure(let error):
+                self.removeLoader()
+                print(error.localizedDescription)
+                
+            }
+        }
+        //        user.realm?.beginWrite()
+        //        user.fullName = name
+        //        user.email = email
+        //        user.phoneNumber = phoneNumber
+        //        user.designation = designation
+        //        do {
+        //            try user.realm?.commitWrite()
+        //        } catch {
+        //            print(error.localizedDescription)
+        //        }
+        //        self.navigationController?.popViewController(animated: true)
     }
 }
 

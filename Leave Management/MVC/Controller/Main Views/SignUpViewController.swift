@@ -175,6 +175,8 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             self.showAlert(title: "Warning", message: "Please enter your designation.", actionTitle: "Ok")
         }else if !self.isValidText(password){
             self.showAlert(title: "Warning", message: "Please enter your password.", actionTitle: "Ok")
+        }else if !self.isValidPassword(password){
+            self.showAlert(title: "Warning", message: "Password must contain 6 characters and atleast one uppercase, one lowercase, one digit, one special character.", actionTitle: "Ok")
         }else if !self.isValidText(confirmPassword){
             self.showAlert(title: "Warning", message: "Please confirm your password.", actionTitle: "Ok")
         }else if password != confirmPassword{
@@ -194,40 +196,101 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         let designation = self.trimString(self.tfDesignation.text ?? "")
         let password = self.trimString(self.tfPassword.text ?? "")
         let confirmPassword = self.trimString(self.tfConfirmPassword.text ?? "")
-        //                guard let url = URL(string: loginUrl) else {
-        //                    return
-        //                }
-        //
-        //                API().post(url: url, parameters: ["name": name,"email": email,"phoneNumber": phoneNumber,"designation": designation,"password": password, "confirmPassword": confirmPassword], token: "", success: { (user) in
-        //                    DispatchQueue.main.async {
-        //                        let model = UserModel.init(dict: userDataDict)
-        //                        RealmDatabase.shared.add(object: model)
-        //                        if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
-        //                        {
-        //                            self.navigationController?.pushViewController(vc, animated: true)
-        //                        }
-        //                    }
-        //                }) { (error) in
-        //                    self.showAlert(title: "Error", message: error, actionTitle: "Ok")
-        //                }
         
-        let model = UserModel()
-        model.id = 1
-        model.fullName = name
-        model.email = email
-        model.phoneNumber = phoneNumber
-        model.designation = designation
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(model, update: .all)
+        let url = APIUrl.base + APIUrl.signUp
+        let parameters : Parameters = ["FullName": name,"Email": email,"Phone": phoneNumber,"Designation": designation,"Password": password, "ConfirmPassword": confirmPassword]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters)")
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let success = data["Success"] as? Int, success == 1
+                    {
+                        self.apiTokenHit()
+                    }
+                    else if let message = data["Message"] as? String
+                    {
+                        self.showAlert(title: "Error", message: message, actionTitle: "Ok")
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+                
+                //                            let model = UserModel.init(dict: response.result.value as! [String : AnyObject])
+                //                            do {
+                //                                let realm = try Realm()
+                //                                try realm.write {
+                //                                    realm.add(model, update: .all)
+                //                                }
+                //                            } catch let error as NSError {
+                //                                print(error)
+            //                            }
+            case .failure(let error):
+                print(error.localizedDescription)
+                
             }
-        } catch let error as NSError {
-            print(error)
         }
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
-        {
-            self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
+    
+    private func apiTokenHit(){
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let password = self.trimString(self.tfPassword.text ?? "")
+        
+        let url = APIUrl.base + APIUrl.token
+        let parameters : Parameters = ["username": email,"Password": password,"grant_type": "password","client_id": "LeaveManagement", "client_secret": "leaveManagement!46#"]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters)")
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let message = data["error"] as? String, let desc = data["error_description"] as? String
+                    {
+                        print(message)
+                        self.showAlert(title: "Error", message: desc, actionTitle: "Ok")
+                    }
+                    else
+                    {
+                        let model = UserModel.init(dict: data)
+                        do {
+                            let realm = try Realm()
+                            try realm.write {
+                                realm.add(model, update: .all)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
+                        self.removeLoader()
+                        
+                        if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
+                        {
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+                
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.removeLoader()
+            }
         }
     }
     

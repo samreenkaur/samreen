@@ -52,5 +52,357 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "917FFE1E-0D68-4B45-B9E8-A2F61E024B6D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leave Management/MVC/Controller/Main Views/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "apiHit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "917FFE1E-0D68-4B45-B9E8-A2F61E024B6D - 3197e6b62521df09"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leave_Management.LoginViewController.(apiHit in _95C990B57CFAC8C695A5812A868B2E07)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Main%20Views/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "2902">
+               </Location>
+               <Location
+                  uuid = "917FFE1E-0D68-4B45-B9E8-A2F61E024B6D - 8e8e3bcaf96b0533"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Leave_Management.LoginViewController.(apiHit in _95C990B57CFAC8C695A5812A868B2E07)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Main%20Views/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "249">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B179724A-F435-437C-82DE-FFAD9B23164C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leave Management/MVC/Controller/Main Views/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "apiTokenHit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B179724A-F435-437C-82DE-FFAD9B23164C - 5e8326f62ec7db24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leave_Management.SignUpViewController.(apiTokenHit in _5583E4BAA8073CC742C6D27E10EB9B08)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Main%20Views/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "253"
+                  endingLineNumber = "253"
+                  offsetFromSymbolStart = "2905">
+               </Location>
+               <Location
+                  uuid = "B179724A-F435-437C-82DE-FFAD9B23164C - 63eff53995af9e56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Leave_Management.SignUpViewController.(apiTokenHit in _5583E4BAA8073CC742C6D27E10EB9B08)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Main%20Views/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "254"
+                  endingLineNumber = "254"
+                  offsetFromSymbolStart = "249">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E6A2FA4-761A-4463-9C42-7318DA282CED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leave Management/MVC/Controller/Home Views/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "apiTokenHit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5E6A2FA4-761A-4463-9C42-7318DA282CED - 9a9077f2b10ec736"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leave_Management.HomeViewController.(apiTokenHit in _5922DD9B4460E9B667E963D5E4D5BFB0)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "1474">
+               </Location>
+               <Location
+                  uuid = "5E6A2FA4-761A-4463-9C42-7318DA282CED - dbc3458d8d303ac6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Leave_Management.HomeViewController.(apiTokenHit in _5922DD9B4460E9B667E963D5E4D5BFB0)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/HomeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "214">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59A21DD5-09B9-4ECC-8A29-FCF703F3325C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leave Management/MVC/Controller/Main Views/ForgotPasswordViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "apiHit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "59A21DD5-09B9-4ECC-8A29-FCF703F3325C - ac26fcbd0adca5ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leave_Management.ForgotPasswordViewController.(apiHit in _89DC46C80AF97A08077118C8A285F205)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Main%20Views/ForgotPasswordViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "1804">
+               </Location>
+               <Location
+                  uuid = "59A21DD5-09B9-4ECC-8A29-FCF703F3325C - 4e8329242f644335"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Leave_Management.ForgotPasswordViewController.(apiHit in _89DC46C80AF97A08077118C8A285F205)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Main%20Views/ForgotPasswordViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E37B8E9-9BEE-4974-816B-9B95441E349B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leave Management/MVC/Controller/Main Views/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "apiHit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8E37B8E9-9BEE-4974-816B-9B95441E349B - d9e5e827a879f77"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leave_Management.SignUpViewController.(apiHit in _5583E4BAA8073CC742C6D27E10EB9B08)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Main%20Views/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
+                  offsetFromSymbolStart = "5838">
+               </Location>
+               <Location
+                  uuid = "8E37B8E9-9BEE-4974-816B-9B95441E349B - 62e58db926e8a09a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Leave_Management.SignUpViewController.(apiHit in _5583E4BAA8073CC742C6D27E10EB9B08)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Main%20Views/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "632ACEBD-27E1-4838-81CD-E6A3384DCE62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leave Management/MVC/Controller/Home Views/My Profile views/EditProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "apiHit(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "632ACEBD-27E1-4838-81CD-E6A3384DCE62 - b5b867414d85e835"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leave_Management.EditProfileViewController.(apiHit in _C2CC03E7B9D846E0A1D94FA23A4FF969)(Swift.String) -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/My%20Profile%20views/EditProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "5418">
+               </Location>
+               <Location
+                  uuid = "632ACEBD-27E1-4838-81CD-E6A3384DCE62 - 5c223880994772dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Leave_Management.EditProfileViewController.(apiHit in _C2CC03E7B9D846E0A1D94FA23A4FF969)(Swift.String) -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/My%20Profile%20views/EditProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3FB226B-4BEE-40BC-B144-1EF2D5CB0490"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leave Management/MVC/Controller/Home Views/My Profile views/EditProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "apiHit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EF145B8-EE87-4BBC-AB0C-94F2F5D111C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Leave Management/MVC/Controller/Home Views/Leave Status Views/LeaveStatusTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "apiHit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1EF145B8-EE87-4BBC-AB0C-94F2F5D111C6 - caffe2ac46b31dc0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leave_Management.LeaveStatusTableViewController.(apiHit in _5A4387457E1788A37A4A5A5D0C7720E2)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/Leave%20Status%20Views/LeaveStatusTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "2211">
+               </Location>
+               <Location
+                  uuid = "1EF145B8-EE87-4BBC-AB0C-94F2F5D111C6 - 30133f778e64ff1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Leave_Management.LeaveStatusTableViewController.(apiHit in _5A4387457E1788A37A4A5A5D0C7720E2)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/Leave%20Status%20Views/LeaveStatusTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "176">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

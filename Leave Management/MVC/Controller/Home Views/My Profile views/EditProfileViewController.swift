@@ -8,6 +8,9 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import Alamofire
+import RealmSwift
+
 
 class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -24,7 +27,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
     
     //MARK:- Variables
     var imagePicker = UIImagePickerController()
-    var user = UserModel()
+    var imageUpdated = false
     
     //MARK:- Lifecycle func
     
@@ -48,25 +51,30 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
     //MARK:- main funcs
     private func callViewDidLoad()
     {
-        
+        self.getUserData()
         self.tfFullName.delegate = self
         self.tfEmail.delegate = self
         self.tfPhoneNumber.delegate = self
         self.tfDesignation.delegate = self
         self.imagePicker.delegate = self
+        self.tfEmail.isUserInteractionEnabled = false
         self.setupToHideKeyboardOnTapOnView()
         self.addAccessoryViewForPhoneNumberField()
     }
     private func callViewWillLoad()
     {
         user = user.getUserloggedIn() ?? UserModel()
-        if user.id > 0
+        if !user.id.isEmpty
         {
             self.tfFullName.text = user.fullName
             self.tfEmail.text = user.email
             self.tfPhoneNumber.text = user.phoneNumber
             self.tfDesignation.text = user.designation
-            
+            if user.profilePic.isEmpty{
+                self.imgUser.image = Images.userPlaceholder
+            }else{
+                self.imgUser.sd_setImage(with: URL(string: APIUrl.base + user.profilePic), placeholderImage: Images.userPlaceholder)
+            }
         }
     }
     
@@ -76,7 +84,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
         self.navigationController?.navigationBar.isTranslucent = true
         
         self.navigationItem.title = "Edit Profile"
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
+        //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
     }
     
     @objc func rightBarButtonAction(_ sender: Any){
@@ -88,7 +96,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == tfFullName
         {
-            tfEmail.becomeFirstResponder()
+            tfPhoneNumber.becomeFirstResponder()
         }else if textField == tfEmail
         {
             tfPhoneNumber.becomeFirstResponder()
@@ -131,9 +139,11 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
             self.imgUser.image = image
+            self.imageUpdated = true
         }
         else if let image = info[.originalImage] as? UIImage {
             self.imgUser.image = image
+            self.imageUpdated = true
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -166,28 +176,131 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
         }else if !self.isValidText(designation){
             self.showAlert(title: "Warning", message: "Please enter your designation.", actionTitle: "Ok")
         }else{
-            self.apiHit()
+            if self.imageUpdated
+            {
+                self.uploadImageApiHit()
+            }else{
+                self.apiHit("")
+            }
         }
         
     }
     
     //MARK:- API Hit
-    private func apiHit(){
+    private func apiHit(_ uploadImageUrl: String){
         let name = self.trimString(self.tfFullName.text ?? "")
         let email = self.trimString(self.tfEmail.text ?? "")
         let phoneNumber = self.trimString(self.tfPhoneNumber.text ?? "")
         let designation = self.trimString(self.tfDesignation.text ?? "")
-        user.realm?.beginWrite()
-        user.fullName = name
-        user.email = email
-        user.phoneNumber = phoneNumber
-        user.designation = designation
-        do {
-            try user.realm?.commitWrite()
-        } catch {
-            print(error.localizedDescription)
+        
+        let url = APIUrl.base + APIUrl.editProfile
+        var parameters : Parameters = ["FullName": name,"Email": email,"Phone": phoneNumber,"Designation": designation]
+        if !uploadImageUrl.isEmpty
+        {
+            parameters["ProfilePictureUrl"] = uploadImageUrl
         }
-        self.navigationController?.popViewController(animated: true)
+        let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
+        Alamofire.request(url, method: .post, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let success = data["Success"] as? Int, success == 1,let responsedata = data["Data"] as? [String:AnyObject]
+                    {
+                        let model = UserModel.init(dict: responsedata)
+                        do {
+                            let realm = try Realm()
+                            try realm.write {
+                                realm.add(model, update: .all)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
+                        self.removeLoader()
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    else if let message = data["Message"] as? String
+                    {
+                        self.showAlert(title: "Error", message: message, actionTitle: "Ok")
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            }
+        }
+        //        user.realm?.beginWrite()
+        //        user.fullName = name
+        //        user.email = email
+        //        user.phoneNumber = phoneNumber
+        //        user.designation = designation
+        //        do {
+        //            try user.realm?.commitWrite()
+        //        } catch {
+        //            print(error.localizedDescription)
+        //        }
+        //        self.navigationController?.popViewController(animated: true)
+    }
+    private func uploadImageApiHit(){
+        let name = self.trimString(self.tfFullName.text ?? "")
+        let email = self.trimString(self.tfEmail.text ?? "")
+        let phoneNumber = self.trimString(self.tfPhoneNumber.text ?? "")
+        let designation = self.trimString(self.tfDesignation.text ?? "")
+        
+        let url = APIUrl.base + APIUrl.editProfile
+        let parameters : Parameters = ["FullName": name,"Email": email,"Phone": phoneNumber,"Designation": designation]
+        
+        let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
+        Alamofire.request(url, method: .post, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let success = data["Success"] as? Int, success == 1,let responsedata = data["Data"] as? [String:AnyObject]
+                    {
+                        self.apiHit("url")
+                    }
+                    else if let message = data["Message"] as? String
+                    {
+                        self.showAlert(title: "Error", message: message, actionTitle: "Ok")
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            }
+        }
+        
+        
+        //        user.realm?.beginWrite()
+        //        user.fullName = name
+        //        user.email = email
+        //        user.phoneNumber = phoneNumber
+        //        user.designation = designation
+        //        do {
+        //            try user.realm?.commitWrite()
+        //        } catch {
+        //            print(error.localizedDescription)
+        //        }
+        //        self.navigationController?.popViewController(animated: true)
     }
     
 }

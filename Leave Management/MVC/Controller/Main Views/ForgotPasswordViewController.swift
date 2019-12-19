@@ -8,6 +8,9 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import Alamofire
+
+
 
 class ForgotPasswordViewController: BaseViewController {
     
@@ -71,14 +74,50 @@ class ForgotPasswordViewController: BaseViewController {
         
     }
     //MARK:- API Hit
+    
     private func apiHit(){
         
         let email = self.trimString(self.tfEmail.text ?? "")
-        let alert = UIAlertController(title: "Success", message: "An email has been sent to \(email ?? "this email address") for further instructions.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
-            self.navigationController?.popViewController(animated: true)
-        }))
-        self.present(alert, animated: true, completion: nil)
+        
+        let url = APIUrl.base + APIUrl.forgotPassword
+        let parameters : Parameters = ["Email": email]
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters)")
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let success = data["Success"] as? Int, success == 1
+                    {
+                        self.removeLoader()
+                        let alert = UIAlertController(title: "Success", message: "An email has been sent to \(email) for further instructions.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+                            self.navigationController?.popViewController(animated: true)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    else if let message = data["Message"] as? String
+                    {
+                        self.showAlert(title: "Error", message: message, actionTitle: "Ok")
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+                
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.removeLoader()
+                
+            }
+        }
+        
+        
     }
     
 }

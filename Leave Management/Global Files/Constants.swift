@@ -8,12 +8,20 @@
 import UIKit
 
 //MARK:- URL
-let baseUrl = ""
-let readMeUrl = ""
+struct APIUrl{
+    
+    static let base = "http://35.154.186.154:3031"
+    static let readMe = ""
 
-let loginUrl = "\(baseUrl)"
-let signUpUrl = "\(baseUrl)"
+    static let signUp = "/api/Account/Register"
+    static let token = "/token"
+    static let resetPassword = "/api/Account/ResetPassword"
+    static let forgotPassword = "/api/Account/ForgotPassword"
+    static let editProfile = "/api/User/Update"
+    
+    static let getAllLeaves = "/api/Leave/GetAll"
 
+}
 
 //MARK:- View Controllers
 var kLoginViewController = "LoginViewController"
@@ -41,21 +49,28 @@ var kLeaveStatusTableViewCell = "LeaveStatusTableViewCell"
 
 
 //MARK:- Colors
-let themeColor = #colorLiteral(red: 0, green: 0.5674916506, blue: 0.6506296396, alpha: 1)
-let themeColorGreen = #colorLiteral(red: 0, green: 0.8230088353, blue: 0.3611240387, alpha: 1)
-let themeColorRed = #colorLiteral(red: 0.9728515744, green: 0.2362010479, blue: 0.2031595707, alpha: 1)
-let themeColorYellow = #colorLiteral(red: 0.8978995681, green: 0.7817478776, blue: 0, alpha: 1)
-let themeColorShadow = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
-let themeColorLink = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-let themeColorLightGray = #colorLiteral(red: 0.6669999957, green: 0.6669999957, blue: 0.6669999957, alpha: 1)
-let themeColorDarkGray = #colorLiteral(red: 0.3330000043, green: 0.3330000043, blue: 0.3330000043, alpha: 1)
+struct Colors{
 
+    static let themeColor = #colorLiteral(red: 0, green: 0.5674916506, blue: 0.6506296396, alpha: 1)
+    static let themeGreen = #colorLiteral(red: 0, green: 0.8230088353, blue: 0.3611240387, alpha: 1)
+    static let themeRed = #colorLiteral(red: 0.9728515744, green: 0.2362010479, blue: 0.2031595707, alpha: 1)
+    static let themeYellow = #colorLiteral(red: 0.8978995681, green: 0.7817478776, blue: 0, alpha: 1)
+    static let themeShadow = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
+    static let themeLink = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+    static let themeLightGray = #colorLiteral(red: 0.6669999957, green: 0.6669999957, blue: 0.6669999957, alpha: 1)
+    static let themeDarkGray = #colorLiteral(red: 0.3330000043, green: 0.3330000043, blue: 0.3330000043, alpha: 1)
+    static let themeTransparentBackground = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+    
+    
+}
 
 //MARK:- Icons
-let eyeHidden = UIImage(named: "eye")
-let eyeShown = UIImage(named: "visibility")
-let userPlaceholder = UIImage(named: "user")
+struct Images{
+    static let eyeHidden = UIImage(named: "eye")
+    static let eyeShown = UIImage(named: "visibility")
+    static let userPlaceholder = UIImage(named: "user")
 
+}
 
 //MARK:- Basic Authentication
 let loginString = String(format: "%@:%@", "email", "password")

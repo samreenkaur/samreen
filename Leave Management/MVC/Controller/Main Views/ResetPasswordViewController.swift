@@ -84,6 +84,8 @@ class ResetPasswordViewController: BaseViewController , UITextFieldDelegate {
         
         if !self.isValidText(password){
             self.showAlert(title: "Warning", message: "Please enter your password.", actionTitle: "Ok")
+        }else if !self.isValidPassword(password){
+            self.showAlert(title: "Warning", message: "Password must contain 6 characters and atleast one uppercase, one lowercase, one digit, one special character.", actionTitle: "Ok")
         }else if !self.isValidText(confirmPassword){
             self.showAlert(title: "Warning", message: "Please confirm your password.", actionTitle: "Ok")
         }else if password != confirmPassword{

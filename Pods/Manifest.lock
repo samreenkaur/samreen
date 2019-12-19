@@ -81,6 +81,9 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
   - Parchment (1.7.0)
   - Protobuf (3.11.0)
   - Realm (4.1.1):
@@ -88,6 +91,9 @@ PODS:
   - Realm/Headers (4.1.1)
   - RealmSwift (4.1.1):
     - Realm (= 4.1.1)
+  - SDWebImage (5.4.0):
+    - SDWebImage/Core (= 5.4.0)
+  - SDWebImage/Core (5.4.0)
   - SkyFloatingLabelTextField (3.7.0)
   - TPKeyboardAvoidingSwift (3.2)
 
@@ -97,8 +103,10 @@ DEPENDENCIES:
   - Fabric
   - Firebase/Analytics
   - Firebase/Messaging
+  - NVActivityIndicatorView
   - Parchment
   - RealmSwift
+  - SDWebImage
   - SkyFloatingLabelTextField (~> 3.0)
   - TPKeyboardAvoidingSwift
 
@@ -120,10 +128,12 @@ SPEC REPOS:
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - nanopb
+    - NVActivityIndicatorView
     - Parchment
     - Protobuf
     - Realm
     - RealmSwift
+    - SDWebImage
     - SkyFloatingLabelTextField
     - TPKeyboardAvoidingSwift
 
@@ -144,13 +154,15 @@ SPEC CHECKSUMS:
   GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   Parchment: cae686f73685d16742cec9c19239b7578a15f0f5
   Protobuf: 394b2bf29ec303f4325e3ee4892c09e675647152
   Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
   RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
+  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   TPKeyboardAvoidingSwift: ce1a75e0bc3af6b485f8bfa1d0a8320cfc565851
 
-PODFILE CHECKSUM: c1c2c992793b2ab3898630e61d57d350fa98cae1
+PODFILE CHECKSUM: f5de4e1774aeecfe9458e8b72fd13054642f6182
 
 COCOAPODS: 1.8.3

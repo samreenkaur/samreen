@@ -12,17 +12,37 @@ import AVFoundation
 import Photos
 import RealmSwift
 import Alamofire
-
+import NVActivityIndicatorView
 
 class BaseViewController: UIViewController {
+    
+    
+    //MARK: - variables
+    let screen = UIScreen.main.bounds.size
+    var loader = NVActivityIndicatorView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize()))
+    var user = UserModel()
     
     
     //MARK: - LifeCycle func
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loader = NVActivityIndicatorView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: screen.width, height: screen.height)), type: .lineSpinFadeLoader, color: Colors.themeColor, padding: .none)
         // Do any additional setup after loading the view.
     }
+    
+    //MARK:- GetData
+    func getUserData(){
+        user = user.getUserloggedIn() ?? UserModel()
+    }
+    
+    //MARK: - Loader
+    func addLoader(){
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData(size: CGSize(width: 50, height: 50), message: "", messageFont: nil, messageSpacing: nil, type: .lineSpinFadeLoader, color: Colors.themeColor, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: Colors.themeTransparentBackground, textColor: Colors.themeColor))
+    }
+    func removeLoader(){
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+    }
+    
     
     //MARK: - Validations
     func trimString(_ data: String) -> String {
@@ -34,6 +54,11 @@ class BaseViewController: UIViewController {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: str)
+    }
+    func isValidPassword(_ str:String) -> Bool {
+        let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{6,}"
+        let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
+        return passwordValidation.evaluate(with: str)
     }
     func isValidPhoneNumber(_ str:String) -> Bool {
         
@@ -54,6 +79,7 @@ class BaseViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        self.removeLoader()
     }
     
     func showLogoutAlert() {

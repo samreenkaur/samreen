@@ -220,7 +220,7 @@ class ApplyLeaveViewController: BaseViewController {
             self.viewDateHeight.constant = 77
             self.viewDate.isHidden = false
             self.btnEndDate.isUserInteractionEnabled = false
-            self.btnEndDate.setTitleColor(themeColorLightGray, for: .normal)
+            self.btnEndDate.setTitleColor(Colors.themeLightGray, for: .normal)
             self.datepickerView.datePickerMode = .dateAndTime
             let maxiDate = Calendar.current.date(byAdding: .hour, value: 2, to: self.startDate) ?? Date()
             self.btnEndDate.setTitle(self.dateSelected(maxiDate), for: .normal)
@@ -230,7 +230,7 @@ class ApplyLeaveViewController: BaseViewController {
             self.viewDateHeight.constant = 77
             self.viewDate.isHidden = false
             self.btnEndDate.isUserInteractionEnabled = false
-            self.btnEndDate.setTitleColor(themeColorLightGray, for: .normal)
+            self.btnEndDate.setTitleColor(Colors.themeLightGray, for: .normal)
             self.datepickerView.datePickerMode = .dateAndTime
             let maxiDate = Calendar.current.date(byAdding: .hour, value: 4, to: self.startDate) ?? Date()
             self.endDate = maxiDate
@@ -247,7 +247,7 @@ class ApplyLeaveViewController: BaseViewController {
             self.viewDateHeight.constant = 77
             self.viewDate.isHidden = false
             self.btnEndDate.isUserInteractionEnabled = true
-            self.btnEndDate.setTitleColor(themeColorDarkGray, for: .normal)
+            self.btnEndDate.setTitleColor(Colors.themeDarkGray, for: .normal)
             self.datepickerView.datePickerMode = .dateAndTime
             self.endDate = Date()
             self.btnEndDate.setTitle("End Date (Including)", for: .normal)
@@ -308,11 +308,11 @@ extension ApplyLeaveViewController: UIImagePickerControllerDelegate,UINavigation
         if let img = info[.editedImage] as? UIImage{
             self.imageUploaded = img
             self.btnAttachment.setTitle(imageName, for: .normal)
-            self.btnAttachment.setTitleColor(themeColorLink, for: .normal)
+            self.btnAttachment.setTitleColor(Colors.themeLink, for: .normal)
         }else if let img = info[.originalImage] as? UIImage{
             self.imageUploaded = img
             self.btnAttachment.setTitle(imageName, for: .normal)
-            self.btnAttachment.setTitleColor(themeColorLink, for: .normal)
+            self.btnAttachment.setTitleColor(Colors.themeLink, for: .normal)
         }
         picker.dismiss(animated: true, completion: nil)
     }

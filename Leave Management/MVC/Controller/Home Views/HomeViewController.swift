@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import RealmSwift
 
 class HomeViewController: BaseViewController {
     
     //MARK:- Variables
+    var autoLogin = false
     
     
     //MARK:- Lifecycle func
@@ -30,7 +33,11 @@ class HomeViewController: BaseViewController {
     //MARK:- main funcs
     private func callViewDidLoad()
     {
-        
+        self.getUserData()
+        if autoLogin
+        {
+            self.apiTokenHit()
+        }
     }
     private func callViewWillLoad()
     {
@@ -80,4 +87,54 @@ class HomeViewController: BaseViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    //MARK:- API Hit
+    private func apiTokenHit(){
+        
+        let url = APIUrl.base + APIUrl.token
+        let parameters : Parameters = ["grant_type": "refresh_token","client_id": "LeaveManagement", "client_secret": "leaveManagement!46#","refresh_token": user.refreshToken]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters)")
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let message = data["error"] as? String, let desc = data["error_description"] as? String
+                    {
+                        print(message)
+                        self.showAlert(title: "Error", message: desc, actionTitle: "Ok")
+                    }
+                    else
+                    {
+                        let model = UserModel.init(dict: data)
+                        do {
+                            let realm = try Realm()
+                            try realm.write {
+                                realm.add(model, update: .all)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
+                        self.removeLoader()
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+                
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.removeLoader()
+            }
+        }
+        
+    }
+    
+    
 }

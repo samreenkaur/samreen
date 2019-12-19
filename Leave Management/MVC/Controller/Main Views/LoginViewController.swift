@@ -76,9 +76,10 @@ class LoginViewController: BaseViewController , UITextFieldDelegate {
     
     private func ifuserAlreadyExists(){
         let model = UserModel().getUserloggedIn() ?? UserModel()
-        if model.id>0{
+        if !model.id.isEmpty{
             if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
             {
+                vc.autoLogin = true
                 self.navigationController?.pushViewController(vc, animated: false)
             }
         }
@@ -138,6 +139,8 @@ class LoginViewController: BaseViewController , UITextFieldDelegate {
             self.showAlert(title: "Warning", message: "Please enter valid email.", actionTitle: "Ok")
         }else if !self.isValidText(password){
             self.showAlert(title: "Warning", message: "Please enter your password.", actionTitle: "Ok")
+        }else if !self.isValidPassword(password){
+            self.showAlert(title: "Warning", message: "Password must contain 6 characters and atleast one uppercase, one lowercase, one digit, one special character.", actionTitle: "Ok")
         }else{
             self.apiHit()
         }
@@ -156,72 +159,54 @@ class LoginViewController: BaseViewController , UITextFieldDelegate {
         let email = self.trimString(self.tfEmail.text ?? "")
         let password = self.trimString(self.tfPassword.text ?? "")
         
-//        guard let url = URL(string: loginUrl) else {
-//                return
-//        }
-        let parameters : Parameters = ["email": email, "password": password]
+        let url = APIUrl.base + APIUrl.token
+        let parameters : Parameters = ["username": email,"Password": password,"grant_type": "password","client_id": "LeaveManagement", "client_secret": "leaveManagement!46#"]
         
-        Alamofire.request(loginUrl, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters)")
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
             switch response.result
             {
             case .success(_):
-//                do{
-//                    let json = try JSONSerialization.data(withJSONObject: response.result, options: .prettyPrinted)
-                    let model = UserModel.init(dict: response.result.value as! [String : AnyObject])
-                    do {
-                        let realm = try Realm()
-                        try realm.write {
-                            realm.add(model, update: .all)
-                        }
-                    } catch let error as NSError {
-                        print(error)
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let message = data["error"] as? String, let desc = data["error_description"] as? String
+                    {
+                        print(message)
+                        self.showAlert(title: "Error", message: desc, actionTitle: "Ok")
                     }
-//                }
-//                catch
-//                {
-//                    print("error")
-//                }
+                    else
+                    {
+                        let model = UserModel.init(dict: data)
+                        do {
+                            let realm = try Realm()
+                            try realm.write {
+                                realm.add(model, update: .all)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
+                        self.removeLoader()
+                        
+                        if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
+                        {
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+                
                 break
             case .failure(let error):
                 print(error.localizedDescription)
-                
+                self.removeLoader()
             }
         }
-        
-        //
-        //        API().post(url: url, parameters: ["email": email, "password": password], token: "", success: { (user) in
-        //            DispatchQueue.main.async {
-        ////                let user = try! JSONDecoder().decode(User.self, from: user)
-        //                let model = UserModel.init(dict: userDataDict)
-        //                RealmDatabase.shared.add(object: model)
-        //                if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
-        //                {
-        //                    self.navigationController?.pushViewController(vc, animated: true)
-        //                }
-        //            }
-        //        }) { (error) in
-        //            self.showAlert(title: "Error", message: error, actionTitle: "Ok")
-        //        }
-        
-        
-        //
-        //        let model = UserModel().getUserloggedIn()
-        //            model?.email = email
-        //do {
-        //    let realm = try Realm()
-        //    try realm.write {
-        //        realm.add(model, update: .all)
-        //    }
-        //} catch let error as NSError {
-        //    print(error)
-        //}
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
-        {
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
     }
-    
     
 }
 

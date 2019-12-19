@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10140EAF23AB9FFB00115A7B /* Leaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10140EAE23AB9FFB00115A7B /* Leaves.swift */; };
 		10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */; };
 		103994072398C42900EB14E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994062398C42900EB14E4 /* ResetPasswordViewController.swift */; };
 		1039940A2398C85C00EB14E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994092398C85C00EB14E4 /* HomeViewController.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10140EAE23AB9FFB00115A7B /* Leaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaves.swift; sourceTree = "<group>"; };
 		10310FC223A8F3F300987B04 /* Leave Management.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Leave Management.entitlements"; sourceTree = "<group>"; };
 		10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
 		103994062398C42900EB14E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				1041A9E5239E3ACE0080E6F4 /* User.swift */,
 				1041A9EA239E7E010080E6F4 /* Holidays.swift */,
+				10140EAE23AB9FFB00115A7B /* Leaves.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				10F57C9E2397E46C0025082D /* Constants.swift in Sources */,
 				1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */,
 				103994122398D21A00EB14E4 /* ChangePasswordViewController.swift in Sources */,
+				10140EAF23AB9FFB00115A7B /* Leaves.swift in Sources */,
 				10B328B123991E3F00B6D0CA /* HolidaysTableViewCell.swift in Sources */,
 				10B328AD23991E0100B6D0CA /* LeaveStatusViewController.swift in Sources */,
 			);

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class MyProfileViewController: BaseViewController {
     
@@ -21,7 +23,7 @@ class MyProfileViewController: BaseViewController {
     
     
     //MARK:- Variables
-    var user = UserModel()
+    
     
     //MARK:- Lifecycle func
     
@@ -46,14 +48,18 @@ class MyProfileViewController: BaseViewController {
     }
     private func callViewWillLoad()
     {
-        user = user.getUserloggedIn() ?? UserModel()
-        if user.id > 0
+        self.getUserData()
+        if !user.id.isEmpty
         {
             self.lblName.text = user.fullName
             self.lblEmail.text = user.email
             self.lblPhoneNumber.text = user.phoneNumber
             self.lblDesignation.text = user.designation
-            
+            if user.profilePic.isEmpty{
+                self.imgUser.image = Images.userPlaceholder
+            }else{
+                self.imgUser.sd_setImage(with: URL(string: APIUrl.base + user.profilePic), placeholderImage: Images.userPlaceholder)
+            }
         }
     }
     

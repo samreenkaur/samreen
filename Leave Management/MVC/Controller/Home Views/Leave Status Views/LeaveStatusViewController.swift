@@ -73,7 +73,7 @@ class LeaveStatusViewController: BaseViewController {
     private func addPagingViewController()
     {
         let pagingViewController = FixedPagingViewController(viewControllers: self.childViewControllersArray)
-        pagingViewController.menuBackgroundColor = themeColor
+        pagingViewController.menuBackgroundColor = Colors.themeColor
         pagingViewController.indicatorColor = UIColor.white
         pagingViewController.selectedTextColor = UIColor.white
         pagingViewController.textColor = UIColor.white
