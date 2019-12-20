@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CancelReasonViewController: BaseViewController {
     
@@ -18,6 +19,8 @@ class CancelReasonViewController: BaseViewController {
     
     //MARK:- Variables
     var selectedButton = UIButton()
+    var leaveDetails = LeavesModel()
+    
     
     //MARK:- Lifecycle func
     override func viewDidLoad() {
@@ -37,7 +40,7 @@ class CancelReasonViewController: BaseViewController {
     //MARK:- main funcs
     private func callViewDidLoad()
     {
-        
+        self.getUserData()
     }
     private func callViewWillLoad()
     {
@@ -67,6 +70,54 @@ class CancelReasonViewController: BaseViewController {
                 btn.setImage(UIImage(named: "icon_radio_btn_selected"), for: .normal)
             }else{
                 btn.setImage(UIImage(named: "icon_radio_btn_unselescted"), for: .normal)
+            }
+        }
+    }
+    
+    //MARK:- API Hit
+    private func apiHit(){
+        
+        let url = APIUrl.base + APIUrl.cancelLeave
+        let parameters : Parameters = ["leaveId": self.leaveDetails.id]
+        
+        let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
+        Alamofire.request(url, method: .post, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    
+                    self.removeLoader()
+                    let responseData = ResponseModel.init(data)
+                    if responseData.success == 1
+                    {
+                        let alert = UIAlertController(title: "Success", message: "Your have successfully cancelled the leave.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+                            self.navigationController?.popViewController(animated: true)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    else if responseData.sessionExpired
+                    {
+                        self.refreshTokenApiHit()
+                    }
+                    else
+                    {
+                        self.showAlert(title: "Error", message: responseData.errorMessage, actionTitle: "Ok")
+                    }
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                
             }
         }
     }

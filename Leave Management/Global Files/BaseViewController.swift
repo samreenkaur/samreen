@@ -95,6 +95,10 @@ class BaseViewController: UIViewController {
     }
     
     func showSessionExpiredAlert(){
+//        - key : "Message"
+//        - value : Authorization has been denied for this request.
+        
+        
         // kLogout -------- logout user when token is expired
         let alert = UIAlertController(title: "Session Expired!!", message: "Please login.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in
@@ -115,6 +119,55 @@ class BaseViewController: UIViewController {
         } catch let error as NSError {
             print(error)
         }
+    }
+    
+    //MARK:- API Hit
+    func refreshTokenApiHit(){
+        self.getUserData()
+        
+        let url = APIUrl.base + APIUrl.token
+        let parameters : Parameters = ["grant_type": "refresh_token","client_id": "LeaveManagement", "client_secret": "leaveManagement!46#","refresh_token": user.refreshToken]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters)")
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                self.removeLoader()
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    if let message = data["error"] as? String, let desc = data["error_description"] as? String
+                    {
+                        print(message + desc)
+                        self.showSessionExpiredAlert()
+                    }
+                    else
+                    {
+                        let model = UserModel.init(dict: data)
+                        do {
+                            let realm = try Realm()
+                            try realm.write {
+                                realm.add(model, update: .all)
+                            }
+                        } catch let error as NSError {
+                            print(error)
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    self.showSessionExpiredAlert()
+                }
+                
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.removeLoader()
+            }
+        }
+        
     }
     
     

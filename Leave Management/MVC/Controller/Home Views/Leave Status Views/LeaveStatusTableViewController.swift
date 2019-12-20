@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 import Alamofire
-
+import SimpleImageViewer
 
 
 class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, UITableViewDataSource {
@@ -16,12 +17,14 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     
     //MARK:- Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblNoData: UILabel!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var lblLeaveBalance: UILabel!
     
     //MARK:- Variables
     var status = 1// "Approved", "Unapproved","Cancelled", "Pending"
     var arrList = [LeavesModel]()
+    
     
     //MARK:- Lifecycle func
     override func viewDidLoad() {
@@ -81,8 +84,10 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = self.arrList.count
         if count > 0 {
+            self.lblNoData.isHidden = true
             self.tableView.isHidden = false
         }else{
+            self.lblNoData.isHidden = false
             self.tableView.isHidden = true
         }
         return count
@@ -90,9 +95,26 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kLeaveStatusTableViewCell, for: indexPath) as! LeaveStatusTableViewCell
+        let data = self.arrList[indexPath.row]
+        let leavetype: String = "\(LeaveType.init(rawValue: data.leaveTypeId) ?? LeaveType.init(rawValue: 1)!)".capitalized
+        let shifttype: String = "\(ShiftType.init(rawValue: data.shiftTypeId) ?? ShiftType.init(rawValue: 1)!)".capitalized
+        cell.lblReason.text = data.reason
+        cell.lblLeaveType.text = "\(leavetype) Leave"
+        cell.lblShiftType.text = "Shift : \(shifttype)"
+        cell.lblDate.text = "\(data.fromDateFormatted) - \(data.toDateFormatted)"
+        if data.shiftTypeId == 3
+        {
+            cell.lblDate.text = "\(data.fromDateFormatted)"
+        }
+        cell.lblAttachments.text = data.documents
+        
         cell.btnCancel.tag = indexPath.row
-        cell.lblReason.text = "I want to go for a trip and will not be able to attend the office for a week.  go for a trip and will not be able to attend the office for a week. "
+        cell.lblAttachments.tag = indexPath.row
         cell.btnCancel.addTarget(self, action: #selector(self.cancelButtonAction(_:)), for: .touchUpInside)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(_:)))
+        cell.lblAttachments.isUserInteractionEnabled = true
+        cell.lblAttachments.addGestureRecognizer(tap)
+        
         switch self.status
         {
         case 1:
@@ -131,25 +153,43 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         default:
             break
         }
-        cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 15
-        //        if thereIsAttachments{
-        //            cell.viewAttachments.isHidden = false
-        //            cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 15
-        //        }else{
-        //            cell.viewAttachments.isHidden = true
-        //            cell.viewAttachmentsHeight.constant = 0
-        //        }
+        if !data.documents.isEmpty{
+            cell.lblAttachments.textColor = Colors.themeLink
+            cell.viewAttachments.isHidden = false
+            cell.viewAttachmentsHeight.constant = cell.lblAttachments.frame.size.height + 15
+        }else{
+            cell.viewAttachments.isHidden = true
+            cell.viewAttachmentsHeight.constant = 0
+        }
         
         return cell
     }
     
     
     
+    @objc func imageTapped(_ sender : UITapGestureRecognizer){
+        let label:UILabel = (sender.view as! UILabel)
+        let index = label.tag
+        
+        let imgView = UIImageView()
+        imgView.sd_setImage(with: URL(string: self.arrList[index].documents), placeholderImage: UIImage())
+        let configuration = ImageViewerConfiguration { config in
+            config.image = imgView.image
+        }
+        
+        let imageViewerController = ImageViewerController(configuration: configuration)
+        
+        present(imageViewerController, animated: true)
+        
+        
+    }
+    
     @objc func cancelButtonAction(_ sender : UIButton){
         let index = sender.tag
         print(index)
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kCancelReasonViewController) as? CancelReasonViewController
         {
+            vc.leaveDetails = self.arrList[sender.tag]
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -159,7 +199,27 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     //MARK:- API Hit
     private func apiHit(){
         
-        let url = APIUrl.base + APIUrl.getAllLeaves + "?leaveStatusId=\(self.status)"
+        
+        var leaveStatusId = 1
+        switch self.status
+        {
+        case 1:
+            leaveStatusId = 2
+            break
+        case 2:
+            leaveStatusId = 3
+            break
+        case 3:
+            leaveStatusId = 4
+            break
+        case 4:
+            leaveStatusId = 1
+            break
+        default:
+            break
+        }
+        
+        let url = APIUrl.base + APIUrl.getAllLeaves + "?leaveStatusId=\(leaveStatusId)"
         let parameters : Parameters = [:]
         
         let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
@@ -174,16 +234,23 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
                 
                 if let data = response.result.value as? [String:AnyObject]
                 {
-                    if let success = data["Success"] as? Int, success == 1,let responsedata = data["Data"] as? [[String:AnyObject]]
+                    self.removeLoader()
+                    let responseData = ResponseModel.init(data)
+                    if responseData.success == 1
                     {
-                        let model : [LeavesModel] = responsedata.map(LeavesModel.init)
+                        let model : [LeavesModel] = responseData.dataArray.map(LeavesModel.init)
                         self.arrList = model
                         self.tableView.reloadData()
                     }
-                    else if let message = data["Message"] as? String
+                    else if responseData.sessionExpired
                     {
-                        self.showAlert(title: "Error", message: message, actionTitle: "Ok")
+                        self.refreshTokenApiHit()
                     }
+                    else
+                    {
+                        self.showAlert(title: "Error", message: responseData.errorMessage, actionTitle: "Ok")
+                    }
+                    
                 }
                 else
                 {
@@ -195,18 +262,6 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
                 
             }
         }
-        //        user.realm?.beginWrite()
-        //        user.fullName = name
-        //        user.email = email
-        //        user.phoneNumber = phoneNumber
-        //        user.designation = designation
-        //        do {
-        //            try user.realm?.commitWrite()
-        //        } catch {
-        //            print(error.localizedDescription)
-        //        }
-        //        self.navigationController?.popViewController(animated: true)
     }
 }
-
 

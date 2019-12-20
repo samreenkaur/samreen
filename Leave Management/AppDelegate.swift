@@ -10,6 +10,9 @@ import UIKit
 import RealmSwift
 import Firebase
 import FirebaseMessaging
+import AWSCore
+import AWSS3
+import AWSCognito
 
 
 @UIApplicationMain
@@ -24,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         self.registerForPushNotification()
         
+        self.awsConfig()
         
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
@@ -46,6 +50,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         return true
+    }
+    func awsConfig()
+    {
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .APSouth1 ,
+                                                                identityPoolId:"ap-south-1:734d60b7-f826-4353-940d-c0ec796f2f71")
+        
+        let configuration = AWSServiceConfiguration(region:.APSouth1, credentialsProvider:credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
     }
 
     // MARK: UISceneSession Lifecycle

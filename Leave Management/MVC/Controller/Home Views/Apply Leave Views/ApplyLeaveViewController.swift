@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ApplyLeaveViewController: BaseViewController {
     
@@ -31,6 +32,7 @@ class ApplyLeaveViewController: BaseViewController {
     //MARK:- Variables
     var textViewPlaceholder = "Type your reason here..."
     var pickerType = 0 // 0 - Leave type, 1 - Shift type , 2 - Start Date pickers, 3 - End Date Picker
+    var selectedLeaveType = 0
     var selectedShiftType = 0
     var pickerLeaveType = ["Annual Leave", "Medical Leave","Emergency Leave","Other"]
     var pickerShiftType = ["Short","Half Day", "Full Day","Multiple Days"]
@@ -39,6 +41,7 @@ class ApplyLeaveViewController: BaseViewController {
     var endDate = Date()
     var pickerController = UIImagePickerController()
     var imageUploaded = UIImage()
+    
     
     //MARK:- Lifecycle func
     override func viewDidLoad() {
@@ -73,6 +76,7 @@ class ApplyLeaveViewController: BaseViewController {
         self.viewDate.isHidden = true
         self.viewDateHeight.constant = 0
         self.checkForShiftType()
+        self.getUserData()
     }
     private func callViewWillLoad()
     {
@@ -163,6 +167,7 @@ class ApplyLeaveViewController: BaseViewController {
         {
         case 0:
             self.btnLeaveType.setTitle(self.pickerArr[row], for: .normal)
+            self.selectedLeaveType = self.pickerView.selectedRow(inComponent: 0)
             break
         case 1:
             self.btnShiftType.setTitle(self.pickerArr[row], for: .normal)
@@ -206,7 +211,14 @@ class ApplyLeaveViewController: BaseViewController {
         }else if !self.isValidText(reason) || reason == self.textViewPlaceholder{
             self.showAlert(title: "Warning", message: "Please enter reason for leave.", actionTitle: "Ok")
         }else{
-            self.apiHit()
+            
+            if imageUploaded != UIImage(){
+                uploadImageApiHit()
+            }
+            else
+            {
+                self.apiHit("")
+            }
         }
     }
     
@@ -259,7 +271,7 @@ class ApplyLeaveViewController: BaseViewController {
     }
     
     func dateSelected(_ sender: Date) -> String {
-        let formatter = DateFormatter()
+        let formatter = dateFormatter
         switch self.selectedShiftType{
         case 0,1,3: formatter.dateFormat = "dd MMM yyyy HH:mm a"
             break
@@ -289,13 +301,77 @@ class ApplyLeaveViewController: BaseViewController {
     }
     
     
+    
     //MARK:- API Hit
-    private func apiHit(){
-        let alert = UIAlertController(title: "Success", message: "Your have successfully applied for leave.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
-            self.navigationController?.popViewController(animated: true)
-        }))
-        self.present(alert, animated: true, completion: nil)
+    private func apiHit(_ uploadImageUrl: String){
+        let desc = self.trimString(self.textView.text ?? "")
+        
+        let url = APIUrl.base + APIUrl.applyLeave
+        var parameters : Parameters = ["LeaveTypeId": self.selectedLeaveType + 1 ,"ShiftTypeId": self.selectedShiftType + 1 ,"FromDate": self.btnStartDate.title(for: .normal) ?? "" ,"ToDate": self.btnEndDate.title(for: .normal) ?? "" ,"Reason": desc ,"LeaveStatusId": 1]
+        if !uploadImageUrl.isEmpty
+        {
+            parameters["Documents[0].ImageUrl"] = uploadImageUrl
+        }
+        let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
+        
+        self.addLoader()
+        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
+        Alamofire.request(url, method: .post, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+            switch response.result
+            {
+            case .success(_):
+                
+                if let data = response.result.value as? [String:AnyObject]
+                {
+                    
+                    self.removeLoader()
+                    let responseData = ResponseModel.init(data)
+                    if responseData.success == 1
+                    {
+                        let alert = UIAlertController(title: "Success", message: "Your have successfully applied for leave.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+                            self.navigationController?.popViewController(animated: true)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    else if responseData.sessionExpired
+                    {
+                        self.refreshTokenApiHit()
+                    }
+                    else
+                    {
+                        self.showAlert(title: "Error", message: responseData.errorMessage, actionTitle: "Ok")
+                    }
+                                        
+                }
+                else
+                {
+                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                
+            }
+        }
+    }
+    private func uploadImageApiHit(){
+        
+        let image = self.imageUploaded
+        AWSS3Manager.shared.uploadImage(image: image, progress: {[weak self] ( uploadProgress) in
+            
+            guard let strongSelf = self else { return }
+            strongSelf.addLoader()
+            print(uploadProgress)
+        }) {[weak self] (uploadedFileUrl, error) in
+            
+            guard let strongSelf = self else { return }
+            if let finalPath = uploadedFileUrl as? String { // 3
+                strongSelf.apiHit(finalPath)
+            } else {
+                print("\(String(describing: error?.localizedDescription))") // 4
+            }
+        }
+        
     }
     
 }

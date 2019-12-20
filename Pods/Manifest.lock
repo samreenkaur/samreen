@@ -1,5 +1,10 @@
 PODS:
   - Alamofire (4.9.1)
+  - AWSCognito (2.12.3):
+    - AWSCore (= 2.12.3)
+  - AWSCore (2.12.3)
+  - AWSS3 (2.12.3):
+    - AWSCore (= 2.12.3)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
@@ -94,11 +99,15 @@ PODS:
   - SDWebImage (5.4.0):
     - SDWebImage/Core (= 5.4.0)
   - SDWebImage/Core (5.4.0)
+  - SimpleImageViewer (1.1.1)
   - SkyFloatingLabelTextField (3.7.0)
   - TPKeyboardAvoidingSwift (3.2)
 
 DEPENDENCIES:
   - Alamofire
+  - AWSCognito
+  - AWSCore
+  - AWSS3
   - Crashlytics
   - Fabric
   - Firebase/Analytics
@@ -107,12 +116,16 @@ DEPENDENCIES:
   - Parchment
   - RealmSwift
   - SDWebImage
+  - SimpleImageViewer
   - SkyFloatingLabelTextField (~> 3.0)
   - TPKeyboardAvoidingSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AWSCognito
+    - AWSCore
+    - AWSS3
     - Crashlytics
     - Fabric
     - Firebase
@@ -134,11 +147,15 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SDWebImage
+    - SimpleImageViewer
     - SkyFloatingLabelTextField
     - TPKeyboardAvoidingSwift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AWSCognito: 32fb164c537b27794ce6f049e2d036f9e915f896
+  AWSCore: a4b4aeb414bdfd55a5e8879adb4985c46da157d6
+  AWSS3: 511a7b646572686c7e193aa19bd6a5cc43ec2977
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
@@ -160,9 +177,10 @@ SPEC CHECKSUMS:
   Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
   RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
   SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
+  SimpleImageViewer: 34c3a2cde2d9ac022146772cefc27fca14b0c8b1
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   TPKeyboardAvoidingSwift: ce1a75e0bc3af6b485f8bfa1d0a8320cfc565851
 
-PODFILE CHECKSUM: f5de4e1774aeecfe9458e8b72fd13054642f6182
+PODFILE CHECKSUM: 40ac0f5294621f9dfebe3567a7cc2757e1c60b4a
 
 COCOAPODS: 1.8.3

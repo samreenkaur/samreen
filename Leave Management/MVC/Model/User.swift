@@ -50,7 +50,7 @@ class UserModel: Object {
         {
             self.profilePic = item
         }
-        if let item = dict["designation"] as? String
+        if let item = dict["Designation"] as? String
         {
             self.designation = item
         }

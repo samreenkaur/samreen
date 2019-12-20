@@ -73,7 +73,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
             if user.profilePic.isEmpty{
                 self.imgUser.image = Images.userPlaceholder
             }else{
-                self.imgUser.sd_setImage(with: URL(string: APIUrl.base + user.profilePic), placeholderImage: Images.userPlaceholder)
+                self.imgUser.sd_setImage(with: URL(string: user.profilePic), placeholderImage: Images.userPlaceholder)
             }
         }
     }
@@ -210,24 +210,53 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
                 
                 if let data = response.result.value as? [String:AnyObject]
                 {
-                    if let success = data["Success"] as? Int, success == 1,let responsedata = data["Data"] as? [String:AnyObject]
+                    self.removeLoader()
+                    let responseData = ResponseModel.init(data)
+                    if responseData.success == 1
                     {
-                        let model = UserModel.init(dict: responsedata)
-                        do {
-                            let realm = try Realm()
-                            try realm.write {
-                                realm.add(model, update: .all)
+                        if let responsedata = responseData.data as? [String:AnyObject]
+                        {
+                            let model = UserModel.init(dict: responsedata)
+                            do {
+                                let realm = try Realm()
+                                try realm.write {
+                                    realm.add(model, update: .all)
+                                }
+                            } catch let error as NSError {
+                                print(error)
                             }
-                        } catch let error as NSError {
-                            print(error)
                         }
-                        self.removeLoader()
-                        self.navigationController?.popViewController(animated: true)
+                        else{
+                            
+                            self.user.realm?.beginWrite()
+                            self.user.fullName = name
+                            self.user.phoneNumber = phoneNumber
+                            self.user.designation = designation
+                            if !uploadImageUrl.isEmpty
+                            {
+                                self.user.profilePic = uploadImageUrl
+                            }
+                                    do {
+                                        try self.user.realm?.commitWrite()
+                                    } catch {
+                                        print(error.localizedDescription)
+                                    }
+                        }
+                        let alert = UIAlertController(title: "Success", message: "Your have successfully updated your profile.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+                            self.navigationController?.popViewController(animated: true)
+                        }))
+                        self.present(alert, animated: true, completion: nil)
                     }
-                    else if let message = data["Message"] as? String
+                    else if responseData.sessionExpired
                     {
-                        self.showAlert(title: "Error", message: message, actionTitle: "Ok")
+                        self.refreshTokenApiHit()
                     }
+                    else
+                    {
+                        self.showAlert(title: "Error", message: responseData.errorMessage, actionTitle: "Ok")
+                    }
+                    
                 }
                 else
                 {
@@ -251,56 +280,23 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
         //        self.navigationController?.popViewController(animated: true)
     }
     private func uploadImageApiHit(){
-        let name = self.trimString(self.tfFullName.text ?? "")
-        let email = self.trimString(self.tfEmail.text ?? "")
-        let phoneNumber = self.trimString(self.tfPhoneNumber.text ?? "")
-        let designation = self.trimString(self.tfDesignation.text ?? "")
         
-        let url = APIUrl.base + APIUrl.editProfile
-        let parameters : Parameters = ["FullName": name,"Email": email,"Phone": phoneNumber,"Designation": designation]
-        
-        let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
-        
-        self.addLoader()
-        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
-        Alamofire.request(url, method: .post, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-            switch response.result
-            {
-            case .success(_):
-                
-                if let data = response.result.value as? [String:AnyObject]
-                {
-                    if let success = data["Success"] as? Int, success == 1,let responsedata = data["Data"] as? [String:AnyObject]
-                    {
-                        self.apiHit("url")
-                    }
-                    else if let message = data["Message"] as? String
-                    {
-                        self.showAlert(title: "Error", message: message, actionTitle: "Ok")
-                    }
-                }
-                else
-                {
-                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-                
+        guard let image = self.imgUser.image else { return } //1
+        AWSS3Manager.shared.uploadImage(image: image, progress: {[weak self] ( uploadProgress) in
+            
+            guard let strongSelf = self else { return }
+            strongSelf.addLoader()
+            print(uploadProgress)
+        }) {[weak self] (uploadedFileUrl, error) in
+            
+            guard let strongSelf = self else { return }
+            if let finalPath = uploadedFileUrl as? String { // 3
+                strongSelf.apiHit(finalPath)
+            } else {
+                print("\(String(describing: error?.localizedDescription))") // 4
             }
         }
         
-        
-        //        user.realm?.beginWrite()
-        //        user.fullName = name
-        //        user.email = email
-        //        user.phoneNumber = phoneNumber
-        //        user.designation = designation
-        //        do {
-        //            try user.realm?.commitWrite()
-        //        } catch {
-        //            print(error.localizedDescription)
-        //        }
-        //        self.navigationController?.popViewController(animated: true)
     }
     
 }

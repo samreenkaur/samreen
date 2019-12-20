@@ -20,6 +20,10 @@ struct APIUrl{
     static let editProfile = "/api/User/Update"
     
     static let getAllLeaves = "/api/Leave/GetAll"
+    static let applyLeave = "/api/Leave/Add"
+    static let cancelLeave = "/api/Leave/CancelLeave"
+    
+    static let getAllHolidays = "/api/Holiday/GetAll"
 
 }
 
@@ -85,5 +89,16 @@ let dateFormatter = DateFormatter()
 enum Month: Int {
    case January = 1, February, March, April, May, June, July, August,
       September, October, November, December
+    
+    static var count: Int { return Month.December.hashValue + 1}
+}
+
+enum LeaveType: Int {
+   case Annual = 1, Medical, Emergency, Other
+    
+}
+
+enum ShiftType: Int {
+   case Short = 1, Half,Full , Multiple
 }
 

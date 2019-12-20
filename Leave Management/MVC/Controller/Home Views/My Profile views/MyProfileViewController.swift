@@ -8,9 +8,11 @@
 
 import UIKit
 import SDWebImage
+import SimpleImageViewer
 
 
-class MyProfileViewController: BaseViewController {
+class MyProfileViewController: BaseViewController{
+    
     
     //MARK:- Outlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -23,7 +25,6 @@ class MyProfileViewController: BaseViewController {
     
     
     //MARK:- Variables
-    
     
     //MARK:- Lifecycle func
     
@@ -44,11 +45,12 @@ class MyProfileViewController: BaseViewController {
     //MARK:- main funcs
     private func callViewDidLoad()
     {
-        
+        self.addTapGesture()
     }
     private func callViewWillLoad()
     {
         self.getUserData()
+        
         if !user.id.isEmpty
         {
             self.lblName.text = user.fullName
@@ -58,7 +60,7 @@ class MyProfileViewController: BaseViewController {
             if user.profilePic.isEmpty{
                 self.imgUser.image = Images.userPlaceholder
             }else{
-                self.imgUser.sd_setImage(with: URL(string: APIUrl.base + user.profilePic), placeholderImage: Images.userPlaceholder)
+                self.imgUser.sd_setImage(with: URL(string: user.profilePic), placeholderImage: Images.userPlaceholder)
             }
         }
     }
@@ -70,6 +72,22 @@ class MyProfileViewController: BaseViewController {
         
         self.navigationItem.title = "My Profile"
     }
+    //MARK:- Tap Gesture
+    private func addTapGesture(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(_:)))
+        self.imgUser.isUserInteractionEnabled = true
+        self.imgUser.addGestureRecognizer(tap)
+    }
+    
+    @objc func imageTapped(_ sender : UITapGestureRecognizer){
+            let configuration = ImageViewerConfiguration { config in
+                config.imageView = self.imgUser
+            }
+
+            let imageViewerController = ImageViewerController(configuration: configuration)
+
+            present(imageViewerController, animated: true)
+        }
     
     //MARK:- Button Actions
     @IBAction func switchNotification(_ sender: UISwitch) {

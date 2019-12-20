@@ -36,7 +36,7 @@ class HomeViewController: BaseViewController {
         self.getUserData()
         if autoLogin
         {
-            self.apiTokenHit()
+//            self.apiTokenHit()
         }
     }
     private func callViewWillLoad()

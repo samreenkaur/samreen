@@ -94,4 +94,21 @@ extension UINavigationBar{
     }
 }
 
-
+extension String
+{
+    func convertStringToDate(dataFormat : String) -> Date?{
+        let formatter = dateFormatter
+        formatter.dateFormat = dataFormat
+        let date = formatter.date(from: self)
+        return date
+    }
+}
+extension Date{
+    func convertDateToString(dataFormat: String) -> String {
+        let formatter = dateFormatter
+        formatter.dateFormat = dataFormat//"dd MMM yyyy"
+//        formatter.dateFormat = "dd MMM yyyy HH:mm a"
+        let str = formatter.string(from: self)
+        return str
+    }
+}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100AD9D023ACA847009CEEF9 /* AWSS3Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100AD9CF23ACA847009CEEF9 /* AWSS3Manager.swift */; };
+		100AD9D223ACF44B009CEEF9 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100AD9D123ACF44B009CEEF9 /* ResponseModel.swift */; };
 		10140EAF23AB9FFB00115A7B /* Leaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10140EAE23AB9FFB00115A7B /* Leaves.swift */; };
 		10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */; };
 		103994072398C42900EB14E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994062398C42900EB14E4 /* ResetPasswordViewController.swift */; };
@@ -64,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100AD9CF23ACA847009CEEF9 /* AWSS3Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3Manager.swift; sourceTree = "<group>"; };
+		100AD9D123ACF44B009CEEF9 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		10140EAE23AB9FFB00115A7B /* Leaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaves.swift; sourceTree = "<group>"; };
 		10310FC223A8F3F300987B04 /* Leave Management.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Leave Management.entitlements"; sourceTree = "<group>"; };
 		10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				1041A9E1239E23240080E6F4 /* BaseViewController.swift */,
+				100AD9CF23ACA847009CEEF9 /* AWSS3Manager.swift */,
 				10F57C9D2397E46C0025082D /* Constants.swift */,
 				10F57C922397E3670025082D /* Extension.swift */,
 			);
@@ -308,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				1041A9E5239E3ACE0080E6F4 /* User.swift */,
+				100AD9D123ACF44B009CEEF9 /* ResponseModel.swift */,
 				1041A9EA239E7E010080E6F4 /* Holidays.swift */,
 				10140EAE23AB9FFB00115A7B /* Leaves.swift */,
 			);
@@ -542,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B328A923991DE800B6D0CA /* ApplyLeaveViewController.swift in Sources */,
+				100AD9D223ACF44B009CEEF9 /* ResponseModel.swift in Sources */,
 				103994162398ED3000EB14E4 /* NotificationsViewController.swift in Sources */,
 				103994102398D1F200EB14E4 /* EditProfileViewController.swift in Sources */,
 				103994072398C42900EB14E4 /* ResetPasswordViewController.swift in Sources */,
@@ -564,6 +571,7 @@
 				1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */,
 				103994122398D21A00EB14E4 /* ChangePasswordViewController.swift in Sources */,
 				10140EAF23AB9FFB00115A7B /* Leaves.swift in Sources */,
+				100AD9D023ACA847009CEEF9 /* AWSS3Manager.swift in Sources */,
 				10B328B123991E3F00B6D0CA /* HolidaysTableViewCell.swift in Sources */,
 				10B328AD23991E0100B6D0CA /* LeaveStatusViewController.swift in Sources */,
 			);

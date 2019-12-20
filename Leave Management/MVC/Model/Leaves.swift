@@ -12,16 +12,17 @@ import RealmSwift
 class LeavesModel: Object {
     
     //MARK:- Variables
-    @objc dynamic var id : String = ""
-    @objc dynamic var fullName: String = ""
-    @objc dynamic var email: String = ""
-    @objc dynamic var phoneNumber: String = ""
-    @objc dynamic var profilePic: String = ""
-    @objc dynamic var designation: String = ""
-    @objc dynamic var refreshToken: String = ""
-    @objc dynamic var tokenType: String = ""
-    @objc dynamic var accessToken: String = ""
-    @objc dynamic var userData = "userData"
+    @objc dynamic var id = Int()
+    @objc dynamic var userId = Int()
+    @objc dynamic var shiftTypeId = Int()
+    @objc dynamic var leaveStatusId = Int()
+    @objc dynamic var leaveTypeId = Int()
+    @objc dynamic var toDate: String = ""
+    @objc dynamic var fromDate: String = ""
+    @objc dynamic var toDateFormatted: String = ""
+    @objc dynamic var fromDateFormatted: String = ""
+    @objc dynamic var reason: String = ""
+    @objc dynamic var documents: String = ""
     
     
     //MARK:- Main func
@@ -34,41 +35,70 @@ class LeavesModel: Object {
     convenience init(dict : [String:AnyObject])
     {
         self.init()
-        if let item = dict["userId"] as? String
+        if let item = dict["Id"] as? Int
         {
             self.id = item
         }
-        if let item = dict["fullName"] as? String
+        if let item = dict["UserId"] as? Int
         {
-            self.fullName = item
+            self.userId = item
         }
-        if let item = dict["Email"] as? String
+        if let item = dict["ShiftTypeId"] as? Int
         {
-            self.email = item
+            self.shiftTypeId = item
         }
-        if let item = dict["ProfilePictureUrl"] as? String
+        if let item = dict["LeaveStatusId"] as? Int
         {
-            self.profilePic = item
+            self.leaveStatusId = item
         }
-        if let item = dict["designation"] as? String
+        if let item = dict["LeaveTypeId"] as? Int
         {
-            self.designation = item
+            self.leaveTypeId = item
         }
-        if let item = dict["PhoneNumber"] as? String
+        if let item = dict["ToDate"] as? String
         {
-            self.phoneNumber = item
+            self.toDate = item
         }
-        if let item = dict["refresh_token"] as? String
+        if let item = dict["FromDate"] as? String
         {
-            self.refreshToken = item
+            self.fromDate = item
         }
-        if let item = dict["access_token"] as? String
+        if let item = dict["Reason"] as? String
         {
-            self.accessToken = item
+            self.reason = item
         }
-        if let item = dict["token_type"] as? String
+        if let item = dict["Documents"] as? [[String: AnyObject]]
         {
-            self.tokenType = item
+            for i in item{
+                if let ImageUrl = i["ImageUrl"] as? String
+                {
+                    self.documents = ImageUrl
+                }
+            }
+        }
+        formatDates()
+    }
+    
+    func formatDates(){
+        
+        var formatter = "dd MMM yyyy HH:mm a"
+        switch self.shiftTypeId{
+            
+        case 1,2,4:
+            formatter = "dd MMM yyyy HH:mm a"
+            break
+        case 3:
+            formatter = "dd MMM yyyy"
+            break
+        default: break
+        }
+        if !self.toDate.isEmpty
+        {
+            self.toDateFormatted = self.toDate.convertStringToDate(dataFormat: "yyyy-MM-dd'T'HH:mm:ss")?.convertDateToString(dataFormat: formatter) ?? ""
+        }
+        if !self.fromDate.isEmpty
+        {
+            self.fromDateFormatted = self.fromDate.convertStringToDate(dataFormat: "yyyy-MM-dd'T'HH:mm:ss")?.convertDateToString(dataFormat: formatter) ?? ""
         }
     }
 }
