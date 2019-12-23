@@ -22,6 +22,7 @@ class ApplyLeaveViewController: BaseViewController {
     @IBOutlet weak var btnEndDate: UIButton!
     @IBOutlet weak var lblTotalDays: UILabel!
     @IBOutlet weak var btnAttachment: UIButton!
+    @IBOutlet weak var btnAttachmentIcon: UIButton!
     
     @IBOutlet weak var viewPickers: UIView!
     //    @IBOutlet weak var viewPickerContainer: UIView!
@@ -202,6 +203,21 @@ class ApplyLeaveViewController: BaseViewController {
     @IBAction func btnUploadAttachmentAction(_ sender: UIButton) {
         self.showActionSheet(pickerDelegate: self)
     }
+    @IBAction func btnDeleteAttachmentAction(_ sender: UIButton) {
+        if sender.tag == 0
+        {
+            self.showActionSheet(pickerDelegate: self)
+        }
+        else
+        {
+            sender.tag = 0
+            sender.setImage(UIImage(named: "icon_attechment"), for: .normal)
+            self.btnAttachment.setTitle("Attach here", for: .normal)
+            self.btnAttachment.setTitleColor(Colors.themeDarkGray, for: .normal)
+
+        }
+        
+    }
     
     @IBAction func btnApplyAction(_ sender: UIButton) {
         self.view.endEditing(true)
@@ -350,7 +366,7 @@ class ApplyLeaveViewController: BaseViewController {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-                
+                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
             }
         }
     }
@@ -385,10 +401,14 @@ extension ApplyLeaveViewController: UIImagePickerControllerDelegate,UINavigation
             self.imageUploaded = img
             self.btnAttachment.setTitle(imageName, for: .normal)
             self.btnAttachment.setTitleColor(Colors.themeLink, for: .normal)
+            self.btnAttachmentIcon.tag = 1
+            self.btnAttachmentIcon.setImage(UIImage(named: "icon_delete"), for: .normal)
         }else if let img = info[.originalImage] as? UIImage{
             self.imageUploaded = img
             self.btnAttachment.setTitle(imageName, for: .normal)
             self.btnAttachment.setTitleColor(Colors.themeLink, for: .normal)
+            self.btnAttachmentIcon.tag = 1
+            self.btnAttachmentIcon.setImage(UIImage(named: "icon_delete"), for: .normal)
         }
         picker.dismiss(animated: true, completion: nil)
     }

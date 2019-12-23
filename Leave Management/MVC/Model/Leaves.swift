@@ -22,6 +22,7 @@ class LeavesModel: Object {
     @objc dynamic var toDateFormatted: String = ""
     @objc dynamic var fromDateFormatted: String = ""
     @objc dynamic var reason: String = ""
+    @objc dynamic var cancelreason: String = ""
     @objc dynamic var documents: String = ""
     
     
@@ -66,6 +67,10 @@ class LeavesModel: Object {
         if let item = dict["Reason"] as? String
         {
             self.reason = item
+        }
+        if let item = dict["CancelReason"] as? String
+        {
+            self.cancelreason = item
         }
         if let item = dict["Documents"] as? [[String: AnyObject]]
         {

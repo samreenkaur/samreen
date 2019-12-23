@@ -24,7 +24,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     //MARK:- Variables
     var status = 1// "Approved", "Unapproved","Cancelled", "Pending"
     var arrList = [LeavesModel]()
-    
+    var LeaveBalance = Int()
     
     //MARK:- Lifecycle func
     override func viewDidLoad() {
@@ -46,10 +46,11 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     //MARK:- main funcs
     private func callViewDidLoad()
     {
+        self.lblLeaveBalance.text = "\(self.LeaveBalance)"
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.getUserData()
-        self.apiHit()
+//        self.apiHit()
     }
     private func callViewWillLoad()
     {
@@ -70,6 +71,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         default:
             break
         }
+        self.apiHit()
     }
     
     private func setUpNavigationBar(){
@@ -99,6 +101,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         let leavetype: String = "\(LeaveType.init(rawValue: data.leaveTypeId) ?? LeaveType.init(rawValue: 1)!)".capitalized
         let shifttype: String = "\(ShiftType.init(rawValue: data.shiftTypeId) ?? ShiftType.init(rawValue: 1)!)".capitalized
         cell.lblReason.text = data.reason
+        cell.lblResponseReason.text = data.cancelreason
         cell.lblLeaveType.text = "\(leavetype) Leave"
         cell.lblShiftType.text = "Shift : \(shifttype)"
         cell.lblDate.text = "\(data.fromDateFormatted) - \(data.toDateFormatted)"
@@ -241,6 +244,11 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
                         let model : [LeavesModel] = responseData.dataArray.map(LeavesModel.init)
                         self.arrList = model
                         self.tableView.reloadData()
+                        
+                        if let leaveBalance = data["LeaveBalance"] as? Int, self.status == 4{
+                            self.LeaveBalance = leaveBalance
+                            self.lblLeaveBalance.text = "\(self.LeaveBalance)"
+                        }
                     }
                     else if responseData.sessionExpired
                     {
@@ -259,7 +267,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
             case .failure(let error):
                 self.removeLoader()
                 print(error.localizedDescription)
-                
+                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
             }
         }
     }

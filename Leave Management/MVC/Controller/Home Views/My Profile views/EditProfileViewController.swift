@@ -217,25 +217,24 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
                         if let responsedata = responseData.data as? [String:AnyObject]
                         {
                             let model = UserModel.init(dict: responsedata)
-                            do {
-                                let realm = try Realm()
-                                try realm.write {
-                                    realm.add(model, update: .all)
-                                }
-                            } catch let error as NSError {
-                                print(error)
-                            }
-                        }
-                        else{
+//                            do {
+//                                let realm = try Realm()
+//                                try realm.write {
+//                                    realm.add(model, update: .all)
+//                                }
+//                            } catch let error as NSError {
+//                                print(error)
+//                            }
+//                        }
+//                        else{
                             
                             self.user.realm?.beginWrite()
-                            self.user.fullName = name
-                            self.user.phoneNumber = phoneNumber
-                            self.user.designation = designation
-                            if !uploadImageUrl.isEmpty
-                            {
-                                self.user.profilePic = uploadImageUrl
-                            }
+                            self.user.fullName = model.fullName
+                            self.user.phoneNumber = model.phoneNumber
+                            self.user.designation = model.designation
+            
+                            self.user.profilePic = model.profilePic
+                            
                                     do {
                                         try self.user.realm?.commitWrite()
                                     } catch {
@@ -264,7 +263,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-                
+                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
             }
         }
         //        user.realm?.beginWrite()

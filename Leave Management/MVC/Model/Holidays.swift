@@ -30,7 +30,7 @@ class HolidaysModel: Object {
     convenience init(dict : [String:AnyObject])
     {
         self.init()
-        if let item = dict["id"] as? Int
+        if let item = dict["Id"] as? Int
         {
             self.id = item
         }

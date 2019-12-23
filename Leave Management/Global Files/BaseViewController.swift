@@ -137,9 +137,9 @@ class BaseViewController: UIViewController {
                 self.removeLoader()
                 if let data = response.result.value as? [String:AnyObject]
                 {
-                    if let message = data["error"] as? String, let desc = data["error_description"] as? String
+                    if let message = data["error"] as? String//, let desc = data["error_description"] as? String
                     {
-                        print(message + desc)
+                        print(message)// + desc)
                         self.showSessionExpiredAlert()
                     }
                     else
@@ -164,6 +164,7 @@ class BaseViewController: UIViewController {
                 break
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
                 self.removeLoader()
             }
         }

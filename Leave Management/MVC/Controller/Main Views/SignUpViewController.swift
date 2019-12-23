@@ -234,7 +234,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             //                            }
             case .failure(let error):
                 print(error.localizedDescription)
-                
+                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
             }
         }
         
@@ -289,6 +289,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
                 break
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
                 self.removeLoader()
             }
         }

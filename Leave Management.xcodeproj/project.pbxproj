@@ -33,6 +33,7 @@
 		10B328B123991E3F00B6D0CA /* HolidaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328B023991E3F00B6D0CA /* HolidaysTableViewCell.swift */; };
 		10B328B323993B3A00B6D0CA /* LeaveStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B328B223993B3A00B6D0CA /* LeaveStatusTableViewController.swift */; };
 		10DA560523A8F0BD00A3945B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10DA560423A8F0BD00A3945B /* GoogleService-Info.plist */; };
+		10E2DBCE23B08E8900170F10 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E2DBCD23B08E8900170F10 /* Notifications.swift */; };
 		10F57C632397E0BC0025082D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C622397E0BC0025082D /* AppDelegate.swift */; };
 		10F57C652397E0BC0025082D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F57C642397E0BC0025082D /* SceneDelegate.swift */; };
 		10F57C6A2397E0BC0025082D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F57C682397E0BC0025082D /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		10B328B023991E3F00B6D0CA /* HolidaysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysTableViewCell.swift; sourceTree = "<group>"; };
 		10B328B223993B3A00B6D0CA /* LeaveStatusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveStatusTableViewController.swift; sourceTree = "<group>"; };
 		10DA560423A8F0BD00A3945B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		10E2DBCD23B08E8900170F10 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		10F57C5F2397E0BC0025082D /* Leave Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Leave Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F57C622397E0BC0025082D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F57C642397E0BC0025082D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				100AD9D123ACF44B009CEEF9 /* ResponseModel.swift */,
 				1041A9EA239E7E010080E6F4 /* Holidays.swift */,
 				10140EAE23AB9FFB00115A7B /* Leaves.swift */,
+				10E2DBCD23B08E8900170F10 /* Notifications.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				1041A9EB239E7E010080E6F4 /* Holidays.swift in Sources */,
 				1041A9E2239E23240080E6F4 /* BaseViewController.swift in Sources */,
 				103994182398ED4000EB14E4 /* NotificationTableViewCell.swift in Sources */,
+				10E2DBCE23B08E8900170F10 /* Notifications.swift in Sources */,
 				10F57CA22397E6B80025082D /* ForgotPasswordViewController.swift in Sources */,
 				10F57C9C2397E4230025082D /* LoginViewController.swift in Sources */,
 				10F57CA02397E4F10025082D /* SignUpViewController.swift in Sources */,

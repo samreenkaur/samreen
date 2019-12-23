@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_design" translatesAutoresizingMaskIntoConstraints="NO" id="mNn-ny-6DP">
-                                <rect key="frame" x="0.0" y="0.0" width="184" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="92" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsY-CZ-c2I" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -40,7 +40,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="178.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FLf-0H-oKA">
-                                                                <rect key="frame" x="-62.5" y="40" width="460" height="98.5"/>
+                                                                <rect key="frame" x="52.5" y="40" width="230" height="98.5"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -159,7 +159,7 @@
                                                                 </state>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4S9-Ry-LeD">
-                                                                <rect key="frame" x="172" y="150" width="123" height="30"/>
+                                                                <rect key="frame" x="174" y="150" width="121" height="30"/>
                                                                 <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="15"/>
                                                                 <state key="normal" title="Forgot Password?">
                                                                     <color key="titleColor" name="Light Gray"/>
@@ -211,16 +211,16 @@
                                                         <rect key="frame" x="0.0" y="448.5" width="335" height="98.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL8-hV-qFC">
-                                                                <rect key="frame" x="41" y="24.5" width="253" height="50"/>
+                                                                <rect key="frame" x="45.5" y="24.5" width="244.5" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIH-g2-dp8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="50"/>
                                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                                         <color key="textColor" name="Dark Gray"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSH-gt-eE6">
-                                                                        <rect key="frame" x="175" y="0.0" width="78" height="50"/>
+                                                                        <rect key="frame" x="173.5" y="0.0" width="71" height="50"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="g4h-Wc-pZ6"/>
@@ -362,19 +362,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFy-3s-zZ5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1472"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="972"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_design" translatesAutoresizingMaskIntoConstraints="NO" id="74F-70-gbP">
-                                                <rect key="frame" x="0.0" y="0.0" width="184" height="1472"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="972"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAn-yM-hgJ">
-                                                <rect key="frame" x="20" y="100" width="335" height="1272"/>
+                                                <rect key="frame" x="20" y="100" width="335" height="772"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZa-K2-hmY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="680"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="180"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="s3d-FV-VSj">
-                                                                <rect key="frame" x="-62.5" y="40" width="460" height="600"/>
+                                                                <rect key="frame" x="52.5" y="40" width="230" height="100"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -385,7 +385,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tq1-zG-Ylz">
-                                                        <rect key="frame" x="20" y="680" width="295" height="490"/>
+                                                        <rect key="frame" x="20" y="180" width="295" height="490"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v17-cb-bEa" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
                                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
@@ -728,10 +728,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnP-eJ-AbO">
-                                                        <rect key="frame" x="0.0" y="1170" width="335" height="102"/>
+                                                        <rect key="frame" x="0.0" y="670" width="335" height="102"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fex-4o-ivm">
-                                                                <rect key="frame" x="48" y="12" width="239" height="50"/>
+                                                                <rect key="frame" x="50.5" y="12" width="234" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hu3-Of-YdO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="190" height="50"/>
@@ -740,7 +740,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urr-zy-2kn">
-                                                                        <rect key="frame" x="190" y="0.0" width="49" height="50"/>
+                                                                        <rect key="frame" x="190" y="0.0" width="44" height="50"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="G5R-pr-BNP"/>
@@ -861,7 +861,7 @@
                                 <rect key="frame" x="0.0" y="87.5" width="375" height="177.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_logo" translatesAutoresizingMaskIntoConstraints="NO" id="AVX-ZW-7bt">
-                                        <rect key="frame" x="-42.5" y="0.0" width="460" height="100"/>
+                                        <rect key="frame" x="72.5" y="0.0" width="230" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="rPe-IL-7ko"/>
                                         </constraints>
@@ -1185,7 +1185,7 @@
             <objects>
                 <viewController storyboardIdentifier="ApplyLeaveViewController" id="8PB-7v-2r8" customClass="ApplyLeaveViewController" customModule="Leave_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pzu-mA-Swc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MP0-qo-WCH">
@@ -1193,35 +1193,35 @@
                                 <color key="backgroundColor" name="App Theme"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIM-FQ-gOX" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="956"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fm9-r9-tiR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="832.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="782.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lM1-Im-4W2" userLabel="View Leave Type">
-                                                <rect key="frame" x="20" y="20" width="335" height="108.5"/>
+                                                <rect key="frame" x="20" y="20" width="335" height="98.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_leave_typebg" translatesAutoresizingMaskIntoConstraints="NO" id="DCe-KU-T59">
-                                                        <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                        <rect key="frame" x="20" y="20" width="20" height="20"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leave Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48L-VO-U4J">
-                                                        <rect key="frame" x="72" y="31.5" width="71" height="17"/>
+                                                        <rect key="frame" x="52" y="21.5" width="68" height="17"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="14"/>
                                                         <color key="textColor" name="Light Gray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcL-qY-nOU">
-                                                        <rect key="frame" x="72" y="56.5" width="251" height="1"/>
+                                                        <rect key="frame" x="52" y="46.5" width="271" height="1"/>
                                                         <color key="backgroundColor" name="Seperator"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="SfU-xk-Gu3"/>
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="8MF-dd-bdg">
-                                                        <rect key="frame" x="303" y="56" width="20" height="34"/>
+                                                        <rect key="frame" x="313" y="54.5" width="10" height="17"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="km8-ny-Tj2">
-                                                        <rect key="frame" x="72" y="57.5" width="251" height="31"/>
+                                                        <rect key="frame" x="52" y="47.5" width="271" height="31"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                         <state key="normal" title="Annual Leave">
                                                             <color key="titleColor" name="Dark Gray"/>
@@ -1253,29 +1253,29 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTv-gF-c28" userLabel="View Shift Type">
-                                                <rect key="frame" x="20" y="148.5" width="335" height="108"/>
+                                                <rect key="frame" x="20" y="138.5" width="335" height="98"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_leave_typebg" translatesAutoresizingMaskIntoConstraints="NO" id="UBy-Yb-eqk">
-                                                        <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                        <rect key="frame" x="20" y="20" width="20" height="20"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFb-5Z-BF6">
-                                                        <rect key="frame" x="72" y="32" width="62" height="16"/>
+                                                        <rect key="frame" x="52" y="22" width="63.5" height="16"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="14"/>
                                                         <color key="textColor" name="Light Gray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgZ-eM-Fvi">
-                                                        <rect key="frame" x="72" y="56" width="251" height="1"/>
+                                                        <rect key="frame" x="52" y="46" width="271" height="1"/>
                                                         <color key="backgroundColor" name="Seperator"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="hMp-ew-7EC"/>
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="aEY-cD-qk8">
-                                                        <rect key="frame" x="303" y="55.5" width="20" height="34"/>
+                                                        <rect key="frame" x="313" y="54" width="10" height="17"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWl-ig-XVk">
-                                                        <rect key="frame" x="72" y="57" width="251" height="31"/>
+                                                        <rect key="frame" x="52" y="47" width="271" height="31"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                         <state key="normal" title="Full">
                                                             <color key="titleColor" name="Dark Gray"/>
@@ -1307,29 +1307,29 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljB-oK-oXg" userLabel="View Date">
-                                                <rect key="frame" x="20" y="276.5" width="335" height="193.5"/>
+                                                <rect key="frame" x="20" y="256.5" width="335" height="183.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_leave_typebg" translatesAutoresizingMaskIntoConstraints="NO" id="OAk-VR-9js">
-                                                        <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                        <rect key="frame" x="20" y="20" width="20" height="20"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2c-yR-9TN">
-                                                        <rect key="frame" x="72" y="32" width="30" height="16.5"/>
+                                                        <rect key="frame" x="52" y="22" width="30" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="14"/>
                                                         <color key="textColor" name="Light Gray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXZ-fG-IxC">
-                                                        <rect key="frame" x="72" y="56.5" width="251" height="1"/>
+                                                        <rect key="frame" x="52" y="46.5" width="271" height="1"/>
                                                         <color key="backgroundColor" name="Seperator"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="APt-dc-cDS"/>
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="kdj-0M-znu">
-                                                        <rect key="frame" x="301" y="61" width="22" height="24"/>
+                                                        <rect key="frame" x="312" y="57" width="11" height="12"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYV-Tx-Aga">
-                                                        <rect key="frame" x="72" y="57.5" width="251" height="31"/>
+                                                        <rect key="frame" x="52" y="47.5" width="271" height="31"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                         <state key="normal" title="Date">
                                                             <color key="titleColor" name="Dark Gray"/>
@@ -1339,17 +1339,17 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QD-W1-MMb">
-                                                        <rect key="frame" x="72" y="96.5" width="251" height="77"/>
+                                                        <rect key="frame" x="52" y="86.5" width="271" height="77"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1A5-mY-MTm">
-                                                                <rect key="frame" x="0.0" y="0.0" width="251" height="1"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="271" height="1"/>
                                                                 <color key="backgroundColor" name="Seperator"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="cAK-C5-pnT"/>
                                                                 </constraints>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wa7-nP-tCD">
-                                                                <rect key="frame" x="0.0" y="9" width="251" height="32"/>
+                                                                <rect key="frame" x="0.0" y="9" width="271" height="32"/>
                                                                 <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                                 <state key="normal" title="Date">
                                                                     <color key="titleColor" name="Dark Gray"/>
@@ -1359,17 +1359,17 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_calendar" translatesAutoresizingMaskIntoConstraints="NO" id="Crr-v5-Oez">
-                                                                <rect key="frame" x="229" y="13" width="22" height="24"/>
+                                                                <rect key="frame" x="260" y="19" width="11" height="12"/>
                                                             </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-Kv-faU">
-                                                                <rect key="frame" x="0.0" y="49" width="251" height="1"/>
+                                                                <rect key="frame" x="0.0" y="49" width="271" height="1"/>
                                                                 <color key="backgroundColor" name="Seperator"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="k2x-PC-Hb7"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHN-AI-TFB">
-                                                                <rect key="frame" x="0.0" y="58" width="61" height="19"/>
+                                                                <rect key="frame" x="0.0" y="58" width="65" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                                 <color key="textColor" name="Dark Gray"/>
                                                                 <nil key="highlightedColor"/>
@@ -1420,26 +1420,26 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-dz-Qz2" userLabel="View Reason">
-                                                <rect key="frame" x="20" y="490" width="335" height="124"/>
+                                                <rect key="frame" x="20" y="460" width="335" height="114"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_leave_typebg" translatesAutoresizingMaskIntoConstraints="NO" id="txE-iY-9h6">
-                                                        <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                        <rect key="frame" x="20" y="20" width="20" height="20"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zV9-xo-4hA">
-                                                        <rect key="frame" x="72" y="31.5" width="47.5" height="16.5"/>
+                                                        <rect key="frame" x="52" y="21.5" width="47.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="14"/>
                                                         <color key="textColor" name="Light Gray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25e-RI-3Ja">
-                                                        <rect key="frame" x="72" y="56" width="251" height="1"/>
+                                                        <rect key="frame" x="52" y="46" width="271" height="1"/>
                                                         <color key="backgroundColor" name="Seperator"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="qP0-U5-22j"/>
                                                         </constraints>
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="interactive" text="Type a reason..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vM8-Nn-EBp">
-                                                        <rect key="frame" x="72" y="69" width="251" height="35"/>
+                                                        <rect key="frame" x="52" y="59" width="271" height="35"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <color key="tintColor" name="Black"/>
                                                         <color key="textColor" name="Dark Gray"/>
@@ -1467,35 +1467,45 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtN-vB-Zv8" userLabel="View Attachment">
-                                                <rect key="frame" x="20" y="634" width="335" height="108.5"/>
+                                                <rect key="frame" x="20" y="594" width="335" height="98.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_leave_typebg" translatesAutoresizingMaskIntoConstraints="NO" id="KDZ-XD-qhX">
-                                                        <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                        <rect key="frame" x="20" y="20" width="20" height="20"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attach Files" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AE-Je-jQG">
-                                                        <rect key="frame" x="72" y="31.5" width="73.5" height="17"/>
+                                                        <rect key="frame" x="52" y="21.5" width="75.5" height="17"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="14"/>
                                                         <color key="textColor" name="Light Gray"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lb2-02-UG7">
-                                                        <rect key="frame" x="72" y="56.5" width="251" height="1"/>
+                                                        <rect key="frame" x="52" y="46.5" width="271" height="1"/>
                                                         <color key="backgroundColor" name="Seperator"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="aun-X0-TaG"/>
                                                         </constraints>
                                                     </view>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_attechment" translatesAutoresizingMaskIntoConstraints="NO" id="raS-Kg-1Yn">
-                                                        <rect key="frame" x="296" y="56" width="27" height="34"/>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_attechment" translatesAutoresizingMaskIntoConstraints="NO" id="raS-Kg-1Yn">
+                                                        <rect key="frame" x="281.5" y="54.5" width="13.5" height="17"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ3-ws-zjJ">
-                                                        <rect key="frame" x="72" y="57.5" width="251" height="31"/>
+                                                        <rect key="frame" x="52" y="47.5" width="243" height="31"/>
                                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                         <state key="normal" title="Attach here">
                                                             <color key="titleColor" name="Dark Gray"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="btnUploadAttachmentAction:" destination="8PB-7v-2r8" eventType="touchUpInside" id="6J3-HT-kgU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeV-in-UJX">
+                                                        <rect key="frame" x="300" y="47.5" width="30" height="31"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="uZ6-ah-rQk"/>
+                                                        </constraints>
+                                                        <state key="normal" image="icon_attechment"/>
+                                                        <connections>
+                                                            <action selector="btnDeleteAttachmentAction:" destination="8PB-7v-2r8" eventType="touchUpInside" id="loU-rw-LiU"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1507,12 +1517,15 @@
                                                     <constraint firstItem="KDZ-XD-qhX" firstAttribute="top" secondItem="AtN-vB-Zv8" secondAttribute="top" constant="20" id="4FF-6J-HLB"/>
                                                     <constraint firstItem="raS-Kg-1Yn" firstAttribute="centerY" secondItem="sJ3-ws-zjJ" secondAttribute="centerY" id="8xV-yY-LfJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="lb2-02-UG7" secondAttribute="trailing" constant="12" id="ALa-Ko-cuT"/>
+                                                    <constraint firstItem="IeV-in-UJX" firstAttribute="height" secondItem="sJ3-ws-zjJ" secondAttribute="height" id="BmC-q9-HNK"/>
                                                     <constraint firstItem="KDZ-XD-qhX" firstAttribute="leading" secondItem="AtN-vB-Zv8" secondAttribute="leading" constant="20" id="BsU-G8-qBn"/>
                                                     <constraint firstItem="lb2-02-UG7" firstAttribute="top" secondItem="4AE-Je-jQG" secondAttribute="bottom" constant="8" id="DyY-nd-z8o"/>
                                                     <constraint firstItem="sJ3-ws-zjJ" firstAttribute="leading" secondItem="lb2-02-UG7" secondAttribute="leading" id="FkP-D0-x7e"/>
                                                     <constraint firstAttribute="bottom" secondItem="sJ3-ws-zjJ" secondAttribute="bottom" constant="20" id="KCV-VF-4oP"/>
+                                                    <constraint firstItem="IeV-in-UJX" firstAttribute="leading" secondItem="sJ3-ws-zjJ" secondAttribute="trailing" constant="5" id="YO7-4p-gTs"/>
+                                                    <constraint firstItem="IeV-in-UJX" firstAttribute="centerY" secondItem="sJ3-ws-zjJ" secondAttribute="centerY" id="anf-Yc-E4x"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IeV-in-UJX" secondAttribute="trailing" constant="5" id="deq-R8-CJu"/>
                                                     <constraint firstItem="lb2-02-UG7" firstAttribute="leading" secondItem="4AE-Je-jQG" secondAttribute="leading" id="f9x-lr-Bkc"/>
-                                                    <constraint firstAttribute="trailing" secondItem="sJ3-ws-zjJ" secondAttribute="trailing" constant="12" id="gw7-Hk-yhJ"/>
                                                     <constraint firstItem="sJ3-ws-zjJ" firstAttribute="top" secondItem="lb2-02-UG7" secondAttribute="bottom" id="mIu-WA-6mB"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4AE-Je-jQG" secondAttribute="trailing" constant="12" id="t4S-t9-vMj"/>
                                                 </constraints>
@@ -1521,7 +1534,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nON-1O-tDz">
-                                                <rect key="frame" x="60" y="762.5" width="255" height="50"/>
+                                                <rect key="frame" x="60" y="712.5" width="255" height="50"/>
                                                 <color key="backgroundColor" name="App Theme"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="zTA-Mc-Ebb"/>
@@ -1575,10 +1588,10 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nd-eY-Dmi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTA-NP-caK">
-                                        <rect key="frame" x="0.0" y="401" width="375" height="266"/>
+                                        <rect key="frame" x="0.0" y="734" width="375" height="266"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5Q-d2-Yiw">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="216"/>
@@ -1595,7 +1608,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-wN-l1n">
-                                                <rect key="frame" x="0.0" y="0.0" width="93" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="50"/>
                                                 <fontDescription key="fontDescription" name="Karla-Bold" family="Karla" pointSize="17"/>
                                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                 <state key="normal" title="Cancel">
@@ -1657,8 +1670,10 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="B8U-JW-fYu"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="btnAttachment" destination="sJ3-ws-zjJ" id="xhp-gk-rPR"/>
+                        <outlet property="btnAttachmentIcon" destination="IeV-in-UJX" id="ggB-mI-pcw"/>
                         <outlet property="btnEndDate" destination="Wa7-nP-tCD" id="CSp-sS-MLs"/>
                         <outlet property="btnLeaveType" destination="km8-ny-Tj2" id="RD3-5k-Wgc"/>
                         <outlet property="btnShiftType" destination="QWl-ig-XVk" id="GZ5-Fs-GIe"/>
@@ -1674,7 +1689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5K-xg-Mv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3002.898550724638" y="138.61607142857142"/>
+            <point key="canvasLocation" x="3008.8000000000002" y="0.0"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="HGf-A0-PRd">
@@ -1685,7 +1700,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_design" translatesAutoresizingMaskIntoConstraints="NO" id="kvZ-1f-gd4">
-                                <rect key="frame" x="0.0" y="0.0" width="184" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="92" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3b-eB-a0T" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1700,7 +1715,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="295"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgot_password_img" translatesAutoresizingMaskIntoConstraints="NO" id="AqT-yu-pTJ">
-                                                                <rect key="frame" x="-9.5" y="60" width="354" height="100"/>
+                                                                <rect key="frame" x="79" y="60" width="177" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="sJB-YJ-WP4"/>
                                                                 </constraints>
@@ -1795,7 +1810,7 @@
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="302-WJ-g8l">
-                                                                <rect key="frame" x="68.5" y="160" width="158" height="50"/>
+                                                                <rect key="frame" x="70" y="160" width="155" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZa-NI-cEc">
                                                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
@@ -1804,7 +1819,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lH-Xf-F2x">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="50"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="Yog-as-57i"/>
@@ -1914,7 +1929,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_design" translatesAutoresizingMaskIntoConstraints="NO" id="9Yo-1Q-Qbo">
-                                <rect key="frame" x="0.0" y="0.0" width="184" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="92" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mje-qh-TPk" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1923,19 +1938,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktp-NV-fVE">
-                                                <rect key="frame" x="20" y="70.5" width="335" height="526"/>
+                                                <rect key="frame" x="20" y="70.5" width="335" height="526.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYG-kE-924">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="296"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="296.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reset_password_img" translatesAutoresizingMaskIntoConstraints="NO" id="2UF-EW-Tt7">
-                                                                <rect key="frame" x="-2.5" y="60" width="340" height="100"/>
+                                                                <rect key="frame" x="82.5" y="60" width="170" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="iAo-WA-UCS"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new password, then re-enter to confirm your new password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqR-zp-rcI">
-                                                                <rect key="frame" x="40" y="200" width="255" height="56"/>
+                                                                <rect key="frame" x="40" y="200" width="255" height="56.5"/>
                                                                 <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                                 <color key="textColor" name="Light Gray"/>
                                                                 <nil key="highlightedColor"/>
@@ -1952,7 +1967,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovK-Fk-GPx">
-                                                        <rect key="frame" x="20" y="296" width="295" height="230"/>
+                                                        <rect key="frame" x="20" y="296.5" width="295" height="230"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxv-St-NCw" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
                                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
@@ -2157,6 +2172,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                 <color key="backgroundColor" name="App Theme"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uni-qG-xMd">
+                                <rect key="frame" x="130.5" y="323" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="35q-9M-sDc">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2178,7 +2199,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 min ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfM-07-Rx0">
-                                                            <rect key="frame" x="258" y="39" width="62" height="16.5"/>
+                                                            <rect key="frame" x="256" y="39" width="64" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="14"/>
                                                             <color key="textColor" name="Light Gray"/>
                                                             <nil key="highlightedColor"/>
@@ -2220,8 +2241,10 @@
                             <constraint firstAttribute="trailing" secondItem="wOA-p9-hjp" secondAttribute="trailing" id="HAK-yg-vRl"/>
                             <constraint firstItem="35q-9M-sDc" firstAttribute="top" secondItem="gKE-xP-DhF" secondAttribute="top" id="JDt-u2-Rfp"/>
                             <constraint firstItem="gKE-xP-DhF" firstAttribute="bottom" secondItem="35q-9M-sDc" secondAttribute="bottom" id="JPR-5i-wzN"/>
+                            <constraint firstItem="uni-qG-xMd" firstAttribute="centerY" secondItem="jZ0-eX-Jpb" secondAttribute="centerY" id="KgQ-KV-aMN"/>
                             <constraint firstItem="35q-9M-sDc" firstAttribute="top" secondItem="wOA-p9-hjp" secondAttribute="bottom" constant="-60" id="NMX-ml-sbA"/>
                             <constraint firstItem="gKE-xP-DhF" firstAttribute="trailing" secondItem="35q-9M-sDc" secondAttribute="trailing" id="QK4-vr-Hg8"/>
+                            <constraint firstItem="uni-qG-xMd" firstAttribute="centerX" secondItem="jZ0-eX-Jpb" secondAttribute="centerX" id="Vi1-JV-WUl"/>
                             <constraint firstItem="wOA-p9-hjp" firstAttribute="leading" secondItem="jZ0-eX-Jpb" secondAttribute="leading" id="YOo-y7-sRC"/>
                             <constraint firstItem="wOA-p9-hjp" firstAttribute="top" secondItem="jZ0-eX-Jpb" secondAttribute="top" id="h75-Dz-P9z"/>
                             <constraint firstItem="35q-9M-sDc" firstAttribute="leading" secondItem="gKE-xP-DhF" secondAttribute="leading" id="sUY-fj-86P"/>
@@ -2231,6 +2254,7 @@
                     <navigationItem key="navigationItem" title="Notifications" id="l9r-HM-XUq"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="lblNoData" destination="uni-qG-xMd" id="2sd-XE-nOC"/>
                         <outlet property="tableView" destination="35q-9M-sDc" id="bFD-14-0nz"/>
                     </connections>
                 </viewController>
@@ -2250,6 +2274,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" name="App Theme"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woE-wY-kAz">
+                                <rect key="frame" x="130.5" y="323" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SLL-PT-sZS">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2294,7 +2324,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annual Leave" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QN1-a9-8rt">
-                                                            <rect key="frame" x="64" y="21.5" width="259" height="21"/>
+                                                            <rect key="frame" x="64" y="21.5" width="259" height="21.5"/>
                                                             <fontDescription key="fontDescription" name="Karla-Bold" family="Karla" pointSize="18"/>
                                                             <color key="textColor" name="Black"/>
                                                             <nil key="highlightedColor"/>
@@ -2336,11 +2366,13 @@
                             <constraint firstItem="SLL-PT-sZS" firstAttribute="top" secondItem="YmZ-5w-pBr" secondAttribute="bottom" id="3fF-Dt-De2"/>
                             <constraint firstAttribute="trailing" secondItem="SLL-PT-sZS" secondAttribute="trailing" id="6wd-1o-xFc"/>
                             <constraint firstAttribute="bottom" secondItem="SLL-PT-sZS" secondAttribute="bottom" id="95w-c5-16l"/>
+                            <constraint firstItem="woE-wY-kAz" firstAttribute="centerY" secondItem="war-U5-N5a" secondAttribute="centerY" id="Ahk-Vz-vpA"/>
                             <constraint firstItem="YmZ-5w-pBr" firstAttribute="top" secondItem="war-U5-N5a" secondAttribute="top" id="IoO-bo-qPR"/>
                             <constraint firstItem="SLL-PT-sZS" firstAttribute="top" secondItem="XBP-zL-CJb" secondAttribute="top" id="NLn-Cg-P3A"/>
                             <constraint firstItem="SLL-PT-sZS" firstAttribute="leading" secondItem="XBP-zL-CJb" secondAttribute="leading" id="WnO-5V-mUb"/>
                             <constraint firstAttribute="trailing" secondItem="YmZ-5w-pBr" secondAttribute="trailing" id="cd9-u0-wLs"/>
                             <constraint firstItem="YmZ-5w-pBr" firstAttribute="leading" secondItem="XBP-zL-CJb" secondAttribute="leading" id="chd-fl-mW1"/>
+                            <constraint firstItem="woE-wY-kAz" firstAttribute="centerX" secondItem="war-U5-N5a" secondAttribute="centerX" id="rLl-4b-gPA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XBP-zL-CJb"/>
                     </view>
@@ -2349,6 +2381,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="lblNoData" destination="woE-wY-kAz" id="Ung-LG-Kw2"/>
                         <outlet property="tableView" destination="SLL-PT-sZS" id="6ee-rm-k3w"/>
                     </connections>
                 </viewController>
@@ -2494,23 +2527,23 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cts-MT-Iuv">
                                                     <rect key="frame" x="20" y="8" width="335" height="300"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uhw-mx-eBo">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhw-mx-eBo">
                                                             <rect key="frame" x="20" y="20" width="295" height="46"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Annual Leave" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUD-MH-GSQ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="108.5" height="21.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annual Leave" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUD-MH-GSQ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="113.5" height="21.5"/>
                                                                     <fontDescription key="fontDescription" name="Karla-Bold" family="Karla" pointSize="18"/>
                                                                     <color key="textColor" name="Black"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Shift : Full day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfV-dd-zpw">
-                                                                    <rect key="frame" x="0.0" y="29.5" width="89" height="16.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift : Full day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfV-dd-zpw">
+                                                                    <rect key="frame" x="0.0" y="29.5" width="91" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="14"/>
                                                                     <color key="textColor" name="Dark Gray"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Approved" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-cm-sil">
-                                                                    <rect key="frame" x="225" y="13.5" width="70" height="19"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approved" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-cm-sil">
+                                                                    <rect key="frame" x="226" y="13.5" width="69" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                                     <color key="textColor" name="Green"/>
                                                                     <nil key="highlightedColor"/>
@@ -2529,14 +2562,14 @@
                                                                 <constraint firstItem="Jam-cm-sil" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GfV-dd-zpw" secondAttribute="trailing" constant="8" id="tUa-PJ-h7f"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLf-aV-86H">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLf-aV-86H">
                                                             <rect key="frame" x="20" y="78" width="295" height="1"/>
                                                             <color key="backgroundColor" name="Seperator"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="Jnr-W9-J51"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-hq-8oA">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-hq-8oA">
                                                             <rect key="frame" x="20" y="91" width="295" height="147.5"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_calendar_annualleave" translatesAutoresizingMaskIntoConstraints="NO" id="nDF-nS-6py">
@@ -2546,29 +2579,29 @@
                                                                         <constraint firstAttribute="height" constant="25" id="HT4-Na-QC9"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="27-12-19 to 31-12-19" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDO-y9-yw9">
-                                                                    <rect key="frame" x="33" y="8" width="155" height="19"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27-12-19 to 31-12-19" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDO-y9-yw9">
+                                                                    <rect key="frame" x="33" y="8" width="135" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                                     <color key="textColor" name="Dark Gray"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon_list_annualleave" translatesAutoresizingMaskIntoConstraints="NO" id="oAh-w0-7xh">
-                                                                    <rect key="frame" x="0.0" y="42" width="25" height="25"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_list_annualleave" translatesAutoresizingMaskIntoConstraints="NO" id="oAh-w0-7xh">
+                                                                    <rect key="frame" x="0.0" y="42" width="25" height="19"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Going out of town" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-87-REO">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Going out of town" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-87-REO">
                                                                     <rect key="frame" x="33" y="42" width="129" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                                     <color key="textColor" name="Dark Gray"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZd-z5-b52">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZd-z5-b52">
                                                                     <rect key="frame" x="0.0" y="61" width="295" height="43.5"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_image_annualleave" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-q6-Igo">
-                                                                            <rect key="frame" x="0.0" y="15" width="25" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="15" width="25" height="19"/>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="image.png" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcT-Ko-Hng">
-                                                                            <rect key="frame" x="33" y="15" width="76" height="19"/>
+                                                                            <rect key="frame" x="33" y="15" width="77.5" height="19"/>
                                                                             <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                                                             <color key="textColor" name="Dark Gray"/>
                                                                             <nil key="highlightedColor"/>
@@ -2585,7 +2618,7 @@
                                                                         <constraint firstItem="fcT-Ko-Hng" firstAttribute="leading" secondItem="IAI-q6-Igo" secondAttribute="trailing" constant="8" id="uG5-5d-svZ"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Msm-bY-X4N">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msm-bY-X4N">
                                                                     <rect key="frame" x="0.0" y="104.5" width="295" height="43"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The reason for this leave " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPU-7U-NQL">
@@ -2615,7 +2648,6 @@
                                                                 <constraint firstItem="oAh-w0-7xh" firstAttribute="width" secondItem="nDF-nS-6py" secondAttribute="width" id="B9A-QQ-JE9"/>
                                                                 <constraint firstAttribute="trailing" secondItem="DZd-z5-b52" secondAttribute="trailing" id="C0Z-RS-fFN"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gxl-87-REO" secondAttribute="trailing" id="E0E-hd-7YZ"/>
-                                                                <constraint firstItem="oAh-w0-7xh" firstAttribute="height" secondItem="nDF-nS-6py" secondAttribute="height" id="EEP-13-wTq"/>
                                                                 <constraint firstItem="uDO-y9-yw9" firstAttribute="leading" secondItem="nDF-nS-6py" secondAttribute="trailing" constant="8" id="FY3-op-Z8N"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uDO-y9-yw9" secondAttribute="trailing" id="Jf4-no-Xt2"/>
                                                                 <constraint firstItem="Gxl-87-REO" firstAttribute="leading" secondItem="oAh-w0-7xh" secondAttribute="trailing" constant="8" id="MSq-Q0-iR3"/>
@@ -2625,6 +2657,7 @@
                                                                 <constraint firstItem="IAI-q6-Igo" firstAttribute="height" secondItem="oAh-w0-7xh" secondAttribute="height" id="XQH-D3-80w"/>
                                                                 <constraint firstItem="oAh-w0-7xh" firstAttribute="leading" secondItem="a6g-hq-8oA" secondAttribute="leading" id="bgf-gK-QGc"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Msm-bY-X4N" secondAttribute="bottom" id="kAR-TL-Eyb"/>
+                                                                <constraint firstItem="oAh-w0-7xh" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Gxl-87-REO" secondAttribute="bottom" id="mnw-fp-Yj8"/>
                                                                 <constraint firstItem="uDO-y9-yw9" firstAttribute="leading" secondItem="fcT-Ko-Hng" secondAttribute="leading" id="mwW-U3-Ymh"/>
                                                                 <constraint firstItem="IAI-q6-Igo" firstAttribute="width" secondItem="oAh-w0-7xh" secondAttribute="width" id="sjd-HI-obA"/>
                                                                 <constraint firstItem="uDO-y9-yw9" firstAttribute="leading" secondItem="Gxl-87-REO" secondAttribute="leading" id="uft-qC-cJR"/>
@@ -2754,13 +2787,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flY-DX-Yms">
-                                        <rect key="frame" x="68" y="164" width="38" height="19"/>
+                                        <rect key="frame" x="50" y="164" width="41.5" height="19"/>
                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                         <color key="textColor" name="Dark Gray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_email" translatesAutoresizingMaskIntoConstraints="NO" id="mh4-Jf-Ox6">
-                                        <rect key="frame" x="20" y="155.5" width="36" height="36"/>
+                                        <rect key="frame" x="20" y="164.5" width="18" height="18"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sV-eO-9Mc">
                                         <rect key="frame" x="0.0" y="198" width="335" height="1"/>
@@ -2770,13 +2803,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDa-I3-B5f">
-                                        <rect key="frame" x="72" y="214" width="105.5" height="19"/>
+                                        <rect key="frame" x="52" y="214" width="107" height="19"/>
                                         <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="16"/>
                                         <color key="textColor" name="Dark Gray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_password" translatesAutoresizingMaskIntoConstraints="NO" id="gFK-KE-mfx">
-                                        <rect key="frame" x="20" y="203.5" width="40" height="40"/>
+                                        <rect key="frame" x="20" y="213.5" width="20" height="20"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibb-eg-OBv">
                                         <rect key="frame" x="285" y="0.0" width="50" height="50"/>
@@ -2839,7 +2872,7 @@
                                 <rect key="frame" x="20" y="422" width="335" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_arrow_gray" translatesAutoresizingMaskIntoConstraints="NO" id="FbB-uH-Eiz">
-                                        <rect key="frame" x="293" y="10.5" width="22" height="39"/>
+                                        <rect key="frame" x="304" y="20.5" width="11" height="19.5"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVF-3q-epx">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
@@ -3756,7 +3789,7 @@
         <image name="icon_user" width="16" height="18.5"/>
         <image name="logo" width="230" height="100"/>
         <image name="reset_password_img" width="170" height="135.5"/>
-        <image name="user" width="64" height="64"/>
+        <image name="user" width="128" height="128"/>
         <namedColor name="App Theme">
             <color red="0.0" green="0.55699998140335083" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

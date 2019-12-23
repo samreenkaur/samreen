@@ -24,6 +24,8 @@ struct APIUrl{
     static let cancelLeave = "/api/Leave/CancelLeave"
     
     static let getAllHolidays = "/api/Holiday/GetAll"
+    
+    static let getAllNotifications = "/api/Noifications/GetAll"
 
 }
 

@@ -57,7 +57,7 @@ class CancelReasonViewController: BaseViewController {
     
     //MARK:- Button Actions
     @IBAction func btnSubmitAction(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        self.apiHit()
     }
     
     
@@ -77,8 +77,8 @@ class CancelReasonViewController: BaseViewController {
     //MARK:- API Hit
     private func apiHit(){
         
-        let url = APIUrl.base + APIUrl.cancelLeave
-        let parameters : Parameters = ["leaveId": self.leaveDetails.id]
+        let url = APIUrl.base + APIUrl.cancelLeave + "?leaveId=\(self.leaveDetails.id)&cancelReason=\(self.selectedButton.tag + 1)"
+        let parameters : Parameters = [:]//["leaveId": self.leaveDetails.id, "cancelReason":self.selectedButton.tag + 1]
         
         let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
         
@@ -117,7 +117,7 @@ class CancelReasonViewController: BaseViewController {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-                
+                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
             }
         }
     }

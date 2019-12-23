@@ -16,6 +16,8 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
     
     //MARK:- Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblNoData: UILabel!
+    
     
     //MARK:- Variables
 //    var holidays = [HolidaysModel.init(dict: ["id":1 as AnyObject,"title":"Lohri" as AnyObject,"date":"13 01 2019" as AnyObject]),
@@ -77,11 +79,16 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
     func sortList(){
         
         let sorted = self.holidaysArray.sorted { $0.date?.compare($1.date ?? Date()) == .orderedAscending }
-        for i in 0..<12
+        var last = HolidaysModel()
+        for i in sorted
         {
-            let filter = sorted.filter({ $0.month == i+1 })
-            if filter.count > 0{
-                self.listArray.append(filter)
+            if i.month == last.month && i.year == last.year
+            {
+                self.listArray[self.listArray.count - 1].append(i)
+                last = i
+            }else{
+                self.listArray.append([i])
+                last = i
             }
         }
         DispatchQueue.main.async {
@@ -95,7 +102,15 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
     
     //MARK:- TableView Delegate and Datasources
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.listArray.count
+        let count = self.listArray.count
+        if count > 0 {
+            self.lblNoData.isHidden = true
+            self.tableView.isHidden = false
+        }else{
+            self.lblNoData.isHidden = false
+            self.tableView.isHidden = true
+        }
+        return count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.listArray[section].count
@@ -149,9 +164,11 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
                     if responseData.success == 1
                     {
                         let model : [HolidaysModel] = responseData.dataArray.map(HolidaysModel.init)
+//                        model.append(HolidaysModel.init(dict: ["Name":"Republic Day" as AnyObject,"Date":"2020-01-26T00:00:00" as AnyObject]))
+//                        model.append(HolidaysModel.init(dict: ["Name":"Republic Day" as AnyObject,"Date":"2018-01-26T00:00:00" as AnyObject]))
                         self.holidaysArray = model
                         self.sortList()
-//                        self.saveToRealm(model: model)
+                        self.saveToRealm(model: model)
                     }
                     else if responseData.sessionExpired
                     {
@@ -170,7 +187,7 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
             case .failure(let error):
                 self.removeLoader()
                 print(error.localizedDescription)
-                
+                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
             }
         }
     }
@@ -182,8 +199,7 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
         do {
             let realm = try Realm()
             try realm.write {
-                realm.add(i)
-//                (i, update: .all)
+                realm.add(i, update: .all)
             }
         } catch let error as NSError {
             print(error)

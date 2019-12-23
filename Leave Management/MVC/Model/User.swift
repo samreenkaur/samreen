@@ -34,11 +34,15 @@ class UserModel: Object {
     convenience init(dict : [String:AnyObject])
     {
         self.init()
-        if let item = dict["userId"] as? String
+        if let item = dict["Id"] as? String
         {
             self.id = item
         }
-        if let item = dict["fullName"] as? String
+        if let item = dict["Id"] as? Int
+        {
+            self.id = "\(item)"
+        }
+        if let item = dict["FullName"] as? String
         {
             self.fullName = item
         }
@@ -53,6 +57,10 @@ class UserModel: Object {
         if let item = dict["Designation"] as? String
         {
             self.designation = item
+        }
+        if let item = dict["Phone"] as? String
+        {
+            self.phoneNumber = item
         }
         if let item = dict["PhoneNumber"] as? String
         {
