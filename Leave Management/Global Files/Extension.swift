@@ -66,7 +66,7 @@ extension UIView
     
     func addShadow(shadowColor: CGColor = Colors.themeShadow.cgColor,
                    shadowOffset: CGSize = CGSize(width: 0.5, height: 0.5),
-                   shadowOpacity: Float = 0.8,
+                   shadowOpacity: Float = 0.5,
                    shadowRadius: CGFloat = 3.0) {
         self.layer.shadowColor = shadowColor
         self.layer.shadowOffset = shadowOffset
@@ -99,6 +99,7 @@ extension String
     func convertStringToDate(dataFormat : String) -> Date?{
         let formatter = dateFormatter
         formatter.dateFormat = dataFormat
+//        formatter.timeZone = TimeZone(abbreviation: "UTC")
         let date = formatter.date(from: self)
         return date
     }
@@ -107,8 +108,16 @@ extension Date{
     func convertDateToString(dataFormat: String) -> String {
         let formatter = dateFormatter
         formatter.dateFormat = dataFormat//"dd MMM yyyy"
+//        formatter.timeZone = TimeZone(abbreviation: "UTC")
 //        formatter.dateFormat = "dd MMM yyyy HH:mm a"
         let str = formatter.string(from: self)
         return str
     }
+    
+    func getOnlyDate() -> Date {
+            
+        guard let date = self.convertDateToString(dataFormat: "dd MMM yyyy").convertStringToDate(dataFormat: "dd MMM yyyy") else { return Date() }
+            return date
+        }
+    
 }

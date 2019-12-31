@@ -21,11 +21,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>For uploading images/profie pictures.</string>
+	<string>For uploading images/profile pictures.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>For uploading images/profie pictures.</string>
+	<string>For uploading images/profile pictures.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>For uploading images/profie pictures.</string>
+	<string>For uploading images/profile pictures.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -60,8 +60,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

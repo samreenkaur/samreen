@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ExpandableLabel
+
 
 class LeaveStatusTableViewCell: UITableViewCell {
 
@@ -16,7 +18,7 @@ class LeaveStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var lblShiftType: UILabel!
     
     @IBOutlet weak var lblDate: UILabel!
-    @IBOutlet weak var lblReason: UILabel!
+    @IBOutlet weak var lblReason: ExpandableLabel!
     @IBOutlet weak var viewAttachments: UIView!
     @IBOutlet weak var lblAttachments: UILabel!
     @IBOutlet weak var viewAttachmentsHeight: NSLayoutConstraint!

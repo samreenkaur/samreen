@@ -22,6 +22,7 @@ class LeavesModel: Object {
     @objc dynamic var toDateFormatted: String = ""
     @objc dynamic var fromDateFormatted: String = ""
     @objc dynamic var reason: String = ""
+    @objc dynamic var reasonExpanded = Bool()
     @objc dynamic var cancelreason: String = ""
     @objc dynamic var documents: String = ""
     

@@ -35,6 +35,40 @@ class BaseViewController: UIViewController {
         user = user.getUserloggedIn() ?? UserModel()
     }
     
+    //MARK: - Realm func
+    func saveHolidaysModelToRealm(model : [HolidaysModel]){
+        for i in model
+        {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(i, update: .all)
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+        }
+    }
+    func getHolidaysModelFromRealm() -> [HolidaysModel]
+    {
+        var ar = [HolidaysModel]()
+        //realm data
+        do {
+            let realm = try Realm()
+            let result = realm.objects(HolidaysModel.self)
+                for i in result
+                {
+                    if let model = i as? HolidaysModel, model.id > 0
+                    {
+                        ar.append(model)
+                    }
+                }
+        } catch let error as NSError {
+            print(error)
+        }
+        return ar
+    }
+    
     //MARK: - Loader
     func addLoader(){
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData(size: CGSize(width: 50, height: 50), message: "", messageFont: nil, messageSpacing: nil, type: .lineSpinFadeLoader, color: Colors.themeColor, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: Colors.themeTransparentBackground, textColor: Colors.themeColor))
@@ -171,6 +205,63 @@ class BaseViewController: UIViewController {
         
     }
     
+    //MARK:- API Hit
+    func getHolidaysListApiHit(showLoader:Bool, success: @escaping([HolidaysModel]) -> () ) {
+            
+            let url = APIUrl.base + APIUrl.getAllHolidays
+            let parameters : Parameters = [:]
+            
+            let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
+            
+            if showLoader{
+                self.addLoader()
+            }
+            print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
+            Alamofire.request(url, method: .get, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+                switch response.result
+                {
+                case .success(_):
+                    self.removeLoader()
+                    if let data = response.result.value as? [String:AnyObject]
+                    {
+                        self.removeLoader()
+                        let responseData = ResponseModel.init(data)
+                        if responseData.success == 1
+                        {
+                            var model : [HolidaysModel] = responseData.dataArray.map(HolidaysModel.init)
+                            model.append(HolidaysModel(dict: ["Id":28 as AnyObject, "Name":"New Year" as AnyObject,"Date":"2020-01-01T00:00:00" as AnyObject]))
+                            model.append(HolidaysModel(dict: ["Id":29 as AnyObject, "Name":"Guru Nanak Jayanti" as AnyObject,"Date":"2020-01-12T00:00:00" as AnyObject]))
+                            self.saveHolidaysModelToRealm(model: model)
+                            success(model)
+                        }
+                        else if responseData.sessionExpired
+                        {
+                            self.refreshTokenApiHit()
+                        }
+                        else
+                        {
+                            if showLoader{
+                            self.showAlert(title: "Error", message: responseData.errorMessage, actionTitle: "Ok")
+                            }
+                        }
+                        
+                    }
+                    else
+                    {
+                        if showLoader{
+                        self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+                        }
+                    }
+                case .failure(let error):
+                    self.removeLoader()
+                    if showLoader{
+                    print(error.localizedDescription)
+                    self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
+                    }
+                }
+            }
+        }
+    
     
     //MARK:- Add Image Picker Controller
     func showActionSheet(pickerDelegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)) {
@@ -196,7 +287,7 @@ class BaseViewController: UIViewController {
             let myPickerController = UIImagePickerController()
             myPickerController.delegate = pickerDelegate
             myPickerController.sourceType = UIImagePickerController.SourceType.camera
-            myPickerController.cameraDevice = .front
+//            myPickerController.cameraDevice = .front
             myPickerController.allowsEditing = false
             self.checkForCameraPermissions(picker: myPickerController)
             // viewController.present(myPickerController, animated: true, completion: nil)
@@ -225,7 +316,9 @@ class BaseViewController: UIViewController {
         switch status {
         case .authorized:
             //handle authorized status
-            self.present(picker, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(picker, animated: true, completion: nil)
+            }
             break
         case .denied :
             //handle denied status
@@ -255,7 +348,9 @@ class BaseViewController: UIViewController {
                 switch status {
                 case .authorized:
                     // as above
-                    self.present(picker, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self.present(picker, animated: true, completion: nil)
+                    }
                     break
                 case .denied, .restricted:
                     // as above
@@ -281,12 +376,17 @@ class BaseViewController: UIViewController {
         {
         case .authorized:
             
-            self.present(picker, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(picker, animated: true, completion: nil)
+            }
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization { status in
                 switch status {
                 case .authorized:
-                    self.present(picker, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self.present(picker, animated: true, completion: nil)
+                    }
+                    
                 // as above
                     break
                 case .denied, .restricted: break

@@ -72,7 +72,8 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
     private func getList(){
         
         //get data and sort
-        self.holidaysArray = self.getFromRealm()
+        self.listArray = []
+        self.holidaysArray = self.getHolidaysModelFromRealm()
         self.sortList()
         self.apiHit()
     }
@@ -145,88 +146,65 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
     //MARK:- API Hit
     private func apiHit(){
         
-        let url = APIUrl.base + APIUrl.getAllHolidays
-        let parameters : Parameters = [:]
         
-        let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
-        
-        self.addLoader()
-        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
-        Alamofire.request(url, method: .get, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
-            switch response.result
-            {
-            case .success(_):
-                self.removeLoader()
-                if let data = response.result.value as? [String:AnyObject]
-                {
-                    self.removeLoader()
-                    let responseData = ResponseModel.init(data)
-                    if responseData.success == 1
-                    {
-                        let model : [HolidaysModel] = responseData.dataArray.map(HolidaysModel.init)
-//                        model.append(HolidaysModel.init(dict: ["Name":"Republic Day" as AnyObject,"Date":"2020-01-26T00:00:00" as AnyObject]))
-//                        model.append(HolidaysModel.init(dict: ["Name":"Republic Day" as AnyObject,"Date":"2018-01-26T00:00:00" as AnyObject]))
-                        self.holidaysArray = model
-                        self.sortList()
-                        self.saveToRealm(model: model)
-                    }
-                    else if responseData.sessionExpired
-                    {
-                        self.refreshTokenApiHit()
-                    }
-                    else
-                    {
-                        self.showAlert(title: "Error", message: responseData.errorMessage, actionTitle: "Ok")
-                    }
-                    
-                }
-                else
-                {
-                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
-                }
-            case .failure(let error):
-                self.removeLoader()
-                print(error.localizedDescription)
-                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
-            }
+        self.getHolidaysListApiHit(showLoader: (self.listArray.count>0) ? false :  true) { (modelArr) in
+            self.listArray = []
+            self.holidaysArray = modelArr
+            self.sortList()
         }
+        
+        
+//        let url = APIUrl.base + APIUrl.getAllHolidays
+//        let parameters : Parameters = [:]
+//
+//        let headers: HTTPHeaders = ["Authorization": user.tokenType + " " + user.accessToken]
+//
+//        if listArray.count <= 0
+//        {
+//            self.addLoader()
+//        }
+//        print("\n\n\nAPI::: \(url) \nParamteres::: \(parameters) \nHeaders::: \(headers)")
+//        Alamofire.request(url, method: .get, parameters: parameters,encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+//            switch response.result
+//            {
+//            case .success(_):
+//                self.removeLoader()
+//                if let data = response.result.value as? [String:AnyObject]
+//                {
+//                    self.removeLoader()
+//                    let responseData = ResponseModel.init(data)
+//                    if responseData.success == 1
+//                    {
+//                        let model : [HolidaysModel] = responseData.dataArray.map(HolidaysModel.init)
+////                        model.append(HolidaysModel.init(dict: ["Name":"Republic Day" as AnyObject,"Date":"2020-01-26T00:00:00" as AnyObject]))
+////                        model.append(HolidaysModel.init(dict: ["Name":"Republic Day" as AnyObject,"Date":"2018-01-26T00:00:00" as AnyObject]))
+//                        self.listArray = []
+//                        self.holidaysArray = model
+//                        self.sortList()
+//                        self.saveHolidaysModelToRealm(model: model)
+//                    }
+//                    else if responseData.sessionExpired
+//                    {
+//                        self.refreshTokenApiHit()
+//                    }
+//                    else
+//                    {
+//                        self.showAlert(title: "Error", message: responseData.errorMessage, actionTitle: "Ok")
+//                    }
+//
+//                }
+//                else
+//                {
+//                    self.showAlert(title: "Error", message: "", actionTitle: "Ok")
+//                }
+//            case .failure(let error):
+//                self.removeLoader()
+//                print(error.localizedDescription)
+//                self.showAlert(title: "Error", message: error.localizedDescription, actionTitle: "Ok")
+//            }
+//        }
     }
     
-    //MARK: - Realm func
-    func saveToRealm(model : [HolidaysModel]){
-        for i in model
-        {
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(i, update: .all)
-            }
-        } catch let error as NSError {
-            print(error)
-        }
-        }
-    }
-    func getFromRealm() -> [HolidaysModel]
-    {
-        var ar = [HolidaysModel]()
-        //realm data
-        do {
-            let realm = try Realm()
-            let result = realm.objects(HolidaysModel.self)
-                for i in result
-                {
-                    if let model = i as? HolidaysModel, model.id > 0
-                    {
-                        ar.append(model)
-                    }
-                }
-            
-
-        } catch let error as NSError {
-            print(error)
-
-        }
-        return ar
-    }
+    
     
 }

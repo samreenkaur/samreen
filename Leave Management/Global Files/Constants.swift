@@ -61,7 +61,7 @@ struct Colors{
     static let themeGreen = #colorLiteral(red: 0, green: 0.8230088353, blue: 0.3611240387, alpha: 1)
     static let themeRed = #colorLiteral(red: 0.9728515744, green: 0.2362010479, blue: 0.2031595707, alpha: 1)
     static let themeYellow = #colorLiteral(red: 0.8978995681, green: 0.7817478776, blue: 0, alpha: 1)
-    static let themeShadow = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
+    static let themeShadow = #colorLiteral(red: 0.8392156863, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
     static let themeLink = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
     static let themeLightGray = #colorLiteral(red: 0.6669999957, green: 0.6669999957, blue: 0.6669999957, alpha: 1)
     static let themeDarkGray = #colorLiteral(red: 0.3330000043, green: 0.3330000043, blue: 0.3330000043, alpha: 1)
@@ -75,6 +75,8 @@ struct Images{
     static let eyeHidden = UIImage(named: "eye")
     static let eyeShown = UIImage(named: "visibility")
     static let userPlaceholder = UIImage(named: "user")
+    static let calenderDate = UIImage(named: "icon_calendar")
+    static let calenderDateDisabled = UIImage(named: "icon_calendar")
 
 }
 

@@ -7,6 +7,7 @@ PODS:
     - AWSCore (= 2.12.3)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
+  - ExpandableLabel (0.5.2)
   - Fabric (1.10.2)
   - Firebase/Analytics (6.13.0):
     - Firebase/Core
@@ -109,6 +110,7 @@ DEPENDENCIES:
   - AWSCore
   - AWSS3
   - Crashlytics
+  - ExpandableLabel
   - Fabric
   - Firebase/Analytics
   - Firebase/Messaging
@@ -127,6 +129,7 @@ SPEC REPOS:
     - AWSCore
     - AWSS3
     - Crashlytics
+    - ExpandableLabel
     - Fabric
     - Firebase
     - FirebaseAnalytics
@@ -157,6 +160,7 @@ SPEC CHECKSUMS:
   AWSCore: a4b4aeb414bdfd55a5e8879adb4985c46da157d6
   AWSS3: 511a7b646572686c7e193aa19bd6a5cc43ec2977
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  ExpandableLabel: c2fab6d27860c572d67134b30522a5917746171d
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
@@ -181,6 +185,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   TPKeyboardAvoidingSwift: ce1a75e0bc3af6b485f8bfa1d0a8320cfc565851
 
-PODFILE CHECKSUM: 40ac0f5294621f9dfebe3567a7cc2757e1c60b4a
+PODFILE CHECKSUM: da2810fc352032e8cec7dd0f5f4dacef25e55de3
 
 COCOAPODS: 1.8.3

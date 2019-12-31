@@ -38,10 +38,12 @@ class HomeViewController: BaseViewController {
         {
 //            self.apiTokenHit()
         }
+        self.getHolidaysList()
     }
     private func callViewWillLoad()
     {
         self.navigationController?.navigationBar.isHidden = false
+        
     }
     
     private func setUpNavigationBar(){
@@ -87,7 +89,15 @@ class HomeViewController: BaseViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
+    //MARK:- get Holidays List
+    private func getHolidaysList(){
+        
+        let listArray = self.getHolidaysModelFromRealm()
+        self.getHolidaysListApiHit(showLoader: (listArray.count>0) ? false :  true) { (modelArr) in
+            print(modelArr)
+        }
+    }
+        
     //MARK:- API Hit
     private func apiTokenHit(){
         

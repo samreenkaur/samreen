@@ -20,7 +20,9 @@ class ApplyLeaveViewController: BaseViewController {
     @IBOutlet weak var viewDateHeight: NSLayoutConstraint!
     @IBOutlet weak var btnStartDate: UIButton!
     @IBOutlet weak var btnEndDate: UIButton!
+    @IBOutlet weak var iconEndDate: UIImageView!
     @IBOutlet weak var lblTotalDays: UILabel!
+    @IBOutlet weak var lblSmartNotes: UILabel!
     @IBOutlet weak var btnAttachment: UIButton!
     @IBOutlet weak var btnAttachmentIcon: UIButton!
     
@@ -34,7 +36,7 @@ class ApplyLeaveViewController: BaseViewController {
     var textViewPlaceholder = "Type your reason here..."
     var pickerType = 0 // 0 - Leave type, 1 - Shift type , 2 - Start Date pickers, 3 - End Date Picker
     var selectedLeaveType = 0
-    var selectedShiftType = 0
+    var selectedShiftType = 2
     var pickerLeaveType = ["Annual Leave", "Medical Leave","Emergency Leave","Other"]
     var pickerShiftType = ["Short","Half Day", "Full Day","Multiple Days"]
     var pickerArr = [String]()
@@ -72,8 +74,8 @@ class ApplyLeaveViewController: BaseViewController {
         self.datepickerView.date = Date()
         self.viewPickers.isHidden = true
         //        self.viewPickerContainer.isHidden = true
-        self.btnLeaveType.setTitle(self.pickerLeaveType[0], for: .normal)
-        self.btnShiftType.setTitle(self.pickerShiftType[0], for: .normal)
+        self.btnLeaveType.setTitle(self.pickerLeaveType[self.selectedLeaveType], for: .normal)
+        self.btnShiftType.setTitle(self.pickerShiftType[self.selectedShiftType], for: .normal)
         self.viewDate.isHidden = true
         self.viewDateHeight.constant = 0
         self.checkForShiftType()
@@ -149,7 +151,10 @@ class ApplyLeaveViewController: BaseViewController {
         {
         case 0,1: self.datepickerView.maximumDate = maxiDate
             break
-        case 2,3: self.datepickerView.maximumDate = nil
+        case 2: self.datepickerView.maximumDate = nil
+            break
+        case 3: self.datepickerView.maximumDate = nil
+        self.datepickerView.minimumDate = Calendar.current.date(byAdding: .hour, value: 2, to: self.startDate)
             break
         default: break
         }
@@ -174,6 +179,7 @@ class ApplyLeaveViewController: BaseViewController {
             self.btnShiftType.setTitle(self.pickerArr[row], for: .normal)
             self.selectedShiftType = self.pickerView.selectedRow(inComponent: 0)
             self.checkForShiftType()
+            self.smartChecks()
             break
         case 2:
             
@@ -181,6 +187,7 @@ class ApplyLeaveViewController: BaseViewController {
             self.startDate = self.datepickerView.date
             self.checkForShiftType()
             self.btnStartDate.setTitle(date, for: .normal)
+            self.smartChecks()
             break
             
         case 3:
@@ -189,6 +196,7 @@ class ApplyLeaveViewController: BaseViewController {
             self.endDate = self.datepickerView.date
             self.btnEndDate.setTitle(date, for: .normal)
             self.calculateDays()
+            self.smartChecks()
             break
         default:
             break
@@ -243,9 +251,10 @@ class ApplyLeaveViewController: BaseViewController {
     func checkForShiftType(){
         let date = self.dateSelected(self.startDate)
         self.btnStartDate.setTitle(date, for: .normal)
+        self.lblSmartNotes.text = ""
         switch self.selectedShiftType{
         case 0 :
-            self.viewDateHeight.constant = 77
+            self.viewDateHeight.constant = 85
             self.viewDate.isHidden = false
             self.btnEndDate.isUserInteractionEnabled = false
             self.btnEndDate.setTitleColor(Colors.themeLightGray, for: .normal)
@@ -253,9 +262,11 @@ class ApplyLeaveViewController: BaseViewController {
             let maxiDate = Calendar.current.date(byAdding: .hour, value: 2, to: self.startDate) ?? Date()
             self.btnEndDate.setTitle(self.dateSelected(maxiDate), for: .normal)
             self.endDate = maxiDate
+            self.iconEndDate.tintColor = Colors.themeLightGray
+//            self.iconEndDate.image = Images.calenderDateDisabled
             break
         case 1:
-            self.viewDateHeight.constant = 77
+            self.viewDateHeight.constant = 85
             self.viewDate.isHidden = false
             self.btnEndDate.isUserInteractionEnabled = false
             self.btnEndDate.setTitleColor(Colors.themeLightGray, for: .normal)
@@ -263,6 +274,8 @@ class ApplyLeaveViewController: BaseViewController {
             let maxiDate = Calendar.current.date(byAdding: .hour, value: 4, to: self.startDate) ?? Date()
             self.endDate = maxiDate
             self.btnEndDate.setTitle(self.dateSelected(maxiDate), for: .normal)
+            self.iconEndDate.tintColor = Colors.themeLightGray
+            //            self.iconEndDate.image = Images.calenderDateDisabled
             break
         case 2 :
             self.viewDateHeight.constant = 0
@@ -270,15 +283,19 @@ class ApplyLeaveViewController: BaseViewController {
             self.datepickerView.datePickerMode = .date
             self.btnEndDate.isUserInteractionEnabled = false
             self.datepickerView.maximumDate = nil
+            self.iconEndDate.tintColor = Colors.themeLightGray
+            //            self.iconEndDate.image = Images.calenderDateDisabled
             break
         case 3:
-            self.viewDateHeight.constant = 77
+            self.viewDateHeight.constant = 85
             self.viewDate.isHidden = false
             self.btnEndDate.isUserInteractionEnabled = true
             self.btnEndDate.setTitleColor(Colors.themeDarkGray, for: .normal)
             self.datepickerView.datePickerMode = .dateAndTime
             self.endDate = Date()
             self.btnEndDate.setTitle("End Date (Including)", for: .normal)
+            self.iconEndDate.tintColor = Colors.themeColor
+            //            self.iconEndDate.image = Images.calenderDate
             break
         default:
             break
@@ -313,6 +330,25 @@ class ApplyLeaveViewController: BaseViewController {
             self.lblTotalDays.text = (days>0) ?  "\(days+1) Days" : "Duration"
             break
         default: break
+        }
+    }
+    
+    //MARK: - smart checks
+    private func smartChecks(){
+        let getHolidaysList = self.getHolidaysModelFromRealm()
+        
+        
+        let filter = getHolidaysList.filter({ $0.date ?? Date() >= Date() && ((self.selectedShiftType != 3 && ($0.date ?? Date() >= self.startDate.getOnlyDate().addingTimeInterval(-60*60*24)) && ($0.date ?? Date() <= self.startDate.getOnlyDate().addingTimeInterval(60*60*24))) || (self.selectedShiftType == 3 && ( ($0.date ?? Date() >= self.startDate.getOnlyDate().addingTimeInterval(-60*60*24)) && ($0.date ?? Date() <= self.endDate.getOnlyDate().addingTimeInterval(60*60*24))))) })
+        if filter.count > 0{
+            var dates = ""
+            for i in filter
+            {
+                dates += " \(i.date?.convertDateToString(dataFormat: "dd-MMM-yyyy") ?? ""),"
+            }
+            self.lblSmartNotes.text = "\n There is an official holiday on\(dates.dropLast()). "
+        }else
+        {
+            self.lblSmartNotes.text = ""
         }
     }
     

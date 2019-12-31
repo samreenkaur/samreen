@@ -54,7 +54,7 @@ class LeaveStatusViewController: BaseViewController {
     
     private func initializeViewControllers()
     {
-        self.childViewTitleArray = ["Approved", "Unapproved","Cancelled", "Pending"]
+        self.childViewTitleArray = ["Pending","Approved", "Unapproved","Cancelled" ]
         let firstViewController = self.storyboard?.instantiateViewController(withIdentifier: kLeaveStatusTableViewController) as! LeaveStatusTableViewController
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: kLeaveStatusTableViewController) as! LeaveStatusTableViewController
         let thirdViewController = self.storyboard?.instantiateViewController(withIdentifier: kLeaveStatusTableViewController) as! LeaveStatusTableViewController
