@@ -222,42 +222,10 @@
             filePath = "Leave Management/MVC/Controller/Home Views/Apply Leave Views/ApplyLeaveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "F9B94B19-5213-48E4-A568-853231667D83 - 9348333b6d11d756"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Leave_Management.ApplyLeaveViewController.(apiHit in _B6A7A7F12C537624557A6EC43EEA5357)(Swift.String) -&gt; ()"
-                  moduleName = "Leave Management"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/Apply%20Leave%20Views/ApplyLeaveViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "367"
-                  endingLineNumber = "367"
-                  offsetFromSymbolStart = "4647">
-               </Location>
-               <Location
-                  uuid = "F9B94B19-5213-48E4-A568-853231667D83 - d1e8e3b1e03c66ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Leave_Management.ApplyLeaveViewController.(apiHit in _B6A7A7F12C537624557A6EC43EEA5357)(Swift.String) -&gt; ()"
-                  moduleName = "Leave Management"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/Apply%20Leave%20Views/ApplyLeaveViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "368"
-                  endingLineNumber = "368"
-                  offsetFromSymbolStart = "160">
-               </Location>
-            </Locations>
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "apiHit(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -270,10 +238,10 @@
             filePath = "Leave Management/MVC/Controller/Home Views/Apply Leave Views/ApplyLeaveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "374"
-            endingLineNumber = "374"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "375"
+            endingLineNumber = "375"
+            landmarkName = "apiHit(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -414,10 +382,42 @@
             filePath = "Leave Management/MVC/Controller/Home Views/Apply Leave Views/ApplyLeaveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "343"
+            endingLineNumber = "343"
+            landmarkName = "smartChecks()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0C07CB0C-EEFF-444F-ABAB-F5720D760364 - 3e24409504231134"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Leave_Management.ApplyLeaveViewController.(smartChecks in _B6A7A7F12C537624557A6EC43EEA5357)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/Apply%20Leave%20Views/ApplyLeaveViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "343"
+                  endingLineNumber = "343"
+                  offsetFromSymbolStart = "273">
+               </Location>
+               <Location
+                  uuid = "0C07CB0C-EEFF-444F-ABAB-F5720D760364 - c82c7ee3516a8bf7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Leave_Management.HolidaysModel) -&gt; Swift.Bool in Leave_Management.ApplyLeaveViewController.(smartChecks in _B6A7A7F12C537624557A6EC43EEA5357)() -&gt; ()"
+                  moduleName = "Leave Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osx/Desktop/Leave%20Management/Leave%20Management/MVC/Controller/Home%20Views/Apply%20Leave%20Views/ApplyLeaveViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "343"
+                  endingLineNumber = "343"
+                  offsetFromSymbolStart = "342">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -430,10 +430,10 @@
             filePath = "Leave Management/MVC/Controller/Home Views/Apply Leave Views/ApplyLeaveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "smartChecks()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "AD0841A0-9E56-4648-A221-D2CB1C77DD22 - 3e24409504231134"
@@ -466,22 +466,6 @@
                   offsetFromSymbolStart = "326">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AB94EA59-468A-40BE-A632-280840292842"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Leave Management/MVC/Controller/Home Views/Apply Leave Views/ApplyLeaveViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
-            landmarkName = "unknown"
-            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

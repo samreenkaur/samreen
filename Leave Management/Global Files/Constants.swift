@@ -33,6 +33,7 @@ struct APIUrl{
 var kLoginViewController = "LoginViewController"
 var kSignUpViewController = "SignUpViewController"
 var kForgotPasswordViewController = "ForgotPasswordViewController"
+var kWebViewController = "WebViewController"
 
 var kHomeViewController = "HomeViewController"
 var kNotificationsViewController = "NotificationsViewController"

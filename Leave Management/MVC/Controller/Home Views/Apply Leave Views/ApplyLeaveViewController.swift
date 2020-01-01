@@ -92,14 +92,16 @@ class ApplyLeaveViewController: BaseViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         
         self.navigationItem.title = "Apply Leave"
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_leave_type"), style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
+            //UIBarButtonItem(title: "info", style: .plain, target: self, action: #selector(self.rightBarButtonAction(_:)))
     }
     
     @objc func rightBarButtonAction(_ sender: Any){
-        self.navigationController?.popViewController(animated: true)
+        if let vc = self.storyboard?.instantiateViewController(identifier: kWebViewController) as? WebViewController
+        {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    
-    
     
     
     //MARK:- Button Actions

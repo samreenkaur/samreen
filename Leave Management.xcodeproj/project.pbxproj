@@ -10,6 +10,8 @@
 		100AD9D023ACA847009CEEF9 /* AWSS3Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100AD9CF23ACA847009CEEF9 /* AWSS3Manager.swift */; };
 		100AD9D223ACF44B009CEEF9 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100AD9D123ACF44B009CEEF9 /* ResponseModel.swift */; };
 		10140EAF23AB9FFB00115A7B /* Leaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10140EAE23AB9FFB00115A7B /* Leaves.swift */; };
+		102F872E23BC75F200A7BF1F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F872D23BC75F200A7BF1F /* WebViewController.swift */; };
+		102F873423BC870C00A7BF1F /* Company Policies.docx in Resources */ = {isa = PBXBuildFile; fileRef = 102F873323BC870C00A7BF1F /* Company Policies.docx */; };
 		10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */; };
 		103994072398C42900EB14E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994062398C42900EB14E4 /* ResetPasswordViewController.swift */; };
 		1039940A2398C85C00EB14E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103994092398C85C00EB14E4 /* HomeViewController.swift */; };
@@ -70,6 +72,8 @@
 		100AD9CF23ACA847009CEEF9 /* AWSS3Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3Manager.swift; sourceTree = "<group>"; };
 		100AD9D123ACF44B009CEEF9 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		10140EAE23AB9FFB00115A7B /* Leaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaves.swift; sourceTree = "<group>"; };
+		102F872D23BC75F200A7BF1F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = "Leave Management/MVC/Controller/Home Views/Apply Leave Views/WebViewController.swift"; sourceTree = SOURCE_ROOT; };
+		102F873323BC870C00A7BF1F /* Company Policies.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Company Policies.docx"; sourceTree = "<group>"; };
 		10310FC223A8F3F300987B04 /* Leave Management.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Leave Management.entitlements"; sourceTree = "<group>"; };
 		10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
 		103994062398C42900EB14E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				100AD9CF23ACA847009CEEF9 /* AWSS3Manager.swift */,
 				10F57C9D2397E46C0025082D /* Constants.swift */,
 				10F57C922397E3670025082D /* Extension.swift */,
+				102F873323BC870C00A7BF1F /* Company Policies.docx */,
 			);
 			path = "Global Files";
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */,
+				102F872D23BC75F200A7BF1F /* WebViewController.swift */,
 			);
 			path = "Apply Leave Views";
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 				10DA560523A8F0BD00A3945B /* GoogleService-Info.plist in Resources */,
 				10AB4F87239FA8FB002E5787 /* Karla-Regular.ttf in Resources */,
 				10AB4F89239FA8FB002E5787 /* Karla-BoldItalic.ttf in Resources */,
+				102F873423BC870C00A7BF1F /* Company Policies.docx in Resources */,
 				10AB4F8A239FA8FB002E5787 /* Karla-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +577,7 @@
 				10F57C652397E0BC0025082D /* SceneDelegate.swift in Sources */,
 				10F57C932397E3670025082D /* Extension.swift in Sources */,
 				10355834239A2D5F0059DF73 /* CancelReasonViewController.swift in Sources */,
+				102F872E23BC75F200A7BF1F /* WebViewController.swift in Sources */,
 				10B328AB23991DF400B6D0CA /* HolidaysViewController.swift in Sources */,
 				10F57C9E2397E46C0025082D /* Constants.swift in Sources */,
 				1041A9E6239E3ACE0080E6F4 /* User.swift in Sources */,
