@@ -37,6 +37,7 @@ class LoginViewController: BaseViewController , UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.callViewWillAppear()
         self.navigationController?.navigationBar.isHidden = true
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,9 +62,9 @@ class LoginViewController: BaseViewController , UITextFieldDelegate {
         
         self.setupToHideKeyboardOnTapOnView()
         //Crashlytics.sharedInstance().crash()
-        
     }
-    private func callViewWillLoad()
+    
+    private func callViewWillAppear()
     {
         
     }

@@ -42,7 +42,7 @@ class NotificationsViewController: BaseViewController, UITableViewDelegate, UITa
         self.tableView.dataSource = self
         self.apiHit()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         
     }

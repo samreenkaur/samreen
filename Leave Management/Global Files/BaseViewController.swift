@@ -229,8 +229,8 @@ class BaseViewController: UIViewController {
                         if responseData.success == 1
                         {
                             var model : [HolidaysModel] = responseData.dataArray.map(HolidaysModel.init)
-                            model.append(HolidaysModel(dict: ["Id":28 as AnyObject, "Name":"New Year" as AnyObject,"Date":"2020-01-01T00:00:00" as AnyObject]))
-                            model.append(HolidaysModel(dict: ["Id":29 as AnyObject, "Name":"Guru Nanak Jayanti" as AnyObject,"Date":"2020-01-12T00:00:00" as AnyObject]))
+                            model.append(HolidaysModel(dict: ["Id":28 as AnyObject, "Name":"Republic Day" as AnyObject,"Date":"2020-01-26T00:00:00" as AnyObject]))
+                            model.append(HolidaysModel(dict: ["Id":29 as AnyObject, "Name":"Lohri" as AnyObject,"Date":"2020-01-13T00:00:00" as AnyObject]))
                             self.saveHolidaysModelToRealm(model: model)
                             success(model)
                         }

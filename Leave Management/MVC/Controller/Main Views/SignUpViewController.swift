@@ -61,7 +61,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         self.setupToHideKeyboardOnTapOnView()
         self.addAccessoryViewForPhoneNumberField()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         
     }

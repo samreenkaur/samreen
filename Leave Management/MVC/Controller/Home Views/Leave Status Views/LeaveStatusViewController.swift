@@ -39,7 +39,7 @@ class LeaveStatusViewController: BaseViewController {
         self.initializeViewControllers()
         self.addPagingViewController()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         
     }

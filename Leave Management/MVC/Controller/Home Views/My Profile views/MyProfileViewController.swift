@@ -38,7 +38,7 @@ class MyProfileViewController: BaseViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        callViewWillLoad()
+        callViewWillAppear()
     }
     
     
@@ -47,7 +47,7 @@ class MyProfileViewController: BaseViewController{
     {
         self.addTapGesture()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         self.getUserData()
         
@@ -101,6 +101,12 @@ class MyProfileViewController: BaseViewController{
     }
     @IBAction func btnChangePasswordAction(_ sender: UIButton) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: kChangePasswordViewController) as? ChangePasswordViewController
+        {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    @IBAction func btnLeavePoliciesAction(_ sender: UIButton) {
+        if let vc = self.storyboard?.instantiateViewController(identifier: kWebViewController) as? WebViewController
         {
             self.navigationController?.pushViewController(vc, animated: true)
         }

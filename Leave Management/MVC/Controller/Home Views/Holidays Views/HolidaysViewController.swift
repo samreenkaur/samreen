@@ -44,7 +44,7 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.callViewWillLoad()
+        self.callViewWillAppear()
     }
     
     
@@ -55,7 +55,7 @@ class HolidaysViewController: BaseViewController , UITableViewDelegate, UITableV
         self.tableView.dataSource = self
         self.getUserData()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         self.getList()
     }

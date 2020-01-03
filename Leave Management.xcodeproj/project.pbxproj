@@ -72,7 +72,7 @@
 		100AD9CF23ACA847009CEEF9 /* AWSS3Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSS3Manager.swift; sourceTree = "<group>"; };
 		100AD9D123ACF44B009CEEF9 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		10140EAE23AB9FFB00115A7B /* Leaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaves.swift; sourceTree = "<group>"; };
-		102F872D23BC75F200A7BF1F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = "Leave Management/MVC/Controller/Home Views/Apply Leave Views/WebViewController.swift"; sourceTree = SOURCE_ROOT; };
+		102F872D23BC75F200A7BF1F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = "Leave Management/MVC/Controller/Home Views/My Profile views/WebViewController.swift"; sourceTree = SOURCE_ROOT; };
 		102F873323BC870C00A7BF1F /* Company Policies.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Company Policies.docx"; sourceTree = "<group>"; };
 		10310FC223A8F3F300987B04 /* Leave Management.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Leave Management.entitlements"; sourceTree = "<group>"; };
 		10355833239A2D5F0059DF73 /* CancelReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelReasonViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +167,7 @@
 				1039940D2398D1DA00EB14E4 /* MyProfileViewController.swift */,
 				1039940F2398D1F200EB14E4 /* EditProfileViewController.swift */,
 				103994112398D21A00EB14E4 /* ChangePasswordViewController.swift */,
+				102F872D23BC75F200A7BF1F /* WebViewController.swift */,
 			);
 			path = "My Profile views";
 			sourceTree = "<group>";
@@ -208,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				10B328A823991DE700B6D0CA /* ApplyLeaveViewController.swift */,
-				102F872D23BC75F200A7BF1F /* WebViewController.swift */,
 			);
 			path = "Apply Leave Views";
 			sourceTree = "<group>";

@@ -27,7 +27,7 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.callViewWillLoad()
+        self.callViewWillAppear()
     }
     
     //MARK:- main funcs
@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController {
         }
         self.getHolidaysList()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         self.navigationController?.navigationBar.isHidden = false
         

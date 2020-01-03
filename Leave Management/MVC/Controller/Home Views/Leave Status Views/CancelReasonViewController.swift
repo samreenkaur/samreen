@@ -33,7 +33,7 @@ class CancelReasonViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.callViewWillLoad()
+        self.callViewWillAppear()
     }
     
     
@@ -42,7 +42,7 @@ class CancelReasonViewController: BaseViewController {
     {
         self.getUserData()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         self.selectedButton = self.btnOption1
     }

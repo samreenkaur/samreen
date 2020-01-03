@@ -40,7 +40,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.callViewWillLoad()
+        self.callViewWillAppear()
     }
     
     
@@ -53,7 +53,7 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         self.getUserData()
 //        self.apiHit()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         switch self.status
         {
@@ -192,16 +192,22 @@ class LeaveStatusTableViewController: BaseViewController , UITableViewDelegate, 
         let label:UILabel = (sender.view as! UILabel)
         let index = label.tag
         
-        let imgView = UIImageView()
-        imgView.sd_setImage(with: URL(string: self.arrList[index].documents), placeholderImage: UIImage())
-        let configuration = ImageViewerConfiguration { config in
-            config.image = imgView.image
+        SDWebImageManager.shared.loadImage(with: URL(string: self.arrList[index].documents),options: .highPriority,progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+            print(isFinished)
+            if isFinished && error == nil{
+                let configuration = ImageViewerConfiguration { config in
+                    config.image = image
+                }
+                        
+                let imageViewerController = ImageViewerController(configuration: configuration)
+                        
+                self.present(imageViewerController, animated: true)
+                }
+            else
+            {
+                self.showAlert(title: "Error", message: error?.localizedDescription ?? "", actionTitle: "Ok")
+            }
         }
-        
-        let imageViewerController = ImageViewerController(configuration: configuration)
-        
-        present(imageViewerController, animated: true)
-        
         
     }
     

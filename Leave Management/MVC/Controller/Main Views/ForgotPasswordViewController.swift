@@ -40,7 +40,7 @@ class ForgotPasswordViewController: BaseViewController {
     {
         self.setupToHideKeyboardOnTapOnView()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         
     }

@@ -45,7 +45,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
         webView.allowsBackForwardNavigationGestures = true
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         
     }
@@ -55,7 +55,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         
-        self.navigationItem.title = "Leave Policies"
+        self.navigationItem.title = "Leave Policy"
     }
     
     

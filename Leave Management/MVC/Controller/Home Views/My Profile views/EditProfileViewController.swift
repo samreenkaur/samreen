@@ -41,7 +41,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.callViewWillLoad()
+        self.callViewWillAppear()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -61,7 +61,7 @@ class EditProfileViewController: BaseViewController , UITextFieldDelegate , UIIm
         self.setupToHideKeyboardOnTapOnView()
         self.addAccessoryViewForPhoneNumberField()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         user = user.getUserloggedIn() ?? UserModel()
         if !user.id.isEmpty

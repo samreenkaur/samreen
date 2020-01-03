@@ -50,7 +50,7 @@ class ResetPasswordViewController: BaseViewController , UITextFieldDelegate {
         self.setupToHideKeyboardOnTapOnView()
         
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         
     }

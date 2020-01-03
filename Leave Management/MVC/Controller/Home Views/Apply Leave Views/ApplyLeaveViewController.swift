@@ -81,7 +81,7 @@ class ApplyLeaveViewController: BaseViewController {
         self.checkForShiftType()
         self.getUserData()
     }
-    private func callViewWillLoad()
+    private func callViewWillAppear()
     {
         
     }
